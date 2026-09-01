@@ -427,7 +427,7 @@ remaining failures are the measured flip-noise rows addressed by §4.4.
 
 Released with this report at
 <https://github.com/cjchanh/longmemeval-evidence> (MIT). A fresh clone
-verifies 448/448 manifest hashes and re-derives every headline count from
+verifies 449/449 manifest hashes and re-derives every headline count from
 the released verdicts without an API key. The evidence commits in the
 footer anchor to the source tree the release was exported from. The
 release holds all reader outputs,

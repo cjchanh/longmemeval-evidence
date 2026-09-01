@@ -167,7 +167,7 @@ uncontrolled losses, net +4 stable, measured).
 - All checkpoints, judge verdicts, control receipts, and attribution tables
   are committed under eval/dense_chain_v32_20260830/ and published at
   https://github.com/cjchanh/longmemeval-evidence (MIT; RELEASE_MANIFEST.md,
-  448 files, sha256 each; fresh clone verified 448/448).
+  449 files, sha256 each; fresh clone verified 449/449).
 
 ## Release boundary
 

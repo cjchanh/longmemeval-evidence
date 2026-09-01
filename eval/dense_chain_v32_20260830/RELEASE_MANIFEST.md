@@ -18,7 +18,7 @@ A public copy of this release is verified when every row below matches `sha256su
 |---|---:|---|
 | `eval/dense_chain_v32_20260830/GOLD_DEFECT_DOSSIER.md` | 6833 | `090bb8e52a5173d5d2f077d5f77be76c456b09b9296b964971934cd4bd2fd954` |
 | `eval/dense_chain_v32_20260830/README.md` | 541 | `9f865a94322765858d220441fc5554928b7096765a4e5b54f8a0ba974e49cbb6` |
-| `eval/dense_chain_v32_20260830/SOTA_WRITEUP.md` | 10355 | `f49dcd4bbd4867766e6f4c711d1b61028f84222507ccf988d31a55bdf1b1e09f` |
+| `eval/dense_chain_v32_20260830/SOTA_WRITEUP.md` | 10355 | `bf9431ed4bb3c6ad855c4bb97632c518a720a410606368a738d7ab3f66320eae` |
 | `eval/dense_chain_v32_20260830/armD_sol/reader.log` | 14 | `0e5f9d2bfbc24f8613e12ea797091ba12b66e7303d5760d10308e887fafc850a` |
 | `eval/dense_chain_v32_20260830/armD_sol/reader/checkpoint_abs.jsonl` | 3377 | `7a6c91128ddab830c80ae353cdf41bb429a32c692de70d4f02c2dcb8433d9126` |
 | `eval/dense_chain_v32_20260830/armD_sol/reader/checkpoint_answerable.jsonl` | 13662 | `36ae97c983fdd1f5ea40d7347653a042d0a7bdce38a29dcae122265db926bd06` |
@@ -248,9 +248,9 @@ A public copy of this release is verified when every row below matches `sha256su
 | `eval/dense_chain_v32_20260830/packets.jsonl` | 2657305 | `3598aee8a14e760a65549abaa45c386942f05c027a3de8ef33ede56b9f6b52f0` |
 | `eval/dense_chain_v32_20260830/packets_abs.jsonl` | 169964 | `bec583d3aabf877bce70ed9d50dd5045a8813d63b595a1a1e9b9d6283d1d97e5` |
 | `eval/dense_chain_v32_20260830/paper/ARXIV_SUBMISSION.md` | 2868 | `38493a5ae84e853d92c33e55440080c5c96133a8c58e47a2d246180372fbe6b6` |
-| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md` | 28411 | `6dd5f71a82fa227db3eee496e07e3b7b5fe85a256c0e18fd47dff1370395f3ad` |
-| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.pdf` | 91358 | `c7b52cdc023de3f3eaa6e7a3e626e0c582be66257d2f50ccd90ee2d3c74e79c9` |
-| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.tex` | 26790 | `4cab404494f509c36cc86b3144ae3f4415b236734de1d268848d545ce874e2d4` |
+| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md` | 28411 | `1a883e953dc88faaa0371d78d1515009df5cc182996896f1e39125b3fe8dc893` |
+| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.pdf` | 91363 | `b58cdea600184d110d47201d531221b53319127ff0eaefb4d23771fe7aee4d88` |
+| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.tex` | 26790 | `f4e1930144c2b013d710cce29356da17e61caf9dfce01da5371a26eef7158f5b` |
 | `eval/dense_chain_v32_20260830/replay-f3fix_pass1/judge.log` | 743 | `a5adcda1af36d89f211eab93a0515e5b12ee8bbe3a64f1fdadda09cc8577503b` |
 | `eval/dense_chain_v32_20260830/replay-f3fix_pass1/judge/control_receipt.json` | 2392 | `b8b3b4ba28f879d23820b90d32fda7615729c4553fa2854965e42b3106e33cad` |
 | `eval/dense_chain_v32_20260830/replay-f3fix_pass1/judge/rescore_summary.json` | 1603 | `aef1c5e19afa643ba5c5ea5bcdaf51fb4fa2bdce975d34dc192fb3a62b061b7f` |

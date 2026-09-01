@@ -6,7 +6,7 @@ technical report v1.2, 2026-09-01). Paper source, Markdown, and PDF are in
 `eval/dense_chain_v32_20260830/paper/`.
 
 This tree is an exact export of the rows in
-`eval/dense_chain_v32_20260830/RELEASE_MANIFEST.md`: 448 files, one SHA-256
+`eval/dense_chain_v32_20260830/RELEASE_MANIFEST.md`: 449 files, one SHA-256
 each. Nothing here was edited after export.
 
 ## What is here
