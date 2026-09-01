@@ -91,6 +91,6 @@ LongMemEval-S, `xiaowu0162/longmemeval-cleaned` (Hugging Face, MIT). Reader
 checkpoints carry question and gold text from the benchmark; the haystack
 sessions are not redistributed here.
 
-## License for this release's code and receipts
+## License
 
-Not yet declared — set by the author before the repository goes public.
+MIT (see `LICENSE`) for the code and receipts in this release. The benchmark-derived question and gold text is MIT under the dataset's own license.
