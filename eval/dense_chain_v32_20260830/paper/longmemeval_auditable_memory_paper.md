@@ -425,10 +425,12 @@ remaining failures are the measured flip-noise rows addressed by §4.4.
 
 ## 8. Reproducibility
 
-Released with this report. **Release gate: these claims are verifiable
-only once the evidence-repository URL resolves here; until then this is
-a pre-release copy and every "released" statement below is a commitment,
-not evidence.** The commit hashes anchor to that repository: all reader outputs,
+Released with this report at
+<https://github.com/cjchanh/longmemeval-evidence> (MIT). A fresh clone
+verifies 448/448 manifest hashes and re-derives every headline count from
+the released verdicts without an API key. The evidence commits in the
+footer anchor to the source tree the release was exported from. The
+release holds all reader outputs,
 all judge verdicts and control receipts for every run in the ladder, the judge harness (frozen rubric, SHA-pinned
 templates, fail-closed transport), the SC rule and per-vote records, the
 attribution tables, the gold-defect dossier, and the run scripts.
@@ -489,5 +491,6 @@ judge, and publish the failures with the successes.
 ---
 
 *Correspondence: Christopher J. Chanhnourack, Centennial Defense Systems.*
-*Evidence commits (in the repository named at publication):
+*Evidence release: <https://github.com/cjchanh/longmemeval-evidence>.
+Source-tree evidence commits:
 477726726 · 04eb64763 · ad71321ea · ba805e575 · 08e5784bb · ad43cc99a · 9b0711c39.*

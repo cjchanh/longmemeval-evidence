@@ -1,6 +1,6 @@
 # LongMemEval-S evidence release — manifest
 
-Generated at HEAD `bbb499c85`; the release commit is the one that contains this file. Regenerate with `python3 scripts/build_release_manifest.py`. Files: 448 · 70.7 MB.
+Generated at HEAD `678305ef4`; the release commit is the one that contains this file. Regenerate with `python3 scripts/build_release_manifest.py`. Files: 449 · 70.7 MB.
 
 A public copy of this release is verified when every row below matches `sha256sum` of the corresponding file. The materialized packets are not part of the release (see Held); every judge-side claim in the paper is re-derivable from the released reader checkpoints plus `scripts/rescore_gpt4o_judge.py` alone.
 
@@ -18,7 +18,7 @@ A public copy of this release is verified when every row below matches `sha256su
 |---|---:|---|
 | `eval/dense_chain_v32_20260830/GOLD_DEFECT_DOSSIER.md` | 6833 | `090bb8e52a5173d5d2f077d5f77be76c456b09b9296b964971934cd4bd2fd954` |
 | `eval/dense_chain_v32_20260830/README.md` | 541 | `9f865a94322765858d220441fc5554928b7096765a4e5b54f8a0ba974e49cbb6` |
-| `eval/dense_chain_v32_20260830/SOTA_WRITEUP.md` | 10205 | `4c1a16c2ab7ce5d4a00478d6a08a4005d6f62cf4f0fbd2a4a1883a6002475681` |
+| `eval/dense_chain_v32_20260830/SOTA_WRITEUP.md` | 10355 | `f49dcd4bbd4867766e6f4c711d1b61028f84222507ccf988d31a55bdf1b1e09f` |
 | `eval/dense_chain_v32_20260830/armD_sol/reader.log` | 14 | `0e5f9d2bfbc24f8613e12ea797091ba12b66e7303d5760d10308e887fafc850a` |
 | `eval/dense_chain_v32_20260830/armD_sol/reader/checkpoint_abs.jsonl` | 3377 | `7a6c91128ddab830c80ae353cdf41bb429a32c692de70d4f02c2dcb8433d9126` |
 | `eval/dense_chain_v32_20260830/armD_sol/reader/checkpoint_answerable.jsonl` | 13662 | `36ae97c983fdd1f5ea40d7347653a042d0a7bdce38a29dcae122265db926bd06` |
@@ -247,9 +247,10 @@ A public copy of this release is verified when every row below matches `sha256su
 | `eval/dense_chain_v32_20260830/materialize_summary.json` | 1034 | `d62fc2ae3080318b6e0dba1f4991d0cec90875ca28b6a3e533a9513ae80cb19e` |
 | `eval/dense_chain_v32_20260830/packets.jsonl` | 2657305 | `3598aee8a14e760a65549abaa45c386942f05c027a3de8ef33ede56b9f6b52f0` |
 | `eval/dense_chain_v32_20260830/packets_abs.jsonl` | 169964 | `bec583d3aabf877bce70ed9d50dd5045a8813d63b595a1a1e9b9d6283d1d97e5` |
-| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md` | 28322 | `8d5d326e88b7c4b7037250730baa514405b9677ae2eb9ec34e8aba6ed9a7730d` |
-| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.pdf` | 90245 | `f0d4b54d1506cc0a4e0db0ad80dcb69982d0f39ebf88f5badca5b0c28dc5aa0a` |
-| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.tex` | 26700 | `df0a3882ed63787123dbe1aef6c2f3527378b84abd554cd405c1014bbc9c6451` |
+| `eval/dense_chain_v32_20260830/paper/ARXIV_SUBMISSION.md` | 2868 | `38493a5ae84e853d92c33e55440080c5c96133a8c58e47a2d246180372fbe6b6` |
+| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md` | 28411 | `6dd5f71a82fa227db3eee496e07e3b7b5fe85a256c0e18fd47dff1370395f3ad` |
+| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.pdf` | 91358 | `c7b52cdc023de3f3eaa6e7a3e626e0c582be66257d2f50ccd90ee2d3c74e79c9` |
+| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.tex` | 26790 | `4cab404494f509c36cc86b3144ae3f4415b236734de1d268848d545ce874e2d4` |
 | `eval/dense_chain_v32_20260830/replay-f3fix_pass1/judge.log` | 743 | `a5adcda1af36d89f211eab93a0515e5b12ee8bbe3a64f1fdadda09cc8577503b` |
 | `eval/dense_chain_v32_20260830/replay-f3fix_pass1/judge/control_receipt.json` | 2392 | `b8b3b4ba28f879d23820b90d32fda7615729c4553fa2854965e42b3106e33cad` |
 | `eval/dense_chain_v32_20260830/replay-f3fix_pass1/judge/rescore_summary.json` | 1603 | `aef1c5e19afa643ba5c5ea5bcdaf51fb4fa2bdce975d34dc192fb3a62b061b7f` |

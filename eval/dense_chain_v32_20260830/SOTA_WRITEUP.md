@@ -165,7 +165,9 @@ uncontrolled losses, net +4 stable, measured).
   determinism, gold-permutation, prefix-superset, budget, and qid-sabotage
   gates.
 - All checkpoints, judge verdicts, control receipts, and attribution tables
-  are committed under eval/dense_chain_v32_20260830/.
+  are committed under eval/dense_chain_v32_20260830/ and published at
+  https://github.com/cjchanh/longmemeval-evidence (MIT; RELEASE_MANIFEST.md,
+  448 files, sha256 each; fresh clone verified 448/448).
 
 ## Release boundary
 
