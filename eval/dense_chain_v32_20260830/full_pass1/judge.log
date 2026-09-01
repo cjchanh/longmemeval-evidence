@@ -1,0 +1,58 @@
+controls: positive 11/12 negative 12/12
+  ans 25/470
+  ans 50/470
+  ans 75/470
+  ans 100/470
+  ans 125/470
+  ans 150/470
+  ans 175/470
+  ans 200/470
+  ans 225/470
+  ans 250/470
+  ans 275/470
+  ans 300/470
+  ans 325/470
+  ans 350/470
+  ans 375/470
+  ans 400/470
+  ans 425/470
+  ans 450/470
+  abs 25/30
+{
+ "string_judge_accuracy": 0.0,
+ "llm_judge_accuracy": 0.9382978723404255,
+ "flips_string_wrong_llm_right": 441,
+ "flips_string_right_llm_wrong": 0
+}
+per_type: {
+ "knowledge-update": {
+  "n": 72,
+  "string_acc": 0.0,
+  "llm_acc": 0.9722222222222222
+ },
+ "multi-session": {
+  "n": 121,
+  "string_acc": 0.0,
+  "llm_acc": 0.8677685950413223
+ },
+ "single-session-assistant": {
+  "n": 56,
+  "string_acc": 0.0,
+  "llm_acc": 0.9821428571428571
+ },
+ "single-session-preference": {
+  "n": 30,
+  "string_acc": 0.0,
+  "llm_acc": 0.9666666666666667
+ },
+ "single-session-user": {
+  "n": 64,
+  "string_acc": 0.0,
+  "llm_acc": 0.984375
+ },
+ "temporal-reasoning": {
+  "n": 127,
+  "string_acc": 0.0,
+  "llm_acc": 0.937007874015748
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "n": 12,
+ "n_positive_eligible": 12,
+ "positive_pass": 12,
+ "negative_pass": 12,
+ "positive_rate": 1.0,
+ "negative_rate": 1.0,
+ "threshold": 0.9,
+ "ssp_excluded_from_positive_arm": true,
+ "records": [
+  {
+   "question_id": "2e6d26dc",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "ba358f49",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "gpt4_61e13b3c",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "7024f17c",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes.",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "gpt4_d6585ce8",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "9a707b82",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "b5ef892d",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "gpt4_74aed68e",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes.",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "982b5123",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "eac54adc",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes.",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "bbf86515",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes.",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "71017276",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No."
+  }
+ ]
+}

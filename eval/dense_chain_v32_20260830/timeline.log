@@ -1,0 +1,56 @@
+2026-08-30T19:06:01Z start replay pass1
+2026-08-30T20:23:53Z judge done replay pass1
+2026-08-30T20:24:07Z start replay pass2
+2026-08-30T21:45:19Z judge done replay pass2
+2026-08-30T22:59:20Z start replay pass2
+2026-08-30T23:21:36Z start replay-f3fix pass1
+2026-08-30T23:44:12Z judge done replay pass2
+2026-08-31T00:05:15Z start armD
+2026-08-31T00:09:45Z start full_sol
+2026-08-31T00:12:25Z start replay-f3value pass1
+2026-08-31T00:26:22Z start replay-v33 pass1
+2026-08-31T00:29:13Z start replay-v33 pass1
+2026-08-31T00:44:16Z full_sol judged
+2026-08-31T00:45:58Z start full_sol
+2026-08-31T00:52:08Z judge done replay-f3fix pass1
+2026-08-31T01:27:27Z start replay-v33 pass2
+2026-08-31T01:44:21Z judge done replay-v33 pass1
+2026-08-31T02:14:54Z full_sol judged
+2026-08-31T02:15:08Z judge done replay-v33 pass2
+2026-08-31T02:35:57Z start full pass1
+2026-08-31T02:35:59Z start full pass2
+2026-08-31T02:36:00Z start full pass2
+2026-08-31T02:36:00Z start full pass1
+2026-08-31T03:17:14Z start full pass1
+2026-08-31T03:17:17Z start full pass2
+2026-08-31T03:51:58Z start v34 pass1
+2026-08-31T04:16:01Z v34 pass1 judged
+2026-08-31T04:16:21Z start v34 pass2
+2026-08-31T04:42:15Z v34 pass2 judged
+2026-08-31T04:43:03Z start v34-full pass1
+2026-08-31T04:43:05Z start v34-full pass2
+2026-08-31T05:23:33Z judge done full pass1
+2026-08-31T05:33:06Z judge done full pass2
+2026-08-31T06:12:43Z v34-full pass2 judged
+2026-08-31T06:13:06Z v34-full pass1 judged
+2026-08-31T06:22:35Z start gemini pass1
+2026-08-31T06:22:37Z gemini pass1 judged
+2026-08-31T06:23:49Z start gemini pass1
+2026-08-31T06:36:04Z start gemini pass1
+2026-08-31T06:43:46Z start gemini pass1
+2026-08-31T07:19:32Z start v34-sol pass1
+2026-08-31T08:54:33Z v34-sol pass1 judged
+2026-08-31T17:30:36Z start v34-xhigh pass1
+2026-08-31T17:45:44Z start v34-xhigh pass2
+2026-08-31T21:24:26Z v34-xhigh pass1 judged
+2026-08-31T21:37:09Z v34-xhigh pass2 judged
+2026-09-01T03:11:54Z start v34-opus pass1
+2026-09-01T06:35:56Z start v34-opus pass2
+2026-09-01T12:58:35Z glm53 cross-judge study launched (both passes, think:true np:512)
+2026-09-01T12:58:54Z start glm53 pass1
+2026-09-01T13:25:41Z glm53 judge apparatus repair: 29 empty-raw rows re-judged (np 4096, fail-closed first-word extraction)
+2026-09-01T13:44:51Z glm53 pass1 judged
+2026-09-01T15:58:34Z start kimi pass1
+2026-09-01T16:18:58Z kimi pass1 reader NOT clean — judge withheld
+2026-09-01T16:22:14Z start kimi pass1
+2026-09-01T16:30:13Z kimi pass1 judged

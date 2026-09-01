@@ -1,0 +1,19 @@
+{
+  "schema": "cds/dense-chain-coverage-materialized-summary/v1",
+  "generated_at": "2026-08-30T19:05:29.244833+00:00",
+  "inputs": {
+    "packets": "eval/dense_chain_v32_20260830/packets_abs.jsonl",
+    "packets_sha256": "bec583d3aabf877bce70ed9d50dd5045a8813d63b595a1a1e9b9d6283d1d97e5",
+    "data": "/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json",
+    "data_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442"
+  },
+  "n_rows": 30,
+  "sha256": "cbb42353030f52bfe252a3e4051cc790251ec67f807e02b46d0dd25ced6ca11b",
+  "max_sessions": 16,
+  "max_tokens": 39925,
+  "min_tokens": 23115,
+  "n_truncated_packets": 0,
+  "truncated_question_ids": [],
+  "tokens_by_truncated_qid": {},
+  "note": "apparatus repair: materialized session_blobs apply packet kept_chars truncation, and reproduce extraction-rendered sessions from kept_line_indices; this is not a new claim"
+}

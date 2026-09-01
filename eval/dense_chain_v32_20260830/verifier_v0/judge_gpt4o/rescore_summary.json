@@ -1,0 +1,44 @@
+{
+ "schema": "cds/lme-qa-gpt4o-judge-rescore/v1",
+ "generated_at": "2026-08-31T06:32:04.168037+00:00",
+ "judge_model": "gpt-4o-2024-08-06",
+ "transport": "api",
+ "resolved_snapshots": [
+  "gpt-4o-2024-08-06"
+ ],
+ "prompt_template_version": "longmemeval-official-judge-v1",
+ "prompt_templates_sha256": "9c9d67fab129acd497461a2f5589d57120d952744d9f7e04fbfff771b3860d62",
+ "rubric_source": "benchmarks/longmemeval-judge-gate/GROUND_TRUTH_SURVEY.md \u00a72 (official templates; SSP header sentence reconstructed)",
+ "inputs": {
+  "answerable": "eval/dense_chain_v32_20260830/verifier_v0/checkpoint_answerable.jsonl",
+  "abs": "eval/dense_chain_v32_20260830/verifier_v0/checkpoint_abs.jsonl"
+ },
+ "n_answerable": 18,
+ "llm_judge_accuracy": 0.2222222222222222,
+ "per_type": {
+  "knowledge-update": {
+   "n": 1,
+   "llm_acc": 0.0
+  },
+  "multi-session": {
+   "n": 11,
+   "llm_acc": 0.18181818181818182
+  },
+  "single-session-user": {
+   "n": 1,
+   "llm_acc": 1.0
+  },
+  "temporal-reasoning": {
+   "n": 5,
+   "llm_acc": 0.2
+  }
+ },
+ "abstention": {
+  "n": 0,
+  "llm_judge_refusal_recognized": 0
+ },
+ "caveats": [
+  "Judge model is gpt-4o-2024-08-06, not gpt-4o (LongMemEval's canonical gpt-4o-2024-08-06 judge); cross-judge agreement with the canonical judge is NOT established by this run.",
+  "Responses are frozen from the named input checkpoints. Retrieval and reader provenance remain governed by those checkpoints' run receipts; this script changes only the ruler."
+ ]
+}

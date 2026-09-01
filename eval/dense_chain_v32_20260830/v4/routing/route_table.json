@@ -1,0 +1,276 @@
+{
+  "schema": "cds/v4-route-table/v1",
+  "gold_blind_contract": "Keys ONLY on question_type (visible at inference). Per-question llm_judge_correct verdicts feed per-type AGGREGATES only -- never a per-question routing decision.",
+  "abstention_exclusion": "Abstention rows (_abs id suffix / abstention:true) are EXCLUDED from every aggregate above. Included for context only in abstention_context below; never used to pick a route -- doing so would require knowing a row is unanswerable in advance, which is gold leakage of the same shape as the banned answer_-id-stem oracle trap.",
+  "primary_model_name": "grok-4.6-high",
+  "run_dirs": {
+    "full-v34_pass1": {
+      "model": "grok-4.6-high",
+      "pass": "p1"
+    },
+    "full-v34_pass2": {
+      "model": "grok-4.6-high",
+      "pass": "p2"
+    },
+    "full-v34-xhigh_pass1": {
+      "model": "grok-xhigh",
+      "pass": "p1"
+    },
+    "full-v34-xhigh_pass2": {
+      "model": "grok-xhigh",
+      "pass": "p2"
+    },
+    "full-v34-sol_pass1": {
+      "model": "sol",
+      "pass": "p1"
+    },
+    "full-v34-dsv4pro_pass1": {
+      "model": "dsv4pro",
+      "pass": "p1"
+    }
+  },
+  "canonical_pass_dir": {
+    "grok-4.6-high": "full-v34_pass1",
+    "grok-xhigh": "full-v34-xhigh_pass1",
+    "sol": "full-v34-sol_pass1",
+    "dsv4pro": "full-v34-dsv4pro_pass1"
+  },
+  "routes": {
+    "knowledge-update": {
+      "primary": "grok-4.6-high",
+      "primary_accuracy": 0.9792,
+      "primary_n": 144,
+      "second": "dsv4pro",
+      "second_accuracy": 0.9722,
+      "second_n": 72,
+      "full_ranking": [
+        {
+          "model": "grok-4.6-high",
+          "accuracy": 0.9792,
+          "n": 144
+        },
+        {
+          "model": "dsv4pro",
+          "accuracy": 0.9722,
+          "n": 72
+        },
+        {
+          "model": "grok-xhigh",
+          "accuracy": 0.9653,
+          "n": 144
+        },
+        {
+          "model": "sol",
+          "accuracy": 0.9306,
+          "n": 72
+        }
+      ]
+    },
+    "multi-session": {
+      "primary": "grok-4.6-high",
+      "primary_accuracy": 0.8926,
+      "primary_n": 242,
+      "second": "sol",
+      "second_accuracy": 0.8678,
+      "second_n": 121,
+      "full_ranking": [
+        {
+          "model": "grok-4.6-high",
+          "accuracy": 0.8926,
+          "n": 242
+        },
+        {
+          "model": "sol",
+          "accuracy": 0.8678,
+          "n": 121
+        },
+        {
+          "model": "grok-xhigh",
+          "accuracy": 0.8636,
+          "n": 242
+        },
+        {
+          "model": "dsv4pro",
+          "accuracy": 0.7934,
+          "n": 121
+        }
+      ]
+    },
+    "single-session-assistant": {
+      "primary": "grok-4.6-high",
+      "primary_accuracy": 1.0,
+      "primary_n": 112,
+      "second": "grok-xhigh",
+      "second_accuracy": 0.9821,
+      "second_n": 112,
+      "full_ranking": [
+        {
+          "model": "grok-4.6-high",
+          "accuracy": 1.0,
+          "n": 112
+        },
+        {
+          "model": "grok-xhigh",
+          "accuracy": 0.9821,
+          "n": 112
+        },
+        {
+          "model": "dsv4pro",
+          "accuracy": 0.9821,
+          "n": 56
+        },
+        {
+          "model": "sol",
+          "accuracy": 0.9821,
+          "n": 56
+        }
+      ]
+    },
+    "single-session-preference": {
+      "primary": "grok-4.6-high",
+      "primary_accuracy": 0.9667,
+      "primary_n": 60,
+      "second": "grok-xhigh",
+      "second_accuracy": 0.8333,
+      "second_n": 60,
+      "full_ranking": [
+        {
+          "model": "grok-4.6-high",
+          "accuracy": 0.9667,
+          "n": 60
+        },
+        {
+          "model": "grok-xhigh",
+          "accuracy": 0.8333,
+          "n": 60
+        },
+        {
+          "model": "sol",
+          "accuracy": 0.8,
+          "n": 30
+        },
+        {
+          "model": "dsv4pro",
+          "accuracy": 0.5,
+          "n": 30
+        }
+      ]
+    },
+    "single-session-user": {
+      "primary": "grok-4.6-high",
+      "primary_accuracy": 0.9844,
+      "primary_n": 128,
+      "second": "sol",
+      "second_accuracy": 0.9688,
+      "second_n": 64,
+      "full_ranking": [
+        {
+          "model": "grok-4.6-high",
+          "accuracy": 0.9844,
+          "n": 128
+        },
+        {
+          "model": "sol",
+          "accuracy": 0.9688,
+          "n": 64
+        },
+        {
+          "model": "grok-xhigh",
+          "accuracy": 0.9453,
+          "n": 128
+        },
+        {
+          "model": "dsv4pro",
+          "accuracy": 0.9375,
+          "n": 64
+        }
+      ]
+    },
+    "temporal-reasoning": {
+      "primary": "grok-4.6-high",
+      "primary_accuracy": 0.9606,
+      "primary_n": 254,
+      "second": "grok-xhigh",
+      "second_accuracy": 0.9606,
+      "second_n": 254,
+      "full_ranking": [
+        {
+          "model": "grok-4.6-high",
+          "accuracy": 0.9606,
+          "n": 254
+        },
+        {
+          "model": "grok-xhigh",
+          "accuracy": 0.9606,
+          "n": 254
+        },
+        {
+          "model": "sol",
+          "accuracy": 0.937,
+          "n": 127
+        },
+        {
+          "model": "dsv4pro",
+          "accuracy": 0.874,
+          "n": 127
+        }
+      ]
+    }
+  },
+  "overall_answerable_by_model": {
+    "grok-4.6-high": {
+      "correct": 897,
+      "n": 940,
+      "accuracy": 0.9543
+    },
+    "grok-xhigh": {
+      "correct": 873,
+      "n": 940,
+      "accuracy": 0.9287
+    },
+    "sol": {
+      "correct": 432,
+      "n": 470,
+      "accuracy": 0.9191
+    },
+    "dsv4pro": {
+      "correct": 407,
+      "n": 470,
+      "accuracy": 0.866
+    }
+  },
+  "abstention_context": {
+    "note": "context only -- never used to pick a route (see abstention_exclusion)",
+    "by_model": {
+      "grok-4.6-high": {
+        "correct": 53,
+        "n": 60,
+        "accuracy": 0.8833
+      },
+      "grok-xhigh": {
+        "correct": 52,
+        "n": 60,
+        "accuracy": 0.8667
+      },
+      "sol": {
+        "correct": 23,
+        "n": 30,
+        "accuracy": 0.7667
+      },
+      "dsv4pro": {
+        "correct": 29,
+        "n": 30,
+        "accuracy": 0.9667
+      }
+    }
+  },
+  "oracle_routed_ceiling": {
+    "flat_grok_baseline": 476,
+    "flat_grok_source": "full-v34_pass1/judge_gpt4o/rescored.jsonl",
+    "oracle_routed_ceiling": 476,
+    "delta_vs_flat_grok": 0,
+    "n_total": 500,
+    "missing_qid_count": 0,
+    "note": "Per-type-only routing (no per-question adjudication) yields a ceiling identical to flat grok whenever grok is the measured primary for every type -- confirmed below. Any uplift beyond this ceiling has to come from per-question dual-read adjudication (scripts/v4_dual_read.py), not from type-level model selection."
+  }
+}

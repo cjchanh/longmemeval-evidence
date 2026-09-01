@@ -1,0 +1,40 @@
+controls: positive 12/12 negative 12/12
+  ans 25/123
+  ans 50/123
+  ans 75/123
+  ans 100/123
+  abs 25/30
+{
+ "judge_model": "gpt-4o-2024-08-06",
+ "transport": "api",
+ "resolved_snapshots": [
+  "gpt-4o-2024-08-06"
+ ],
+ "llm_judge_accuracy": 0.8211382113821138
+}
+per_type: {
+ "knowledge-update": {
+  "n": 14,
+  "llm_acc": 0.9285714285714286
+ },
+ "multi-session": {
+  "n": 62,
+  "llm_acc": 0.7741935483870968
+ },
+ "single-session-assistant": {
+  "n": 2,
+  "llm_acc": 1.0
+ },
+ "single-session-preference": {
+  "n": 2,
+  "llm_acc": 0.0
+ },
+ "single-session-user": {
+  "n": 6,
+  "llm_acc": 1.0
+ },
+ "temporal-reasoning": {
+  "n": 37,
+  "llm_acc": 0.8648648648648649
+ }
+}

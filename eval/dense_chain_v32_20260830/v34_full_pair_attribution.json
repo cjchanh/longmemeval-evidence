@@ -1,0 +1,99 @@
+{
+ "schema": "v34_full_pair_attribution/v1",
+ "generated_at": "2026-08-31T06:20:00Z",
+ "judge": "gpt-4o-2024-08-06 (api)",
+ "reader": "cursor-grok-4.6-high",
+ "prompt": "v3.4-facts-20260831",
+ "pass1": {
+  "answerable": 450,
+  "abs": 26,
+  "total": 476
+ },
+ "pass2": {
+  "answerable": 447,
+  "abs": 27,
+  "total": 474
+ },
+ "headline_rule": "two full passes agreeing or stated spread; pair straddles bar -> report spread, no clean-beat headline",
+ "headline": "475 +/- 1 per 500 (476/474). Mastra bar 474: >= in both passes, beaten in pass1 only. Statistical tie-to-beat.",
+ "agreed_correct_both": 471,
+ "flips": [
+  {
+   "question_id": "1da05512",
+   "p1": 0,
+   "p2": 1,
+   "class": "control",
+   "v33": 1
+  },
+  {
+   "question_id": "35a27287",
+   "p1": 1,
+   "p2": 0,
+   "class": "uncontrolled",
+   "v33": 1
+  },
+  {
+   "question_id": "618f13b2",
+   "p1": 0,
+   "p2": 1,
+   "class": "control",
+   "v33": 0
+  },
+  {
+   "question_id": "88432d0a",
+   "p1": 1,
+   "p2": 0,
+   "class": "reject-target",
+   "v33": 1
+  },
+  {
+   "question_id": "9aaed6a3",
+   "p1": 1,
+   "p2": 0,
+   "class": "reject-target",
+   "v33": 0
+  },
+  {
+   "question_id": "9ee3ecd6",
+   "p1": 1,
+   "p2": 0,
+   "class": "reject-target",
+   "v33": 0
+  },
+  {
+   "question_id": "gpt4_2ba83207",
+   "p1": 1,
+   "p2": 0,
+   "class": "reject-target",
+   "v33": 0
+  },
+  {
+   "question_id": "gpt4_fe651585_abs",
+   "p1": 0,
+   "p2": 1,
+   "class": "abs",
+   "v33": 1
+  }
+ ],
+ "flip_reading": "8 flips: 4 reject-targets (recovery is real but per-pass unstable on ~4 rows), 2 known flip-prone controls (1da05512, 618f13b2), 1 uncontrolled, 1 abs. No systematic regression.",
+ "stable_gains_vs_v33": [
+  "0edc2aef",
+  "37f165cf",
+  "778164c6",
+  "9a707b81",
+  "a11281a2",
+  "affe2881",
+  "e3038f8c",
+  "f685340e_abs",
+  "gpt4_468eb063"
+ ],
+ "stable_losses_vs_v33": [
+  "09ba9854_abs",
+  "3a704032",
+  "7405e8b1",
+  "dd2973ad",
+  "gpt4_7fce9456"
+ ],
+ "stable_loss_reading": "5 stable losses (4 answerable uncontrolled + 1 abs) = the uncontrolled-facts-row class predicted before launch; net stable delta vs v3.3 +4.",
+ "gold_defect_note": "5 documented gold-defect candidates unclaimed in this number; with defensible gold corrections the pair would read ~478/476."
+}

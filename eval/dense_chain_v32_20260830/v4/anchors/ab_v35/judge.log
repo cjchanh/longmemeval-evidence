@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/scripts/rescore_gpt4o_judge.py", line 677, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/scripts/rescore_gpt4o_judge.py", line 585, in main
+    ans_rows = load_rows(Path(args.answerable))
+  File "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/scripts/rescore_gpt4o_judge.py", line 424, in load_rows
+    with path.open() as fh:
+         ~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'eval/dense_chain_v32_20260830/v4/anchors/ab_v35/reader/checkpoint_answerable.jsonl'
+controls: positive 12/12 negative 12/12
+  ans 25/113
+  ans 50/113
+  ans 75/113
+  ans 100/113
+{
+ "judge_model": "gpt-4o-2024-08-06",
+ "transport": "api",
+ "resolved_snapshots": [
+  "gpt-4o-2024-08-06"
+ ],
+ "llm_judge_accuracy": 0.911504424778761
+}
+per_type: {
+ "knowledge-update": {
+  "n": 2,
+  "llm_acc": 1.0
+ },
+ "multi-session": {
+  "n": 32,
+  "llm_acc": 0.78125
+ },
+ "single-session-user": {
+  "n": 3,
+  "llm_acc": 1.0
+ },
+ "temporal-reasoning": {
+  "n": 76,
+  "llm_acc": 0.9605263157894737
+ }
+}

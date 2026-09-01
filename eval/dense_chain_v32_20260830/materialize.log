@@ -1,0 +1,17 @@
+{
+ "n_rows": 470,
+ "sha256": "876ef9d2f95d57ae5d014476315b69fa7dc323f631ba9fae0558fd5c3c3f9a6c",
+ "max_sessions": 16,
+ "max_tokens": 40000,
+ "n_truncated_packets": 3,
+ "truncated_question_ids": [
+  "afdc33df",
+  "gpt4_a1b77f9c",
+  "a1eacc2a"
+ ],
+ "tokens_by_truncated_qid": {
+  "afdc33df": 40000,
+  "gpt4_a1b77f9c": 40000,
+  "a1eacc2a": 40000
+ }
+}

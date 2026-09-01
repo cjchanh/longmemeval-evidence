@@ -1,0 +1,108 @@
+{
+ "n": 12,
+ "n_positive_eligible": 12,
+ "positive_pass": 12,
+ "negative_pass": 12,
+ "positive_rate": 1.0,
+ "negative_rate": 1.0,
+ "threshold": 0.9,
+ "ssp_excluded_from_positive_arm": true,
+ "records": [
+  {
+   "question_id": "37d43f65",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "gpt4_372c3eed",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "gpt4_1e4a8aeb",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes.",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "311778f1",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "6a1eabeb",
+   "question_type": "knowledge-update",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "945e3d21",
+   "question_type": "knowledge-update",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "e48988bc",
+   "question_type": "single-session-assistant",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "3b6f954b",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes.",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "gpt4_e414231f",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "18dcd5a5",
+   "question_type": "single-session-assistant",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "gpt4_93159ced",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "c7cf7dfd",
+   "question_type": "single-session-assistant",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No."
+  }
+ ]
+}

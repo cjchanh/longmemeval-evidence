@@ -1,0 +1,53 @@
+25/500 (58s)
+50/500 (110s)
+75/500 (181s)
+100/500 (448s)
+125/500 (574s)
+150/500 (666s)
+175/500 (728s)
+200/500 (806s)
+225/500 (911s)
+250/500 (1030s)
+275/500 (1197s)
+300/500 (1368s)
+325/500 (1498s)
+350/500 (1628s)
+375/500 (1771s)
+400/500 (1900s)
+425/500 (2006s)
+450/500 (2146s)
+475/500 (2208s)
+500/500 (2334s)
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-09-01T13:37:52.422524+00:00",
+ "reader_model": "ollama-cloud/glm-5.3",
+ "reader_lane": "flash",
+ "transport": "opencode run --pure (stdin), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/full-v34-glm53_pass1/materialized_all.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/full-v34-glm53_pass1/facts_all.jsonl",
+ "n_rows_with_facts": 257,
+ "prompt_versions": {
+  "v2-20260827": 243,
+  "v3.4-facts-20260831": 257
+ },
+ "prompt_version_histogram": {
+  "v2-20260827": 243,
+  "v3.4-facts-20260831": 257
+ },
+ "prompt_contract": null,
+ "prompt_contract_version": null,
+ "prompt_contract_sha256": null,
+ "n_rows_v3": 257,
+ "n_rows_total": 500,
+ "n_completed_this_invocation": 500,
+ "n_expected": 500,
+ "audit": {
+  "error_rows": [],
+  "empty_response_rows": [],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": true
+ }
+}

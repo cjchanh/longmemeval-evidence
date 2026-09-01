@@ -1,0 +1,54 @@
+{
+ "study_class": "judge-variance study, NOT rubric-comparable \u2014 the official GPT-4o number never changes (opus pair 479/475 stands)",
+ "judge_study": "glm-5.3:cloud (Ollama MAX rail, think:true, num_predict:4096 after apparatus repair, direct 127.0.0.1:11434, fail-closed first-word verdict extraction)",
+ "judge_official": "gpt-4o-2024-08-06 (api transport) \u2014 pass1 judge_gpt4o_v2 (fresh, authoritative), pass2 judge_gpt4o",
+ "rubric": "identical frozen official LongMemEval templates both judges (longmemeval-official-judge-v1)",
+ "inputs": "frozen Opus reader checkpoints (claude-cli lane), 500/500 rows each pass, 0 errors, 0 empty verdicts after repair",
+ "controls": "pass1 pos 17/17 neg 20/20; pass2 pos 17/17 neg 20/20 (threshold 0.9, fail-closed)",
+ "apparatus_incident_and_repair": "first pass recorded 29 empty-raw verdicts (14 pass1 + 15 pass2): glm-5.3 thinking exceeded num_predict:512, done_reason=length left the response channel empty, and the pre-repair parser recorded silent False. 11+14 of those disagreed with official = artifact-flavored. Repair: num_predict 4096 + empty/unparseable verdicts retry fail-closed + first-word extraction (tests test_extract_verdict_*). 29 rows re-judged; 0 empty raws since. Pre-repair agreement was 96.6/96.6 \u2014 do not quote.",
+ "opus_pass1": {
+  "n": 500,
+  "agree": 493,
+  "pct": 98.6,
+  "gpt_only": 7,
+  "glm_only": 0,
+  "gpt_only_ids": [
+   "031748ae_abs",
+   "2133c1b5_abs",
+   "60bf93ed_abs",
+   "7024f17c",
+   "c8090214_abs",
+   "f685340e_abs",
+   "gpt4_7fce9456"
+  ],
+  "glm_only_ids": []
+ },
+ "opus_pass2": {
+  "n": 500,
+  "agree": 493,
+  "pct": 98.6,
+  "gpt_only": 5,
+  "glm_only": 2,
+  "gpt_only_ids": [
+   "2133c1b5_abs",
+   "88432d0a_abs",
+   "a2f3aa27",
+   "c8090214_abs",
+   "f685340e_abs"
+  ],
+  "glm_only_ids": [
+   "09d032c9",
+   "57f827a0"
+  ]
+ },
+ "systematic_gpt_only": [
+  "2133c1b5_abs",
+  "c8090214_abs",
+  "f685340e_abs"
+ ],
+ "systematic_glm_only": [],
+ "stricter": "glm-5.3:cloud is the stricter judge on both passes (pass1 7-0, pass2 5-2); it credits an answerable row GPT-4o rejected only twice (both single-session-preference, pass2)",
+ "per_type_disagreement_concentration": "abstention carries the most disagreement (5 pass1 + 4 pass2 of 30); all other types >=98.3% agreement; temporal-reasoning and single-session-assistant 100% both passes",
+ "prior_study_reference": "glm-5.2:cloud judge on grok pair: 98.2/97.8% agreement, gpt_only 7/7, glm_only 2/4 (judge_agreement_matrix.json) \u2014 glm-5.3 on the opus pair reproduces the same ~98% cross-judge agreement band",
+ "glm53_totals_for_context_only": "glm-5.3 judge scores the same responses 472/500 (pass1) and 472/500 (pass2) \u2014 NOT rubric-comparable, not a benchmark number; the stricter direction accounts for the gap to 479/475"
+}

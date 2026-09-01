@@ -1,0 +1,4 @@
+READER_EXIT=0
+reader_model ollama-cloud/glm-5.3 | rows 500 | versions {'v2-20260827': 243, 'v3.4-facts-20260831': 257} | audit clean True
+JUDGE_EXIT=0
+GLM53 FULL: answerable 445/470 | abs 26/30 | TOTAL 471/500 = 94.2%  (single pass — curve datapoint, NOT a headline; opus pair 479/475)

@@ -1,0 +1,31 @@
+controls: positive 12/12 negative 12/12
+{
+ "judge_model": "gpt-4o-2024-08-06",
+ "transport": "api",
+ "resolved_snapshots": [
+  "gpt-4o-2024-08-06"
+ ],
+ "llm_judge_accuracy": 0.47619047619047616
+}
+per_type: {
+ "knowledge-update": {
+  "n": 2,
+  "llm_acc": 0.5
+ },
+ "multi-session": {
+  "n": 12,
+  "llm_acc": 0.3333333333333333
+ },
+ "single-session-preference": {
+  "n": 1,
+  "llm_acc": 1.0
+ },
+ "single-session-user": {
+  "n": 1,
+  "llm_acc": 1.0
+ },
+ "temporal-reasoning": {
+  "n": 5,
+  "llm_acc": 0.6
+ }
+}

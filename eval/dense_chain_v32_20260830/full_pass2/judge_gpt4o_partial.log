@@ -1,0 +1,38 @@
+controls: positive 11/11 negative 12/12
+  ans 25/280
+  ans 50/280
+  ans 75/280
+  ans 100/280
+  ans 125/280
+  ans 150/280
+  ans 175/280
+  ans 200/280
+  ans 225/280
+  ans 250/280
+  ans 275/280
+{
+ "judge_model": "gpt-4o-2024-08-06",
+ "transport": "api",
+ "resolved_snapshots": [
+  "gpt-4o-2024-08-06"
+ ],
+ "llm_judge_accuracy": 0.9142857142857143
+}
+per_type: {
+ "multi-session": {
+  "n": 121,
+  "llm_acc": 0.8760330578512396
+ },
+ "single-session-preference": {
+  "n": 30,
+  "llm_acc": 0.9666666666666667
+ },
+ "single-session-user": {
+  "n": 64,
+  "llm_acc": 0.984375
+ },
+ "temporal-reasoning": {
+  "n": 65,
+  "llm_acc": 0.8923076923076924
+ }
+}

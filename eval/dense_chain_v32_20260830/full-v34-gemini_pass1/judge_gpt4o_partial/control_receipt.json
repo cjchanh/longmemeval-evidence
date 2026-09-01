@@ -1,0 +1,108 @@
+{
+ "n": 12,
+ "n_positive_eligible": 11,
+ "positive_pass": 11,
+ "negative_pass": 12,
+ "positive_rate": 1.0,
+ "negative_rate": 1.0,
+ "threshold": 0.9,
+ "ssp_excluded_from_positive_arm": true,
+ "records": [
+  {
+   "question_id": "726462e0",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "2788b940",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "f35224e0",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "37d43f65",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes.",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "73d42213",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "d6062bb9",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "58ef2f1c",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "311778f1",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "gpt4_d84a3211",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "bf659f65",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No."
+  },
+  {
+   "question_id": "0edc2aef",
+   "question_type": "single-session-preference",
+   "positive_pass": null,
+   "negative_pass": true,
+   "positive_raw": "",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "6ade9755",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No."
+  }
+ ]
+}

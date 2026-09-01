@@ -1,0 +1,26 @@
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-08-31T00:46:26.315758+00:00",
+ "reader_model": "openai/gpt-5.6-sol",
+ "reader_lane": "sol",
+ "transport": "opencode run --pure openai oauth (stdin), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/full_sol/materialized_all.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/full_sol/facts_all.jsonl",
+ "n_rows_with_facts": 257,
+ "prompt_versions": {
+  "v2-20260827": 243,
+  "v3.3-facts-20260830": 0
+ },
+ "n_rows_v3": 0,
+ "n_rows_total": 500,
+ "n_completed_this_invocation": 1,
+ "n_expected": 500,
+ "audit": {
+  "error_rows": [],
+  "empty_response_rows": [],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": true
+ }
+}

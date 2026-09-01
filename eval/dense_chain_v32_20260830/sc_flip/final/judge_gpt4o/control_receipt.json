@@ -1,0 +1,68 @@
+{
+ "n": 7,
+ "n_positive_eligible": 5,
+ "positive_pass": 5,
+ "negative_pass": 7,
+ "positive_rate": 1.0,
+ "negative_rate": 1.0,
+ "threshold": 0.9,
+ "ssp_excluded_from_positive_arm": true,
+ "records": [
+  {
+   "question_id": "1da05512",
+   "question_type": "single-session-preference",
+   "positive_pass": null,
+   "negative_pass": true,
+   "positive_raw": "",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "35a27287",
+   "question_type": "single-session-preference",
+   "positive_pass": null,
+   "negative_pass": true,
+   "positive_raw": "",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "88432d0a",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "gpt4_2ba83207",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "618f13b2",
+   "question_type": "knowledge-update",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "9aaed6a3",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "9ee3ecd6",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  }
+ ]
+}

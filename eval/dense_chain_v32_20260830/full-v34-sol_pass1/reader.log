@@ -1,0 +1,46 @@
+25/500 (212s)
+50/500 (385s)
+75/500 (549s)
+100/500 (777s)
+125/500 (1112s)
+150/500 (1542s)
+175/500 (1892s)
+200/500 (2147s)
+225/500 (2380s)
+250/500 (2625s)
+275/500 (2917s)
+300/500 (3187s)
+325/500 (3512s)
+350/500 (3739s)
+375/500 (3978s)
+400/500 (4246s)
+425/500 (4531s)
+450/500 (4816s)
+475/500 (5063s)
+500/500 (5328s)
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-08-31T08:48:22.011783+00:00",
+ "reader_model": "openai/gpt-5.6-sol",
+ "reader_lane": "sol",
+ "transport": "opencode run --pure openai oauth (stdin), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/full-v34-sol_pass1/materialized_all.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/full-v34-sol_pass1/facts_all.jsonl",
+ "n_rows_with_facts": 257,
+ "prompt_versions": {
+  "v2-20260827": 243,
+  "v3.4-facts-20260831": 257
+ },
+ "n_rows_v3": 257,
+ "n_rows_total": 500,
+ "n_completed_this_invocation": 500,
+ "n_expected": 500,
+ "audit": {
+  "error_rows": [],
+  "empty_response_rows": [],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": true
+ }
+}

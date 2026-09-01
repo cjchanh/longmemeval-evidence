@@ -1,0 +1,79 @@
+{
+ "label": "opus_pass2: glm-5.3:cloud judge vs official gpt-4o-2024-08-06 (judge-variance study, NOT rubric-comparable)",
+ "n": 500,
+ "agree": 493,
+ "pct": 98.6,
+ "gpt_only": 5,
+ "glm_only": 2,
+ "gpt_only_ids": [
+  "2133c1b5_abs",
+  "88432d0a_abs",
+  "a2f3aa27",
+  "c8090214_abs",
+  "f685340e_abs"
+ ],
+ "glm_only_ids": [
+  "09d032c9",
+  "57f827a0"
+ ],
+ "stricter": "glm-5.3 stricter (more gpt_only than glm_only)",
+ "per_type_disagreement": {
+  "abstention": {
+   "n": 30,
+   "agree": 26,
+   "gpt_only": 4,
+   "glm_only": 0,
+   "pct": 86.7
+  },
+  "knowledge-update": {
+   "n": 72,
+   "agree": 71,
+   "gpt_only": 1,
+   "glm_only": 0,
+   "pct": 98.6
+  },
+  "multi-session": {
+   "n": 121,
+   "agree": 121,
+   "gpt_only": 0,
+   "glm_only": 0,
+   "pct": 100.0
+  },
+  "single-session-assistant": {
+   "n": 56,
+   "agree": 56,
+   "gpt_only": 0,
+   "glm_only": 0,
+   "pct": 100.0
+  },
+  "single-session-preference": {
+   "n": 30,
+   "agree": 28,
+   "gpt_only": 0,
+   "glm_only": 2,
+   "pct": 93.3
+  },
+  "single-session-user": {
+   "n": 64,
+   "agree": 64,
+   "gpt_only": 0,
+   "glm_only": 0,
+   "pct": 100.0
+  },
+  "temporal-reasoning": {
+   "n": 127,
+   "agree": 127,
+   "gpt_only": 0,
+   "glm_only": 0,
+   "pct": 100.0
+  }
+ },
+ "join_gaps": {
+  "only_in_official": [],
+  "only_in_study": []
+ },
+ "generated_at": "2026-09-01T13:29:06.449078+00:00",
+ "official_source": "eval/dense_chain_v32_20260830/full-v34-opus_pass2/judge_gpt4o/rescored.jsonl",
+ "study_source": "eval/dense_chain_v32_20260830/full-v34-opus_pass2/judge_glm53/rescored.jsonl",
+ "study_class": "judge-variance study, NOT rubric-comparable \u2014 the official GPT-4o number never changes"
+}

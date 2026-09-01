@@ -1,0 +1,46 @@
+25/500 (319s)
+50/500 (691s)
+75/500 (1205s)
+100/500 (2333s)
+125/500 (3351s)
+150/500 (4101s)
+175/500 (4779s)
+200/500 (5480s)
+225/500 (6118s)
+250/500 (7015s)
+275/500 (7748s)
+300/500 (8545s)
+325/500 (9064s)
+350/500 (9900s)
+375/500 (10530s)
+400/500 (11067s)
+425/500 (11584s)
+450/500 (12518s)
+475/500 (13119s)
+500/500 (13520s)
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-08-31T21:31:05.656097+00:00",
+ "reader_model": "grok-4.6",
+ "reader_lane": "grok-cli",
+ "transport": "grok --prompt-file (single-turn, effort=xhigh), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/full-v34-xhigh_pass2/materialized_all.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/full-v34-xhigh_pass2/facts_all.jsonl",
+ "n_rows_with_facts": 257,
+ "prompt_versions": {
+  "v2-20260827": 243,
+  "v3.4-facts-20260831": 257
+ },
+ "n_rows_v3": 257,
+ "n_rows_total": 500,
+ "n_completed_this_invocation": 500,
+ "n_expected": 500,
+ "audit": {
+  "error_rows": [],
+  "empty_response_rows": [],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": true
+ }
+}

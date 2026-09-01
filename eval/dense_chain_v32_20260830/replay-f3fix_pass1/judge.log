@@ -1,0 +1,44 @@
+controls: positive 12/12 negative 12/12
+  ans 25/104
+  ans 50/104
+  ans 75/104
+  ans 100/104
+  abs 25/30
+{
+ "string_judge_accuracy": 0.0,
+ "llm_judge_accuracy": 0.8942307692307693,
+ "flips_string_wrong_llm_right": 93,
+ "flips_string_right_llm_wrong": 0
+}
+per_type: {
+ "knowledge-update": {
+  "n": 14,
+  "string_acc": 0.0,
+  "llm_acc": 1.0
+ },
+ "multi-session": {
+  "n": 50,
+  "string_acc": 0.0,
+  "llm_acc": 0.86
+ },
+ "single-session-assistant": {
+  "n": 2,
+  "string_acc": 0.0,
+  "llm_acc": 1.0
+ },
+ "single-session-preference": {
+  "n": 1,
+  "string_acc": 0.0,
+  "llm_acc": 1.0
+ },
+ "single-session-user": {
+  "n": 5,
+  "string_acc": 0.0,
+  "llm_acc": 1.0
+ },
+ "temporal-reasoning": {
+  "n": 32,
+  "string_acc": 0.0,
+  "llm_acc": 0.875
+ }
+}

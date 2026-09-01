@@ -1,0 +1,16 @@
+{
+  "schema": "cds/dense-chain-closure-facts-summary/v1",
+  "generated_at": "2026-08-30T22:59:34.123894+00:00",
+  "command": "python3 scripts/run_dense_chain_failure_closure.py facts --materialized eval/dense_chain_v32_20260830/materialized_abs.jsonl --data /Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json --out eval/dense_chain_v32_20260830/facts_abs_f3fix.jsonl",
+  "materialized": "eval/dense_chain_v32_20260830/materialized_abs.jsonl",
+  "materialized_sha256": "cbb42353030f52bfe252a3e4051cc790251ec67f807e02b46d0dd25ced6ca11b",
+  "n_materialized_rows": 30,
+  "n_rows_with_facts": 17,
+  "n_activated_questions": 17,
+  "sha256": "b05c9300deb649d743f6df69e0916e52db62b2e42f271476449ea6c424e2b749",
+  "activated_operator_counts": {
+    "count_dedup": 14,
+    "date_duration": 6,
+    "update_precedence": 3
+  }
+}

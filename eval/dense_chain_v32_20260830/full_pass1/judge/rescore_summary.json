@@ -1,0 +1,55 @@
+{
+ "schema": "cds/lme-qa-llm-judge-rescore/v1",
+ "generated_at": "2026-08-31T05:23:33.660122+00:00",
+ "judge_model": "opencode-go/glm-5.3-flash",
+ "rubric_source": "benchmarks/longmemeval-judge-gate/GROUND_TRUTH_SURVEY.md \u00a72 (official templates; SSP header sentence reconstructed)",
+ "inputs": {
+  "answerable": "eval/dense_chain_v32_20260830/full_pass1/reader/checkpoint_answerable.jsonl",
+  "abs": "eval/dense_chain_v32_20260830/full_pass1/reader/checkpoint_abs.jsonl"
+ },
+ "n_answerable": 470,
+ "string_judge_accuracy": 0.0,
+ "llm_judge_accuracy": 0.9382978723404255,
+ "flips_string_wrong_llm_right": 441,
+ "flips_string_right_llm_wrong": 0,
+ "per_type": {
+  "knowledge-update": {
+   "n": 72,
+   "string_acc": 0.0,
+   "llm_acc": 0.9722222222222222
+  },
+  "multi-session": {
+   "n": 121,
+   "string_acc": 0.0,
+   "llm_acc": 0.8677685950413223
+  },
+  "single-session-assistant": {
+   "n": 56,
+   "string_acc": 0.0,
+   "llm_acc": 0.9821428571428571
+  },
+  "single-session-preference": {
+   "n": 30,
+   "string_acc": 0.0,
+   "llm_acc": 0.9666666666666667
+  },
+  "single-session-user": {
+   "n": 64,
+   "string_acc": 0.0,
+   "llm_acc": 0.984375
+  },
+  "temporal-reasoning": {
+   "n": 127,
+   "string_acc": 0.0,
+   "llm_acc": 0.937007874015748
+  }
+ },
+ "abstention": {
+  "n": 30,
+  "llm_judge_refusal_recognized": 25
+ },
+ "caveats": [
+  "Judge model is opencode-go/glm-5.3-flash, not gpt-4o-2024-08-06; cross-judge agreement with the canonical judge is NOT established by this run.",
+  "Responses are frozen from the named input checkpoints. Retrieval and reader provenance remain governed by those checkpoints' run receipts; this script changes only the ruler."
+ ]
+}

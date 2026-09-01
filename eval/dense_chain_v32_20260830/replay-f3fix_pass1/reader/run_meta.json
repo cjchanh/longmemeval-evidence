@@ -1,0 +1,26 @@
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-08-30T23:47:39.529202+00:00",
+ "reader_model": "cursor-grok-4.6-high",
+ "reader_lane": "cursor-grok",
+ "transport": "cursor-agent -p --mode ask (stdin, empty workspace), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/replay_materialized.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/replay_facts_f3rework.jsonl",
+ "n_rows_with_facts": 115,
+ "prompt_versions": {
+  "v2-20260827": 19,
+  "v3.2-facts-20260830": 115
+ },
+ "n_rows_v3": 115,
+ "n_rows_total": 134,
+ "n_completed_this_invocation": 134,
+ "n_expected": 134,
+ "audit": {
+  "error_rows": [],
+  "empty_response_rows": [],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": true
+ }
+}

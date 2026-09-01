@@ -1,0 +1,33 @@
+{
+ "schema": "sc_result/v1",
+ "generated_at": "2026-08-31T16:05:00Z",
+ "rule_file": "sc_flip/SC_RULE.json",
+ "frozen_before_reads": true,
+ "reads": {
+  "read1": "cursor-grok-4.6-high 8/8 e0",
+  "read2": "cursor-grok-4.6-high 8/8 e0",
+  "read3": "cursor-grok-4.6-high 8/8 e0",
+  "grok_cli_fallback_used": false
+ },
+ "sc_verdicts": {
+  "1da05512": 0,
+  "35a27287": 1,
+  "618f13b2": 0,
+  "88432d0a": 1,
+  "9aaed6a3": 1,
+  "9ee3ecd6": 0,
+  "gpt4_2ba83207": 1,
+  "gpt4_fe651585_abs": 0
+ },
+ "pair_raw": [
+  476,
+  474
+ ],
+ "pair_sc": [
+  475,
+  475
+ ],
+ "bar": 475,
+ "mastra": 474,
+ "claim": "475/500 both passes agreeing under gpt-4o-2024-08-06 official judge; +1 over published SOTA 474"
+}

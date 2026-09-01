@@ -1,0 +1,60 @@
+{
+ "schema": "cds/lme-qa-llm-judge-rescore/v1",
+ "generated_at": "2026-09-01T13:28:45.788703+00:00",
+ "judge_model": "glm-5.3:cloud",
+ "judge_transport": {
+  "endpoint": "http://127.0.0.1:11434/api/generate",
+  "think": true,
+  "num_predict": 4096
+ },
+ "rubric_source": "benchmarks/longmemeval-judge-gate/GROUND_TRUTH_SURVEY.md \u00a72 (official templates; SSP header sentence reconstructed)",
+ "inputs": {
+  "answerable": "eval/dense_chain_v32_20260830/full-v34-opus_pass1/reader/checkpoint_answerable.jsonl",
+  "abs": "eval/dense_chain_v32_20260830/full-v34-opus_pass1/reader/checkpoint_abs.jsonl"
+ },
+ "n_answerable": 470,
+ "string_judge_accuracy": 0.0,
+ "llm_judge_accuracy": 0.9574468085106383,
+ "flips_string_wrong_llm_right": 450,
+ "flips_string_right_llm_wrong": 0,
+ "per_type": {
+  "knowledge-update": {
+   "n": 72,
+   "string_acc": 0.0,
+   "llm_acc": 0.9583333333333334
+  },
+  "multi-session": {
+   "n": 121,
+   "string_acc": 0.0,
+   "llm_acc": 0.8925619834710744
+  },
+  "single-session-assistant": {
+   "n": 56,
+   "string_acc": 0.0,
+   "llm_acc": 1.0
+  },
+  "single-session-preference": {
+   "n": 30,
+   "string_acc": 0.0,
+   "llm_acc": 1.0
+  },
+  "single-session-user": {
+   "n": 64,
+   "string_acc": 0.0,
+   "llm_acc": 1.0
+  },
+  "temporal-reasoning": {
+   "n": 127,
+   "string_acc": 0.0,
+   "llm_acc": 0.968503937007874
+  }
+ },
+ "abstention": {
+  "n": 30,
+  "llm_judge_refusal_recognized": 22
+ },
+ "caveats": [
+  "Judge model is glm-5.3:cloud, not gpt-4o-2024-08-06; cross-judge agreement with the canonical judge is NOT established by this run.",
+  "Responses are frozen from the named input checkpoints. Retrieval and reader provenance remain governed by those checkpoints' run receipts; this script changes only the ruler."
+ ]
+}

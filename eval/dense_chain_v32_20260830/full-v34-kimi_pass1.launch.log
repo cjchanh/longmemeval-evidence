@@ -1,0 +1,3 @@
+READER_EXIT=3
+reader_model ollama-cloud/kimi-k3 | rows 500 | versions {'v2-20260827': 243, 'v3.4-facts-20260831': 257} | audit clean False
+READER NOT CLEAN (reader_exit=3 audit_exit=3) — refusing to judge; resume reader first, judge only after clean.

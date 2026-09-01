@@ -1,0 +1,32 @@
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-09-01T02:29:04.330540+00:00",
+ "reader_model": "grok-4.6",
+ "reader_lane": "grok-cli",
+ "transport": "grok --prompt-file (single-turn, effort=high), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/v4/anchors/ab_v35/materialized_all.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/v4/anchors/ab_v35/facts_all_v35.jsonl",
+ "n_rows_with_facts": 119,
+ "prompt_versions": {
+  "v2-20260827": 0,
+  "v3.4-facts-20260831": 0
+ },
+ "prompt_version_histogram": {
+  "v3.5-facts-20260831": 119
+ },
+ "prompt_contract": null,
+ "prompt_contract_version": null,
+ "prompt_contract_sha256": null,
+ "n_rows_v3": 0,
+ "n_rows_total": 119,
+ "n_completed_this_invocation": 14,
+ "n_expected": 119,
+ "audit": {
+  "error_rows": [],
+  "empty_response_rows": [],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": true
+ }
+}

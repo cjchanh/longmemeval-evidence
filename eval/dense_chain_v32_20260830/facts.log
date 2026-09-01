@@ -1,0 +1,9 @@
+{
+ "n_rows_with_facts": 240,
+ "sha256": "05e283d3ba6beae640ee0577464a46765c75c466112b22b3d6d3b99b9db24336",
+ "activated_operator_counts": {
+  "count_dedup": 187,
+  "date_duration": 113,
+  "update_precedence": 40
+ }
+}

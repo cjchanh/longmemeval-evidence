@@ -1,0 +1,83 @@
+{
+  "schema": "cds/v4-sufficiency-nc/v1",
+  "gate_version": "cds/v4-sufficiency-gate/v0",
+  "responses_from": "full-v34_pass2",
+  "frozen_acceptance_rule": "BLOCKED if control flips > 2, or if abs-miss catches < 3 of 4. Control set must be >= 230 rows.",
+  "frozen_constants": {
+    "MAX_CONTROL_FLIPS": 2,
+    "MIN_ABS_CATCHES": 3,
+    "MIN_CONTROL_ROWS": 230,
+    "KNOWN_ABS_MISS_ROWS": [
+      "a96c20ee_abs",
+      "09ba9854_abs",
+      "gpt4_fe651585_abs",
+      "031748ae_abs"
+    ]
+  },
+  "control_rows": 471,
+  "control_committed": 446,
+  "control_skipped_already_abstained": 25,
+  "control_flips": 1,
+  "flip_detail": [
+    {
+      "question_id": "078150f1",
+      "reasons": [
+        "FRAME_D_OPERAND_NEVER_USER_STATED"
+      ],
+      "detail": {
+        "FRAME_D_OPERAND_NEVER_USER_STATED": {
+          "operands": [
+            "initial",
+            "goal"
+          ],
+          "operand_never_user_stated": [
+            "initial",
+            "goal"
+          ]
+        }
+      },
+      "question": "How much more money did I raise than my initial goal in the charity cycling event?"
+    }
+  ],
+  "abs_rows": [
+    {
+      "question_id": "a96c20ee_abs",
+      "verdict": "PASS",
+      "reasons": [],
+      "committed": true,
+      "chain_class": "INFERRED"
+    },
+    {
+      "question_id": "09ba9854_abs",
+      "verdict": "REFUSE",
+      "reasons": [
+        "FRAME_D_OPERAND_NEVER_USER_STATED"
+      ],
+      "committed": true,
+      "chain_class": "INFERRED"
+    },
+    {
+      "question_id": "gpt4_fe651585_abs",
+      "verdict": "SKIP_NOT_COMMITTED",
+      "reasons": [],
+      "committed": false,
+      "chain_class": "INFERRED"
+    },
+    {
+      "question_id": "031748ae_abs",
+      "verdict": "REFUSE",
+      "reasons": [
+        "FRAME_B_TITLE_PHRASE_ABSENT"
+      ],
+      "committed": true,
+      "chain_class": "STATED"
+    }
+  ],
+  "abs_catches": 2,
+  "statistical_note": "At a 2% true flip rate, P(0 flips in 230) = 0.98^230 = 0.0094 (<1%); over the observed 471 controls, 0.98^471 = 7.37e-05.",
+  "verdict": "BLOCKED",
+  "blocked_reasons": [
+    "abs catches 2 < 3"
+  ],
+  "detail_path": "eval/dense_chain_v32_20260830/v4/sufficiency/nc_results_pass2.jsonl"
+}

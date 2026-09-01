@@ -1,0 +1,77 @@
+25/500 (757s)
+50/500 (1139s)
+75/500 (1711s)
+100/500 (2732s)
+125/500 (3569s)
+150/500 (4375s)
+175/500 (5168s)
+200/500 (5683s)
+225/500 (6343s)
+250/500 (7287s)
+275/500 (8101s)
+300/500 (8963s)
+325/500 (9528s)
+350/500 (10097s)
+375/500 (10940s)
+400/500 (11679s)
+425/500 (12104s)
+450/500 (12690s)
+475/500 (13203s)
+500/500 (13633s)
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-08-31T21:17:51.534869+00:00",
+ "reader_model": "grok-4.6",
+ "reader_lane": "grok-cli",
+ "transport": "grok --prompt-file (single-turn, effort=xhigh), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/full-v34-xhigh_pass1/materialized_all.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/full-v34-xhigh_pass1/facts_all.jsonl",
+ "n_rows_with_facts": 257,
+ "prompt_versions": {
+  "v2-20260827": 243,
+  "v3.4-facts-20260831": 257
+ },
+ "n_rows_v3": 257,
+ "n_rows_total": 500,
+ "n_completed_this_invocation": 500,
+ "n_expected": 500,
+ "audit": {
+  "error_rows": [
+   "gpt4_fe651585_abs"
+  ],
+  "empty_response_rows": [
+   "gpt4_fe651585_abs"
+  ],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": false
+ }
+}
+ARTIFACT INVALID — not fit for judging. errors=1 empty=1 contaminated=0 missing=0
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-08-31T21:35:11.788534+00:00",
+ "reader_model": "grok-4.6",
+ "reader_lane": "grok-cli",
+ "transport": "grok --prompt-file (single-turn, effort=xhigh), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/full-v34-xhigh_pass1/materialized_all.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/full-v34-xhigh_pass1/facts_all.jsonl",
+ "n_rows_with_facts": 257,
+ "prompt_versions": {
+  "v2-20260827": 243,
+  "v3.4-facts-20260831": 257
+ },
+ "n_rows_v3": 257,
+ "n_rows_total": 500,
+ "n_completed_this_invocation": 1,
+ "n_expected": 500,
+ "audit": {
+  "error_rows": [],
+  "empty_response_rows": [],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": true
+ }
+}

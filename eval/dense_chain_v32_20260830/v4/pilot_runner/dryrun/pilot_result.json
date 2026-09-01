@@ -1,0 +1,152 @@
+{
+ "schema": "cds/v4-pilot-runner/v1",
+ "mode": "dry-run",
+ "pilot_set": "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/eval/dense_chain_v32_20260830/v4/pilot/PILOT_SET.json",
+ "freeze_hash": "4c9feeac5a522d17f1aeba41ba75a016dcd4f3e819abe696ec74df681fe6ad2f",
+ "n_rows": 89,
+ "counts": {
+  "target": 27,
+  "control": 60,
+  "claim_excluded": 2,
+  "total_listed": 89,
+  "per_type": {
+   "knowledge-update": {
+    "target": 3,
+    "control": 9,
+    "claim_excluded": 0
+   },
+   "multi-session": {
+    "target": 16,
+    "control": 15,
+    "claim_excluded": 1
+   },
+   "single-session-assistant": {
+    "target": 0,
+    "control": 7,
+    "claim_excluded": 0
+   },
+   "single-session-preference": {
+    "target": 2,
+    "control": 4,
+    "claim_excluded": 0
+   },
+   "single-session-user": {
+    "target": 1,
+    "control": 9,
+    "claim_excluded": 0
+   },
+   "temporal-reasoning": {
+    "target": 5,
+    "control": 16,
+    "claim_excluded": 1
+   }
+  }
+ },
+ "acceptance_rule_verbatim": "v4 components are promoted to a full pair only if pilot shows net >= +4 on TARGET rows with <= 1 CONTROL regression.",
+ "adjudication_rule": "On disagreement, prefer the answer whose citations byte-verify AND whose LINK markers are all stated=yes; if neither or both qualify, keep primary.",
+ "sufficiency_module": "cds/v4-sufficiency-gate/v0",
+ "gate_refuse_reasons_enabled": [
+  "SPAN_NOT_VERBATIM",
+  "LINK_STATED_NO",
+  "MISSING_TERM"
+ ],
+ "lexical_v0_detectors_used": false,
+ "contract": "v4-citation",
+ "lane": "grok-cli",
+ "effort": "high",
+ "dual_read_enabled": true,
+ "filter_materialized": {
+  "source": "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/eval/dense_chain_v32_20260830/full-v34_pass1/materialized_all.jsonl",
+  "written": "eval/dense_chain_v32_20260830/v4/pilot_runner/dryrun/filtered/materialized_pilot.jsonl",
+  "n_wanted": 89,
+  "n_written": 89,
+  "missing": []
+ },
+ "filter_facts": {
+  "sources": [
+   {
+    "source": "eval/dense_chain_v32_20260830/v4/anchors/facts_v35.jsonl",
+    "n_rows": 240,
+    "n_in_pilot": 45
+   },
+   {
+    "source": "eval/dense_chain_v32_20260830/v4/anchors/facts_abs_v35.jsonl",
+    "n_rows": 17,
+    "n_in_pilot": 5
+   }
+  ],
+  "written": "eval/dense_chain_v32_20260830/v4/pilot_runner/dryrun/filtered/facts_pilot.jsonl",
+  "n_wanted": 89,
+  "n_written": 50,
+  "n_pilot_rows_without_facts": 39
+ },
+ "armA": {
+  "source": "full-v34_pass1/reader (dry-run, no live call)"
+ },
+ "armB": {
+  "source": "route_table.json per question_type (dry-run)",
+  "n_second_rows": 89,
+  "n_without_second": 0,
+  "without_second": []
+ },
+ "gate": {
+  "n_refused": 0,
+  "n_skip_not_committed": 7,
+  "n_pass": 82,
+  "n_unavailable": 0,
+  "n_rows_with_contract_markup": 0,
+  "n_changed_from_primary": 0,
+  "reasons": {
+   "advisory:NO_CITATIONS": 82
+  }
+ },
+ "dual_read": {
+  "n_disagree": 54,
+  "n_second_won": 0
+ },
+ "judge": {
+  "mode": "cached-reuse (byte-identity guarded)",
+  "source": "full-v34_pass1/judge_gpt4o/rescored.jsonl",
+  "n_reused": 89,
+  "n_pending_live": 0
+ },
+ "score": {
+  "baseline_key": "pass1_correct",
+  "n_pending_judge": 0,
+  "pending_judge": [],
+  "per_category": {
+   "target": {
+    "n": 27,
+    "n_scored": 27,
+    "n_pending": 0,
+    "baseline_correct": 5,
+    "final_correct_scored": 5
+   },
+   "control": {
+    "n": 60,
+    "n_scored": 60,
+    "n_pending": 0,
+    "baseline_correct": 60,
+    "final_correct_scored": 60
+   },
+   "claim_excluded": {
+    "n": 2,
+    "n_scored": 2,
+    "n_pending": 0,
+    "baseline_correct": 0,
+    "final_correct_scored": 0
+   }
+  },
+  "target_net": 0,
+  "target_gained": [],
+  "target_lost": [],
+  "control_regressions": [],
+  "control_gains": [],
+  "n_control_regressions": 0
+ },
+ "verdict": {
+  "verdict": "DO NOT PROMOTE",
+  "why": "TARGET net +0 (need >= +4); CONTROL regressions 0 (need <= 1)",
+  "acceptance_rule_verbatim": "v4 components are promoted to a full pair only if pilot shows net >= +4 on TARGET rows with <= 1 CONTROL regression."
+ }
+}

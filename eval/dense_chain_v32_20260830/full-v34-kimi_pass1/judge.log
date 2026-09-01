@@ -1,0 +1,54 @@
+controls: positive 12/12 negative 12/12
+  ans 25/470
+  ans 50/470
+  ans 75/470
+  ans 100/470
+  ans 125/470
+  ans 150/470
+  ans 175/470
+  ans 200/470
+  ans 225/470
+  ans 250/470
+  ans 275/470
+  ans 300/470
+  ans 325/470
+  ans 350/470
+  ans 375/470
+  ans 400/470
+  ans 425/470
+  ans 450/470
+  abs 25/30
+{
+ "judge_model": "gpt-4o-2024-08-06",
+ "transport": "api",
+ "resolved_snapshots": [
+  "gpt-4o-2024-08-06"
+ ],
+ "llm_judge_accuracy": 0.9446808510638298
+}
+per_type: {
+ "knowledge-update": {
+  "n": 72,
+  "llm_acc": 0.9722222222222222
+ },
+ "multi-session": {
+  "n": 121,
+  "llm_acc": 0.9008264462809917
+ },
+ "single-session-assistant": {
+  "n": 56,
+  "llm_acc": 0.9107142857142857
+ },
+ "single-session-preference": {
+  "n": 30,
+  "llm_acc": 0.9333333333333333
+ },
+ "single-session-user": {
+  "n": 64,
+  "llm_acc": 1.0
+ },
+ "temporal-reasoning": {
+  "n": 127,
+  "llm_acc": 0.9606299212598425
+ }
+}

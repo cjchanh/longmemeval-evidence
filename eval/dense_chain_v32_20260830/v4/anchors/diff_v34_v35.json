@@ -1,0 +1,1688 @@
+{
+  "arms": {
+    "abs": {
+      "n_changed": 3,
+      "n_rows": 17,
+      "n_rows_with_anchors_emitted": 3,
+      "n_rows_with_anchors_found": 4
+    },
+    "answerable": {
+      "n_changed": 51,
+      "n_rows": 240,
+      "n_rows_with_anchors_emitted": 51,
+      "n_rows_with_anchors_found": 85
+    }
+  },
+  "changed": [
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/01/02",
+        "2023/02/01"
+      ],
+      "anchor_surfaces": [
+        "January 2nd",
+        "February 1st"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 5,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "08f4fc43",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/01/10",
+        "2023/01/17",
+        "2023/02/22",
+        "2023/03/15"
+      ],
+      "anchor_surfaces": [
+        "January 10th",
+        "January 17th",
+        "February 22",
+        "March 15"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 8,
+      "n_intext_anchors": 4,
+      "n_intext_anchors_found": 4,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "0bb5a684",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/03/12"
+      ],
+      "anchor_surfaces": [
+        "March 12th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 7,
+      "names_provenance": true,
+      "question_id": "0bc8ad92",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration"
+      ],
+      "anchor_dates": [
+        "2023/07/01"
+      ],
+      "anchor_surfaces": [
+        "July 1st"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 4,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 8,
+      "names_provenance": true,
+      "question_id": "0bc8ad93",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "passthrough"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "update_precedence",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/10"
+      ],
+      "anchor_surfaces": [
+        "February 10th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 13,
+      "names_provenance": true,
+      "question_id": "0db4c65d",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "update_precedence",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/03/15"
+      ],
+      "anchor_surfaces": [
+        "March 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 7,
+      "names_provenance": true,
+      "question_id": "0ea62687",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "count_enumeration"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/04/10",
+        "2023/04/18"
+      ],
+      "anchor_surfaces": [
+        "10th of April",
+        "18th of April"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 5,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "10d9b85a",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "count_enumeration"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/26",
+        "2023/03/19"
+      ],
+      "anchor_surfaces": [
+        "February 26th",
+        "March 19th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 5,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "2a1811e2",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2022/02/10",
+        "2022/02/15",
+        "2022/03/01"
+      ],
+      "anchor_surfaces": [
+        "February 10th",
+        "2/15",
+        "3/1"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 6,
+      "n_intext_anchors": 3,
+      "n_intext_anchors_found": 3,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "2c63a862",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/10",
+        "2023/02/17",
+        "2023/02/24",
+        "2023/03/03"
+      ],
+      "anchor_surfaces": [
+        "February 10th",
+        "February 17th",
+        "February 24th",
+        "March 3rd"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 7,
+      "n_intext_anchors": 4,
+      "n_intext_anchors_found": 4,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "2ce6a0f2",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "count_quantity"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/04/15",
+        "2023/04/20"
+      ],
+      "anchor_surfaces": [
+        "April 15th",
+        "April 20th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 5,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 7,
+      "names_provenance": true,
+      "question_id": "311778f1",
+      "question_type": "single-session-user",
+      "removed_lines": [],
+      "selector_class": "count_quantity"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/15",
+        "2023/03/12"
+      ],
+      "anchor_surfaces": [
+        "February 15th",
+        "March 12th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 5,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 13,
+      "names_provenance": true,
+      "question_id": "4dfccbf7",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration"
+      ],
+      "anchor_dates": [
+        "2023/03/01"
+      ],
+      "anchor_surfaces": [
+        "March 1st"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 10,
+      "names_provenance": true,
+      "question_id": "4dfccbf8",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "passthrough"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/12/10",
+        "2023/12/12",
+        "2023/12/17",
+        "2023/12/24"
+      ],
+      "anchor_surfaces": [
+        "December 10th",
+        "December 12th",
+        "December 17th",
+        "December 24th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 7,
+      "n_intext_anchors": 4,
+      "n_intext_anchors_found": 4,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "5a7937c8",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "count_enumeration"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/20"
+      ],
+      "anchor_surfaces": [
+        "February 20th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 9,
+      "names_provenance": true,
+      "question_id": "60159905",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "count_enumeration"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/01/15",
+        "2023/01/20",
+        "2023/01/28",
+        "2023/02/12"
+      ],
+      "anchor_surfaces": [
+        "1/15",
+        "1/20",
+        "January 28th",
+        "February 12th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 8,
+      "n_intext_anchors": 4,
+      "n_intext_anchors_found": 4,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "60bf93ed",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/05/15",
+        "2023/07/22"
+      ],
+      "anchor_surfaces": [
+        "May 15th",
+        "July 22nd"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 6,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "6613b389",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2022/05/15"
+      ],
+      "anchor_surfaces": [
+        "May 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 4,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 3,
+      "names_provenance": true,
+      "question_id": "8077ef71",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/03/08",
+        "2023/03/15"
+      ],
+      "anchor_surfaces": [
+        "3/8",
+        "15th of March"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 5,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "8c18457d",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2022/02/10"
+      ],
+      "anchor_surfaces": [
+        "February 10th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 10,
+      "names_provenance": true,
+      "question_id": "9a707b81",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/09/01",
+        "2023/10/16"
+      ],
+      "anchor_surfaces": [
+        "September 1st",
+        "October 16th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 6,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 10,
+      "names_provenance": true,
+      "question_id": "a08a253f",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "count_enumeration"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2022/02/14",
+        "2022/04/15",
+        "2022/04/22",
+        "2022/05/15"
+      ],
+      "anchor_surfaces": [
+        "February 14th",
+        "15th of April",
+        "22nd of April",
+        "May 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 7,
+      "n_intext_anchors": 4,
+      "n_intext_anchors_found": 4,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "a3045048",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/01/25"
+      ],
+      "anchor_surfaces": [
+        "January 25th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 4,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 5,
+      "names_provenance": true,
+      "question_id": "af082822",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/05",
+        "2023/02/10"
+      ],
+      "anchor_surfaces": [
+        "February 5th",
+        "February 10th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 5,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "b3c15d39",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/08/15"
+      ],
+      "anchor_surfaces": [
+        "August 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 4,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "b5ef892d",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "count_enumeration"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/01/15",
+        "2023/02/15"
+      ],
+      "anchor_surfaces": [
+        "January 15th",
+        "February 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 6,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "ba358f49",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "count_enumeration"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/06/14",
+        "2023/06/18",
+        "2023/10/15",
+        "2023/11/01"
+      ],
+      "anchor_surfaces": [
+        "June 14th",
+        "June 18th",
+        "October 15th",
+        "November 1st"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 8,
+      "n_intext_anchors": 4,
+      "n_intext_anchors_found": 4,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "bbf86515",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/01/15",
+        "2023/02/10"
+      ],
+      "anchor_surfaces": [
+        "January 15th",
+        "February 10th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 5,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 5,
+      "names_provenance": true,
+      "question_id": "bcbe585f",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2024/04/16"
+      ],
+      "anchor_surfaces": [
+        "April 16th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 4,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "c8090214",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/01/03",
+        "2023/01/10",
+        "2023/01/24",
+        "2023/02/01",
+        "2023/02/02",
+        "2023/02/05",
+        "2023/02/10",
+        "2023/02/15"
+      ],
+      "anchor_surfaces": [
+        "1/3",
+        "January 10th",
+        "January 24th",
+        "February 1st",
+        "February 2nd",
+        "February 5th",
+        "February 10th",
+        "February 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 12,
+      "n_intext_anchors": 8,
+      "n_intext_anchors_found": 8,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "dcfa8644",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/01/15"
+      ],
+      "anchor_surfaces": [
+        "January 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 8,
+      "names_provenance": true,
+      "question_id": "e831120c",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/21",
+        "2023/03/07"
+      ],
+      "anchor_surfaces": [
+        "February 21st",
+        "March 7th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 5,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "f0853d11",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/03/22",
+        "2023/08/22"
+      ],
+      "anchor_surfaces": [
+        "March 22nd",
+        "22nd of August"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 6,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 6,
+      "names_provenance": true,
+      "question_id": "gpt4_1e4a8aeb",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/01/20"
+      ],
+      "anchor_surfaces": [
+        "January 20th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 12,
+      "names_provenance": true,
+      "question_id": "gpt4_21adecb5",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/10",
+        "2023/03/20",
+        "2023/03/27",
+        "2023/04/25"
+      ],
+      "anchor_surfaces": [
+        "February 10th",
+        "March 20th",
+        "3/27",
+        "April 25th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 8,
+      "n_intext_anchors": 4,
+      "n_intext_anchors_found": 4,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "gpt4_4cd9eba1",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "count_quantity"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/03/05",
+        "2023/05/15"
+      ],
+      "anchor_surfaces": [
+        "March 5th",
+        "May 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 5,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 13,
+      "names_provenance": true,
+      "question_id": "gpt4_4fc4f797",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/10"
+      ],
+      "anchor_surfaces": [
+        "February 10th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 13,
+      "names_provenance": true,
+      "question_id": "gpt4_61e13b3c",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/22",
+        "2023/03/15",
+        "2023/03/22"
+      ],
+      "anchor_surfaces": [
+        "February 22",
+        "March 15",
+        "March 22nd"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 7,
+      "n_intext_anchors": 3,
+      "n_intext_anchors_found": 3,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "gpt4_731e37d7",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "count_enumeration"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/03/15"
+      ],
+      "anchor_surfaces": [
+        "March 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 4,
+      "names_provenance": true,
+      "question_id": "gpt4_7a0daae1",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "update_precedence"
+      ],
+      "anchor_dates": [
+        "2023/02/17"
+      ],
+      "anchor_surfaces": [
+        "February 17th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 13,
+      "names_provenance": true,
+      "question_id": "gpt4_7abb270c",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "recency_value"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/03/15"
+      ],
+      "anchor_surfaces": [
+        "March 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 3,
+      "names_provenance": true,
+      "question_id": "gpt4_7bc6cf22",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration"
+      ],
+      "anchor_dates": [
+        "2023/01/15"
+      ],
+      "anchor_surfaces": [
+        "January 15th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 11,
+      "names_provenance": true,
+      "question_id": "gpt4_8279ba03",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "passthrough"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/01"
+      ],
+      "anchor_surfaces": [
+        "February 1st"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 7,
+      "names_provenance": true,
+      "question_id": "gpt4_8e165409",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/03/12"
+      ],
+      "anchor_surfaces": [
+        "March 12th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 4,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 13,
+      "names_provenance": true,
+      "question_id": "gpt4_af6db32f",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/26"
+      ],
+      "anchor_surfaces": [
+        "February 26th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 13,
+      "names_provenance": true,
+      "question_id": "gpt4_b0863698",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration"
+      ],
+      "anchor_dates": [
+        "2023/03/03",
+        "2023/04/12",
+        "2023/04/15",
+        "2023/06/01"
+      ],
+      "anchor_surfaces": [
+        "March 3rd",
+        "April 12th",
+        "April 15th",
+        "June 1st"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 8,
+      "n_intext_anchors": 4,
+      "n_intext_anchors_found": 4,
+      "n_removed_lines": 0,
+      "n_session_days": 10,
+      "names_provenance": true,
+      "question_id": "gpt4_b5700ca0",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "passthrough"
+    },
+    {
+      "activated": [
+        "date_duration"
+      ],
+      "anchor_dates": [
+        "2023/08/14"
+      ],
+      "anchor_surfaces": [
+        "August 14th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 4,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 6,
+      "names_provenance": true,
+      "question_id": "gpt4_e061b84g",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "passthrough"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/10"
+      ],
+      "anchor_surfaces": [
+        "February 10th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 6,
+      "names_provenance": true,
+      "question_id": "gpt4_e072b769",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "update_precedence"
+      ],
+      "anchor_dates": [
+        "2023/02/10",
+        "2023/04/10"
+      ],
+      "anchor_surfaces": [
+        "February 10th",
+        "April 10th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 6,
+      "n_intext_anchors": 2,
+      "n_intext_anchors_found": 2,
+      "n_removed_lines": 0,
+      "n_session_days": 14,
+      "names_provenance": true,
+      "question_id": "gpt4_f420262c",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "recency_value"
+    },
+    {
+      "activated": [
+        "date_duration"
+      ],
+      "anchor_dates": [
+        "2023/04/17",
+        "2023/05/10",
+        "2023/05/28"
+      ],
+      "anchor_surfaces": [
+        "April 17th",
+        "May 10th",
+        "May 28th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 7,
+      "n_intext_anchors": 3,
+      "n_intext_anchors_found": 3,
+      "n_removed_lines": 0,
+      "n_session_days": 8,
+      "names_provenance": true,
+      "question_id": "gpt4_f49edff3",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "passthrough"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/02/20"
+      ],
+      "anchor_surfaces": [
+        "February 20th"
+      ],
+      "arm": "answerable",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 9,
+      "names_provenance": true,
+      "question_id": "gpt4_fa19884c",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/01/15",
+        "2023/01/20",
+        "2023/01/25"
+      ],
+      "anchor_surfaces": [
+        "1/15",
+        "1/20",
+        "January 25th"
+      ],
+      "arm": "abs",
+      "n_added_lines": 7,
+      "n_intext_anchors": 3,
+      "n_intext_anchors_found": 3,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "60bf93ed_abs",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "date_interval"
+    },
+    {
+      "activated": [
+        "date_duration"
+      ],
+      "anchor_dates": [
+        "2023/01/02",
+        "2023/01/15",
+        "2023/03/01",
+        "2023/03/20"
+      ],
+      "anchor_surfaces": [
+        "1/2",
+        "January 15th",
+        "March 1st",
+        "March 20th"
+      ],
+      "arm": "abs",
+      "n_added_lines": 7,
+      "n_intext_anchors": 4,
+      "n_intext_anchors_found": 4,
+      "n_removed_lines": 0,
+      "n_session_days": 1,
+      "names_provenance": true,
+      "question_id": "982b5123_abs",
+      "question_type": "temporal-reasoning",
+      "removed_lines": [],
+      "selector_class": "date_anchor"
+    },
+    {
+      "activated": [
+        "date_duration",
+        "count_dedup"
+      ],
+      "anchor_dates": [
+        "2023/03/12"
+      ],
+      "anchor_surfaces": [
+        "March 12th"
+      ],
+      "arm": "abs",
+      "n_added_lines": 3,
+      "n_intext_anchors": 1,
+      "n_intext_anchors_found": 1,
+      "n_removed_lines": 0,
+      "n_session_days": 7,
+      "names_provenance": true,
+      "question_id": "edced276_abs",
+      "question_type": "multi-session",
+      "removed_lines": [],
+      "selector_class": "count_quantity"
+    }
+  ],
+  "unchanged_with_anchors": [
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 5,
+      "question_id": "00ca467f"
+    },
+    {
+      "activated": [
+        "update_precedence",
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 2,
+      "question_id": "09ba9854"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "0a995998"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "0e5e2d1a"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 3,
+      "question_id": "10e09553"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 3,
+      "question_id": "21d02d0d"
+    },
+    {
+      "activated": [
+        "update_precedence"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "3ba21379"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 4,
+      "question_id": "4bc144e2"
+    },
+    {
+      "activated": [
+        "update_precedence"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "50635ada"
+    },
+    {
+      "activated": [
+        "update_precedence"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "5a4f22c0"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "61f8c8f8"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "6a27ffc2"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "7401057b"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 2,
+      "question_id": "77eafa52"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 2,
+      "question_id": "7a8d0b71"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 2,
+      "question_id": "80ec1f4f"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "95bcc1c8"
+    },
+    {
+      "activated": [
+        "update_precedence"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 2,
+      "question_id": "9ea5eabc"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "a346bb18"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 4,
+      "question_id": "a3838d2b"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "a4996e51"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 6,
+      "question_id": "a9f6b44c"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "c4a1ceb8"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "cc06de0d"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "cf22b7bf"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 2,
+      "question_id": "d851d5ba"
+    },
+    {
+      "activated": [
+        "update_precedence",
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "ed4ddc30"
+    },
+    {
+      "activated": [
+        "update_precedence"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "f685340e"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 3,
+      "question_id": "gpt4_59c863d7"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 6,
+      "question_id": "gpt4_7fce9456"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 3,
+      "question_id": "gpt4_d84a3211"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 4,
+      "question_id": "gpt4_e05b82a6"
+    },
+    {
+      "activated": [
+        "update_precedence"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 3,
+      "question_id": "gpt4_ec93e27f"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "answerable",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 1,
+      "question_id": "gpt4_f2262a51"
+    },
+    {
+      "activated": [
+        "count_dedup"
+      ],
+      "arm": "abs",
+      "date_duration_active": false,
+      "n_intext_anchors_found": 2,
+      "question_id": "80ec1f4f_abs"
+    }
+  ]
+}

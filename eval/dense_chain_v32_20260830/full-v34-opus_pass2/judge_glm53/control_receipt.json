@@ -1,0 +1,172 @@
+{
+ "n": 20,
+ "n_positive_eligible": 17,
+ "positive_pass": 17,
+ "negative_pass": 20,
+ "positive_rate": 1.0,
+ "negative_rate": 1.0,
+ "threshold": 0.9,
+ "ssp_excluded_from_positive_arm": true,
+ "records": [
+  {
+   "question_id": "gpt4_d6585ce8",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "18bc8abd",
+   "question_type": "knowledge-update",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "36b9f61e",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "no"
+  },
+  {
+   "question_id": "gpt4_7bc6cf22",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "08f4fc43",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "Yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "0edc2aef",
+   "question_type": "single-session-preference",
+   "positive_pass": null,
+   "negative_pass": true,
+   "positive_raw": "",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "1c549ce4",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "e47becba",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "no"
+  },
+  {
+   "question_id": "gpt4_468eb063",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "no"
+  },
+  {
+   "question_id": "gpt4_8c8961ae",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "no"
+  },
+  {
+   "question_id": "ef66a6e5",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "no"
+  },
+  {
+   "question_id": "8ebdbe50",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "92a0aa75",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "no"
+  },
+  {
+   "question_id": "gpt4_45189cb4",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "gpt4_0b2f1d21",
+   "question_type": "temporal-reasoning",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "no"
+  },
+  {
+   "question_id": "1a1907b4",
+   "question_type": "single-session-preference",
+   "positive_pass": null,
+   "negative_pass": true,
+   "positive_raw": "",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "b3c15d39",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "no"
+  },
+  {
+   "question_id": "32260d93",
+   "question_type": "single-session-preference",
+   "positive_pass": null,
+   "negative_pass": true,
+   "positive_raw": "",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "7024f17c",
+   "question_type": "multi-session",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "No"
+  },
+  {
+   "question_id": "66f24dbb",
+   "question_type": "single-session-user",
+   "positive_pass": true,
+   "negative_pass": true,
+   "positive_raw": "yes",
+   "negative_raw": "no"
+  }
+ ]
+}

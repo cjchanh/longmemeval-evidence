@@ -1,0 +1,9 @@
+{
+ "n_rows": 30,
+ "sha256": "cbb42353030f52bfe252a3e4051cc790251ec67f807e02b46d0dd25ced6ca11b",
+ "max_sessions": 16,
+ "max_tokens": 39925,
+ "n_truncated_packets": 0,
+ "truncated_question_ids": [],
+ "tokens_by_truncated_qid": {}
+}

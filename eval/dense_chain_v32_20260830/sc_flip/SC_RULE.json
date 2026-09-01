@@ -1,0 +1,15 @@
+{
+ "rule": "sc-v1-frozen-20260831",
+ "rows": [
+  "1da05512",
+  "35a27287",
+  "618f13b2",
+  "88432d0a",
+  "9aaed6a3",
+  "9ee3ecd6",
+  "gpt4_2ba83207",
+  "gpt4_fe651585_abs"
+ ],
+ "votes": "2 existing (pass1,pass2) + 3 fresh reads; majority of 5; ties broken toward the existing pass1 answer; majority answer judged gpt-4o; reported as v3.4+SC",
+ "transports": "cursor-grok-4.6-high preferred, grok-cli grok-4.6 fallback, per-vote transport recorded"
+}

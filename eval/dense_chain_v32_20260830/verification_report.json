@@ -1,0 +1,44 @@
+{
+  "schema": "cds/dense-chain-closure-verification/v1",
+  "generated_at": "2026-08-30T19:05:33.931170+00:00",
+  "packets": {
+    "allocation": "union16-rerank-term-extractive",
+    "determinism": {
+      "run1": "3598aee8a14e760a65549abaa45c386942f05c027a3de8ef33ede56b9f6b52f0",
+      "run2": "3598aee8a14e760a65549abaa45c386942f05c027a3de8ef33ede56b9f6b52f0",
+      "identical": true
+    },
+    "gold_permutation_nc": {
+      "shuffled_data": "/tmp/lme_gold_shuffled_closure.json",
+      "sha256": "3598aee8a14e760a65549abaa45c386942f05c027a3de8ef33ede56b9f6b52f0",
+      "identical_to_run1": true
+    }
+  },
+  "membership": {
+    "n_compared": 470,
+    "regressions": [],
+    "n_grown": 463
+  },
+  "budget": {
+    "n_checked": 470,
+    "n_violations": 0,
+    "violations": []
+  },
+  "facts": {
+    "n_rows": 240,
+    "determinism": {
+      "identical": true
+    },
+    "gold_permutation_nc": {
+      "note": "facts read only question text/date and session blobs; gold fields are not inputs (pinned by test signature and by the packets NC above, which leaves the same blobs byte-identical under gold permutation)"
+    }
+  },
+  "question_id_sabotage": {
+    "method": "consistent rename across all inputs",
+    "n_renamed_ids": 500,
+    "n_packets": 470,
+    "identical_modulo_ids": true,
+    "failed_loudly": false
+  },
+  "overall": "PASS"
+}

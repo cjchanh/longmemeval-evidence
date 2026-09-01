@@ -1,0 +1,15 @@
+{
+  "schema": "cds/entity-link-expansion-summary/v1",
+  "n_questions": 470,
+  "n_with_expansion_terms": 55,
+  "n_with_added_sessions": 22,
+  "total_added_sessions": 40,
+  "n_with_mined_aliases": 465,
+  "sha256": "f12ca5df1f8af750ae369e8a1a537d28957a6c6c8629037ea697ee7c1d538e33",
+  "params": {
+    "window": 120,
+    "max_aliases": 3,
+    "max_terms": 8,
+    "max_added": 3
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "cds/dense-chain-coverage-packets-summary/v1",
+  "generated_at": "2026-08-30T19:05:24.809571+00:00",
+  "command": "python3 scripts/build_coverage_preserving_packets.py --pools eval/dense_chain_reranker_v3_20260830/abs/pools_ce.jsonl --baseline-top10 eval/dense_chain_reranker_v3_20260830/abs/baseline_top10_abs_dedup.jsonl --data /Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json --out eval/dense_chain_v32_20260830/packets_abs.jsonl --budget-tokens 40000 --max-sessions 16 --allocation union16-rerank-term-extractive --extension-order ce --extension-floor none",
+  "allocation": "union16-rerank-term-extractive",
+  "extension_order": "ce",
+  "extension_floor": "none",
+  "n_packets": 30,
+  "sha256": "bec583d3aabf877bce70ed9d50dd5045a8813d63b595a1a1e9b9d6283d1d97e5",
+  "budget": {
+    "max_sessions": 16,
+    "max_tokens": 40000
+  },
+  "session_count": {
+    "min": 10,
+    "mean": 14.37,
+    "max": 16
+  },
+  "tokens": {
+    "min": 23115,
+    "mean": 34860.2,
+    "max": 39925
+  },
+  "n_truncated_sessions": 0,
+  "n_packets_with_truncation": 0,
+  "budget_violations": [],
+  "baseline_duplicate_findings": []
+}

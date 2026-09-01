@@ -1,0 +1,32 @@
+25/153 (240s)
+50/153 (518s)
+75/153 (675s)
+100/153 (914s)
+125/153 (1162s)
+150/153 (1328s)
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-08-31T04:40:11.934695+00:00",
+ "reader_model": "cursor-grok-4.6-high",
+ "reader_lane": "cursor-grok",
+ "transport": "cursor-agent -p --mode ask (stdin, empty workspace), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/replay_materialized_v34.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/replay_facts_v34.jsonl",
+ "n_rows_with_facts": 130,
+ "prompt_versions": {
+  "v2-20260827": 23,
+  "v3.4-facts-20260831": 130
+ },
+ "n_rows_v3": 130,
+ "n_rows_total": 153,
+ "n_completed_this_invocation": 153,
+ "n_expected": 153,
+ "audit": {
+  "error_rows": [],
+  "empty_response_rows": [],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": true
+ }
+}

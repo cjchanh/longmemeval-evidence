@@ -1,0 +1,33 @@
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-09-01T03:10:52.653628+00:00",
+ "reader_model": "opus",
+ "reader_lane": "claude-cli",
+ "transport": "claude -p --tools '' (single-turn, scratch cwd), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/v4/claude_lane/probe25/materialized_all.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/v4/claude_lane/probe25/facts_all.jsonl",
+ "n_rows_with_facts": 20,
+ "prompt_versions": {
+  "v2-20260827": 5,
+  "v3.4-facts-20260831": 20
+ },
+ "prompt_version_histogram": {
+  "v2-20260827": 5,
+  "v3.4-facts-20260831": 20
+ },
+ "prompt_contract": null,
+ "prompt_contract_version": null,
+ "prompt_contract_sha256": null,
+ "n_rows_v3": 20,
+ "n_rows_total": 25,
+ "n_completed_this_invocation": 25,
+ "n_expected": 25,
+ "audit": {
+  "error_rows": [],
+  "empty_response_rows": [],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": true
+ }
+}

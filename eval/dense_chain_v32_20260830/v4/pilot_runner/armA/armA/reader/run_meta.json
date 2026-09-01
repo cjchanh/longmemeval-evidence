@@ -1,0 +1,33 @@
+{
+ "schema": "cds/lme-qa-flash-packets/v1",
+ "generated_at": "2026-09-01T04:31:48.426387+00:00",
+ "reader_model": "grok-4.6",
+ "reader_lane": "grok-cli",
+ "transport": "grok --prompt-file (single-turn, effort=high), ThreadPoolExecutor",
+ "prompt_version": "v2-20260827 (identical to cloud v2 chain)",
+ "materialized_source": "eval/dense_chain_v32_20260830/v4/pilot_runner/armA/filtered/materialized_pilot.jsonl",
+ "facts_source": "eval/dense_chain_v32_20260830/v4/pilot_runner/armA/filtered/facts_pilot.jsonl",
+ "n_rows_with_facts": 50,
+ "prompt_versions": {
+  "v2-20260827": 39,
+  "v3.4-facts-20260831": 50
+ },
+ "prompt_version_histogram": {
+  "v2-20260827+v4-citation-20260831": 39,
+  "v3.4-facts-20260831+v4-citation-20260831": 50
+ },
+ "prompt_contract": "v4-citation",
+ "prompt_contract_version": "v4-citation-20260831",
+ "prompt_contract_sha256": "70f5738fd6455416a5e4cead471135f3c02d48b441269ccc12e935a8ce89cae5",
+ "n_rows_v3": 50,
+ "n_rows_total": 89,
+ "n_completed_this_invocation": 1,
+ "n_expected": 89,
+ "audit": {
+  "error_rows": [],
+  "empty_response_rows": [],
+  "wrapper_contaminated_rows": [],
+  "missing_rows": [],
+  "clean": true
+ }
+}

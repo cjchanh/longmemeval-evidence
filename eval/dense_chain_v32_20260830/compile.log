@@ -1,0 +1,17 @@
+{
+ "n_packets": 470,
+ "sha256": "3598aee8a14e760a65549abaa45c386942f05c027a3de8ef33ede56b9f6b52f0",
+ "session_count": {
+  "min": 10,
+  "mean": 14.91,
+  "max": 16
+ },
+ "tokens": {
+  "min": 22605,
+  "mean": 36102.4,
+  "max": 40000
+ },
+ "n_truncated_sessions": 3,
+ "n_packets_with_truncation": 3,
+ "budget_violations": []
+}

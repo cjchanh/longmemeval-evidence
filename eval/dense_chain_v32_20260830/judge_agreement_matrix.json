@@ -1,0 +1,52 @@
+{
+ "full_pass1": {
+  "n": 500,
+  "agree": 491,
+  "pct": 98.2,
+  "gpt_only": 7,
+  "glm_only": 2,
+  "gpt_only_ids": [
+   "09ba9854_abs",
+   "2318644b",
+   "6e984301",
+   "7405e8b1",
+   "88432d0a",
+   "88432d0a_abs",
+   "ba358f49"
+  ],
+  "glm_only_ids": [
+   "37f165cf",
+   "affe2881"
+  ]
+ },
+ "full_pass2": {
+  "n": 500,
+  "agree": 489,
+  "pct": 97.8,
+  "gpt_only": 7,
+  "glm_only": 4,
+  "gpt_only_ids": [
+   "4f54b7c9",
+   "6e984301",
+   "8550ddae",
+   "88432d0a_abs",
+   "ba358f49",
+   "gpt4_70e84552_abs",
+   "gpt4_7fce9456"
+  ],
+  "glm_only_ids": [
+   "08f4fc43",
+   "0edc2aef",
+   "2318644b",
+   "37f165cf"
+  ]
+ },
+ "systematic_gpt_only": [
+  "6e984301",
+  "88432d0a_abs",
+  "ba358f49"
+ ],
+ "systematic_glm_only": [
+  "37f165cf"
+ ]
+}

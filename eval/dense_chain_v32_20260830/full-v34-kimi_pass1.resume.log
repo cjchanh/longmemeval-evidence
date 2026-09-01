@@ -1,0 +1,4 @@
+READER_EXIT=0
+reader_model ollama-cloud/kimi-k3 | rows 500 | versions {'v2-20260827': 243, 'v3.4-facts-20260831': 257} | audit clean True
+JUDGE_EXIT=0
+KIMI FULL: answerable 444/470 | abs 21/30 | TOTAL 465/500 = 93.0%  (single pass — curve datapoint, NOT a headline; opus pair 479/475, grok 476/474, glm-5.3 471)
