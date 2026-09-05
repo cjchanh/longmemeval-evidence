@@ -2,7 +2,10 @@
 
 All subprocess calls are mocked — no live `claude` invocations here (those
 live in eval/dense_chain_v32_20260830/v4/claude_lane/SMOKE.md as a separate,
-explicitly-bounded 3-call live smoke test).
+explicitly-bounded 3-call live smoke test). The `shutil.which` binary lookup
+is mocked too, so the suite is hermetic on machines without the `claude`
+binary installed; the one test that exercises the not-found branch re-patches
+`which` to return None locally.
 """
 from __future__ import annotations
 
@@ -79,6 +82,16 @@ class TestChromeGuard(unittest.TestCase):
 
 
 class TestClaudeCliGenerate(unittest.TestCase):
+    def setUp(self):
+        # Hermetic binary lookup: `_resolve_claude_binary` calls
+        # shutil.which("claude") before any (already-mocked) subprocess
+        # call, so without this the suite fails on machines without the
+        # `claude` binary installed. The returned path is never executed.
+        which = mock.patch("scripts.claude_cli_lane.shutil.which",
+                           return_value="/usr/bin/claude")
+        which.start()
+        self.addCleanup(which.stop)
+
     def test_happy_path_returns_stdout(self):
         with mock.patch("scripts.claude_cli_lane.subprocess.run",
                          return_value=_proc(0, b"PONG\n")) as run:

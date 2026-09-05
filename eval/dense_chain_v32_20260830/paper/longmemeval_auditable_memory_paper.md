@@ -155,7 +155,9 @@ The scaffold is gold-blind and question-ID-independent by construction.
 
 **3.5 Replaceable reader.** The packet, scaffold, and question go to an
 LLM reader. The reader is deliberately replaceable; we measure the chain
-under three readers (§5.3). The headline uses `grok-4.6-high`.
+under three readers (§5.3). The headline pair uses the Claude Opus
+reader over the CLI lane (§5.1); `grok-4.6-high` and GLM-5.3 are the
+secondary readers (§5.3).
 
 ## 4. Measurement methodology
 
