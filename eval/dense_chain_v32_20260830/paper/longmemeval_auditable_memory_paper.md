@@ -1,4 +1,4 @@
-# Auditable Long-Term Memory: A Deterministic Retrieval Chain at 95.4±0.4% on LongMemEval-S
+# Auditable Long-Term Memory: A Deterministic Retrieval Chain Scoring 479/475 of 500 on LongMemEval-S Under the Official Judge
 
 **Christopher J. Chanhnourack** — Centennial Defense Systems (Archivist)
 *Technical report, September 1, 2026 — v1.2*
@@ -216,6 +216,14 @@ no judge re-rolling; no selective reporting (the failed routes are in
 | **v3.4, Claude Opus reader (CLI lane)** | **479/500** | **475/500** |
 | v3.4, grok-4.6 high (raw pair) | 476/500 | 474/500 |
 | v3.4, grok-4.6 xhigh (agentic transport) | 461/500 | 465/500 |
+| v3.4, Claude Opus reader — ex-dossier (8 gold-defect/boundary rows removed, §6.3) | 474/492 | 471/492 |
+| v3.4, grok-4.6 high — ex-dossier (same 8 rows removed) | 475/492 | 474/492 |
+
+Ex-dossier, grok leads Opus 475/474 to 474/471: the Opus margin on the full
+set is carried by gold-idiom reading on dossier rows (§5.2, §6.3), not by
+evidence reading on ordinary rows. Both are reported because the headline is
+the official-judge score and the ex-dossier pair is what the evidence
+supports.
 
 The Opus pair is the headline: pass 1 exceeds the published SOTA (478)
 on the raw score; the pair's both-pass-stable floor is 473 (vs. the grok pair's
@@ -405,6 +413,18 @@ remaining failures are the measured flip-noise rows addressed by §4.4.
 
 ## 7. Limitations
 
+- **No held-out evaluation.** Every component that moves the score — the
+  v3.2→v3.4 operator ladder, the extension-ordering sweeps, the packet
+  budgets, and the 60-row negative-control set — was developed against the
+  same 500 LongMemEval-S questions the headline is measured on, and the
+  gold-defect dossier records per-row inspection of gold answers during
+  development. Nothing in this report is a test-set number in the held-out
+  sense. At a one-to-four-question margin over the published state of the
+  art this is the dominant threat to validity; the mitigations we do have
+  (deterministic stages with negative controls, two independent full passes,
+  every verdict released) bound variance, not overfitting. A held-out run on
+  a disjoint question set is the right next measurement and has not been
+  done.
 - **Margins at this level are not claims of statistical superiority.**
   Wilson 95% intervals: our 479 [93.7%, 97.2%] and 475 [92.7%, 96.6%]
   (grok pair: 476 [93.0%, 96.8%], 474 [92.5%, 96.4%]) vs Chronos's 478
@@ -438,7 +458,7 @@ recorded in the same manifest.
 
 Released with this report at
 <https://github.com/cjchanh/longmemeval-evidence> (MIT). A fresh clone
-verifies 449/449 manifest hashes and re-derives every headline count from
+verifies every `RELEASE_MANIFEST.md` row and re-derives every headline count from
 the released verdicts without an API key. The evidence commits in the
 footer anchor to the source tree the release was exported from. The
 release holds all reader outputs,
@@ -452,8 +472,13 @@ deterministically by `scripts/build_release_manifest.py`): released are
 all reader checkpoints, judge verdicts, control receipts, agreement
 matrices, the dossier, the judge harness with its tests and rubric
 source, and the reader-lane scripts; held are the retrieval, rerank,
-packet-compiler and scaffold-operator sources and the materialized packets
-(benchmark haystack text). The held stages ship as pinned artifacts with
+packet-compiler and scaffold-operator sources. The materialized packets and
+the v3.4 scaffolds the headline pair consumed are released under
+`eval/dense_chain_v32_20260830/packets_materialized/` (gzip; sha256 in its
+`MANIFEST.md`), and `scripts/materialize_packets.py` re-derives every packet
+byte-for-byte from the released allocation and the MIT benchmark data, so
+stage 5 (reader) and the judge are re-runnable by a third party on the exact
+text we read. The held stages ship as pinned artifacts with
 verification receipts (determinism, gold-permutation,
 question-ID-sabotage, budget gates); every judge-side claim is
 re-derivable from the released checkpoints and harness alone. The
