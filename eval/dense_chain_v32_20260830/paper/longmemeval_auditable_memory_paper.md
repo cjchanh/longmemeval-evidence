@@ -427,7 +427,7 @@ remaining failures are the measured flip-noise rows addressed by §4.4.
 
 ## 8. Reproducibility
 
-**Comparator sources are pinned in the release.** The Chronos paper (arXiv
+**The Chronos and Mastra comparator sources are pinned in the release; OMEGA is not.** The Chronos paper (arXiv
 2603.16862, PDF and abstract page) and the Mastra Observational Memory page
 that supply the 478/500 and 94.87% / 468 raw comparator figures are stored
 with SHA-256 digests and a fetch timestamp under
