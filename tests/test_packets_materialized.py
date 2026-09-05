@@ -93,6 +93,13 @@ def load_packet_session_ids() -> dict[str, list[str]]:
     return out
 
 
+def test_packets_manifest_verify_uses_env_var_not_pinned_path():
+    intro = md_section(MANIFEST.read_text(), "Verify the rendering")
+    assert "pinned path" not in intro
+    assert "$LONGMEMEVAL_S_JSON" in intro
+    assert "public dataset JSON" in intro
+
+
 def test_gz_sha256_and_row_counts_match_manifest():
     pins = parse_manifest_files(MANIFEST.read_text())
     assert "materialized_all.jsonl.gz" in pins
@@ -188,7 +195,8 @@ def test_readme_held_does_not_defer_packet_boundary_to_paper():
     packets = md_section(readme, "Packets")
     assert "paper §8" not in held
     assert "packets_materialized/MANIFEST.md" in packets
-    assert "Paper §8 still lists materialized packets as held" in packets
+    assert "Paper §8 still lists materialized packets as held" not in packets
+    assert "still lists materialized packets as held" not in readme
 
 
 def test_packets_manifest_is_a_release_manifest_row():

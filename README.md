@@ -41,9 +41,32 @@ sources. See the manifest's *Held* section.
 The headline pair's compiled packet text is released under
 `eval/dense_chain_v32_20260830/packets_materialized/`. See
 `eval/dense_chain_v32_20260830/packets_materialized/MANIFEST.md`.
-Paper §8 still lists materialized packets as held; this directory is current.
 
 ## Verify
+
+Manifest root (sha256 of `RELEASE_MANIFEST.md`):
+`956f3f97f838b36fcaf4017f83231f3fa52b3c0f0f5c3ca716be07120c807ae2`
+(`eval/dense_chain_v32_20260830/RELEASE_MANIFEST.root`). Anchors:
+`eval/dense_chain_v32_20260830/ANCHORS.md`.
+
+Upstream judge pin: `benchmarks/longmemeval-judge-gate/upstream/evaluate_qa.py`
+sha256 `ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251`
+(`xiaowu0162/LongMemEval` `src/evaluation/evaluate_qa.py`, 2026-09-05, MIT;
+see `benchmarks/longmemeval-judge-gate/upstream/UPSTREAM.md`). Harness rubric
+templates are pinned at `9c9d67fab129…`.
+
+Third-party:
+
+```
+python3 scripts/build_release_manifest.py --check
+python3 -m pytest -q tests
+bash scripts/verify_release_manifest_signature.sh
+shasum -a 256 benchmarks/longmemeval-judge-gate/upstream/evaluate_qa.py
+```
+
+`--check` exits 1 and names mismatching rows if any released file drifted.
+The signature wrapper prints `UNSIGNED` and exits 2 until an operator
+offline key writes `RELEASE_MANIFEST.root.sig`.
 
 Every file against the manifest:
 

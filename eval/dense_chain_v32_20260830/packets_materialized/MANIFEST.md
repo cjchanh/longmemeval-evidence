@@ -27,10 +27,10 @@ Uncompressed sha256 is `sha256` of the gunzipped bytes (`gunzip -c FILE | shasum
 
 ## Verify the rendering
 
-From the repository root, with the public dataset at the pinned path:
+From the repository root, set `$LONGMEMEVAL_S_JSON` to the public dataset JSON:
 
 ```
-python3 scripts/materialize_packets.py --data /Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json --verify eval/dense_chain_v32_20260830/packets_materialized/materialized_all.jsonl.gz
+python3 scripts/materialize_packets.py --data "$LONGMEMEVAL_S_JSON" --verify eval/dense_chain_v32_20260830/packets_materialized/materialized_all.jsonl.gz
 ```
 
 Expected: `rows=500 identical=500 mismatched=0` (exit 0). This does not
@@ -41,6 +41,6 @@ re-run retrieval, rerank, or the compiler.
 ```
 gunzip -c eval/dense_chain_v32_20260830/packets_materialized/materialized_all.jsonl.gz > /tmp/materialized_all.jsonl
 gunzip -c eval/dense_chain_v32_20260830/packets_materialized/facts_all.jsonl.gz > /tmp/facts_all.jsonl
-python3 scripts/run_lme_qa_flash_packets.py --data /Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json --materialized /tmp/materialized_all.jsonl --facts /tmp/facts_all.jsonl --out-dir /tmp/lme_reader_rerun
+python3 scripts/run_lme_qa_flash_packets.py --data "$LONGMEMEVAL_S_JSON" --materialized /tmp/materialized_all.jsonl --facts /tmp/facts_all.jsonl --out-dir /tmp/lme_reader_rerun
 python3 scripts/rescore_gpt4o_judge.py --answerable /tmp/lme_reader_rerun/checkpoint_answerable.jsonl --abs /tmp/lme_reader_rerun/checkpoint_abs.jsonl --out-dir /tmp/lme_reader_rerun_judge
 ```
