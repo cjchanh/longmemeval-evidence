@@ -427,6 +427,15 @@ remaining failures are the measured flip-noise rows addressed by §4.4.
 
 ## 8. Reproducibility
 
+**Comparator sources are pinned in the release.** The Chronos paper (arXiv
+2603.16862, PDF and abstract page) and the Mastra Observational Memory page
+that supply the 478/500 and 94.87% / 468 raw comparator figures are stored
+with SHA-256 digests and a fetch timestamp under
+`eval/dense_chain_v32_20260830/comparators/` (see its `MANIFEST.md`), so the
+comparison rows in §5.1 can be checked against bytes the release carries.
+The OMEGA figure quoted in §5.1 has no pinned source yet; that gap is
+recorded in the same manifest.
+
 Released with this report at
 <https://github.com/cjchanh/longmemeval-evidence> (MIT). A fresh clone
 verifies 449/449 manifest hashes and re-derives every headline count from
