@@ -254,7 +254,7 @@ A public copy of this release is verified when every row below matches `sha256su
 | `eval/dense_chain_v32_20260830/packets_materialized/facts_all.jsonl.gz` | 742968 | `0e0f648dfc7a6e39236b9d1272a89b36931e99cfb2f344270a6ec1e7cdf2ff42` |
 | `eval/dense_chain_v32_20260830/packets_materialized/materialized_all.jsonl.gz` | 22471435 | `304b7be41c1045618cba3d669d1c1062298500c4447872378c7b077134305dd7` |
 | `eval/dense_chain_v32_20260830/paper/ARXIV_SUBMISSION.md` | 2868 | `38493a5ae84e853d92c33e55440080c5c96133a8c58e47a2d246180372fbe6b6` |
-| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md` | 29079 | `9b5a65014534e0b168f1f7a88953531fc07dcf147b7a779c887928b79f0e96e4` |
+| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md` | 30804 | `ae1c652d4c6a16e09dee5afb073f91f4d895334a8c2a48599e65a5fa4f49e590` |
 | `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.pdf` | 91363 | `b58cdea600184d110d47201d531221b53319127ff0eaefb4d23771fe7aee4d88` |
 | `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.tex` | 26790 | `f4e1930144c2b013d710cce29356da17e61caf9dfce01da5371a26eef7158f5b` |
 | `eval/dense_chain_v32_20260830/replay-f3fix_pass1/judge.log` | 743 | `a5adcda1af36d89f211eab93a0515e5b12ee8bbe3a64f1fdadda09cc8577503b` |
