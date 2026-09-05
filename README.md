@@ -5,9 +5,9 @@ Evidence for *Auditable Long-Term Memory: A Deterministic Retrieval Chain at
 technical report v1.2, 2026-09-01). Paper source, Markdown, and PDF are in
 `eval/dense_chain_v32_20260830/paper/`.
 
-This tree is an exact export of the rows in
-`eval/dense_chain_v32_20260830/RELEASE_MANIFEST.md`: 449 files, one SHA-256
-each. Nothing here was edited after export.
+This tree matches the rows in
+`eval/dense_chain_v32_20260830/RELEASE_MANIFEST.md` (see that file's header
+for the file count; one SHA-256 per row).
 
 ## What is here
 
@@ -34,8 +34,14 @@ each. Nothing here was edited after export.
 ## What is held
 
 Retrieval, cross-encoder rerank, packet-compiler, and scaffold-operator
-sources, and the materialized packets (benchmark haystack text). See the
-manifest's *Held* section and paper §8.
+sources. See the manifest's *Held* section.
+
+## Packets
+
+The headline pair's compiled packet text is released under
+`eval/dense_chain_v32_20260830/packets_materialized/`. See
+`eval/dense_chain_v32_20260830/packets_materialized/MANIFEST.md`.
+Paper §8 still lists materialized packets as held; this directory is current.
 
 ## Verify
 
@@ -88,8 +94,9 @@ Tests: `python3 -m pytest -q tests/`.
 ## Dataset
 
 LongMemEval-S, `xiaowu0162/longmemeval-cleaned` (Hugging Face, MIT). Reader
-checkpoints carry question and gold text from the benchmark; the haystack
-sessions are not redistributed here.
+checkpoints carry question and gold text from the benchmark. Rendered
+packet text (`session_blobs` under `packets_materialized/`) is released;
+the raw dataset JSON is not.
 
 ## License
 
