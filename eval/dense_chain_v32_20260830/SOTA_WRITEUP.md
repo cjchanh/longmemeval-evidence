@@ -159,7 +159,7 @@ from the released verdicts — there is no single cross-pair figure.)
   failed its negative control, the second recovered 0 (the residue is
   semantic, not evidential).
 - **Retrieval/packet coverage, measured precisely** — an entity-linking
-  arm (alias mining + query expansion) was built, tested (17/17), and
+  arm (alias mining + query expansion) was built, tested, and
   honestly retired: zero of its added sessions are gold; the presumed
   alias-mismatch losses do not exist at the pool stage. The real coverage
   facts: 19/23 failing rows have gold-complete packets; 3 rows lost a gold

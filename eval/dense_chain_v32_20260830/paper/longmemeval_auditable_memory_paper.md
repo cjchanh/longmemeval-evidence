@@ -18,7 +18,7 @@ a deterministic retrieval chain — dense retrieval, cross-encoder
 reranking, a coverage-first packet compiler, and mechanically extracted
 reasoning scaffolds, all deterministic code validated by negative
 controls — with a replaceable LLM reader confined to the final answering
-step. At margins of a few questions, measurement is the result: the pair's
+step. At margins of a few questions, measurement is the result: the Opus headline pair's
 entire spread traces to eight verdict-flip rows; cross-judge agreement
 is 98%, we observed official-judge verdict flips on byte-identical
 answers, and a maximum-reasoning-effort reader variant scored *lower*
@@ -182,12 +182,14 @@ questions before integration. This rule has teeth: a verifier stage
 (cite-or-revise) that recovered 3 previously-wrong rows was **rejected**
 because the control replay showed it flipped 11 of 59 correct drafts to
 wrong (§6.2). The frozen acceptance rule — zero control flips — blocked
-it from ever touching the headline.
+it from ever touching the headline, while the reader-tier upgrade in this
+report passed that same control with zero flips before its full pair was
+launched.
 
-**4.4 Self-consistency on measured flip rows (frozen rule).** The raw
-v3.4 pair measured 476/474: eight rows flipped verdicts between passes
-(reader or judge nondeterminism), and the entire spread came from them.
-The raw pair's spread came from eight verdict-flip rows, and a tie-break
+**4.4 Self-consistency tie-break (built, then withdrawn).** The raw
+grok pair measured 476/474, and its entire spread came from eight rows
+that flipped verdicts between passes (reader or judge nondeterminism).
+A tie-break
 rule frozen before any additional read (`SC_RULE.json`) gave each flip row
 three more reads with a five-vote majority. **The resulting number was
 WITHDRAWN from any claim.** Internal review showed the construction wrote
@@ -385,8 +387,9 @@ drafts, flipping 11 to wrong while repairing none. It was blocked from
 integration by the pre-committed acceptance rule. A second design
 (draft-blind candidate enumeration + rule-based adjudication) recovered
 0/9: on the residue rows the adjudicator reaches defensible-but-not-gold
-readings. Both failures map the limit of prompting-side repair and
-motivate an evidence-testimony layer as future work.
+readings. Both failures are published; they map the limit of
+prompting-side repair. They motivate an evidence-testimony layer as
+future work.
 
 ### 6.3 Gold-answer defects (1 strict, 7 boundary)
 Documented row-by-row in the released dossier:
@@ -408,16 +411,21 @@ Documented row-by-row in the released dossier:
 - Six further rows are boundary-semantic (defensible readings on both
   sides); we claim nothing for them. One earlier strict candidate was
   *downgraded* to boundary after an independent-reader control showed the
-  intended referent was answerable by premise repair.
+  intended referent was answerable by premise repair. The Chronos authors
+  independently document a defect on question `6d550036` (their §3.5,
+  alongside a judge-variability example on `75f70248`), consistent with our
+  dossier.
 
-### 6.4 Retrieval ceiling (2 rows) and flip noise
+### 6.4 Retrieval ceiling and coverage, measured precisely
 One row's gold never reaches the candidate pool; three rows lost an
 in-pool gold session to packet budget ordering (an ordering sweep showed
 no global setting recovers them without losing more). An entity-linking
 retrieval arm (alias mining + query expansion) was built, tested, and
 retired when measurement showed zero of its added sessions were gold —
 the presumed alias-mismatch losses do not exist in this benchmark. The
-remaining failures are the measured flip-noise rows addressed by §4.4.
+remaining failures are the eight measured flip-noise rows — reader or
+judge nondeterminism on the same substrate, quantified in §5.1 and not
+repaired by any construction in this report.
 
 ## 7. Limitations
 
