@@ -1,0 +1,1349 @@
+{
+ "schema": "cds/dossier-claim-audit/v1",
+ "audited_file": "eval/dense_chain_v32_20260830/GOLD_DEFECT_DOSSIER.md",
+ "audited_file_sha256": "090bb8e52a5173d5d2f077d5f77be76c456b09b9296b964971934cd4bd2fd954",
+ "generated_by": "audit_claims.py (mechanical, no model/provider/network calls)",
+ "counts": {
+  "total": 65,
+  "confirmed": 51,
+  "contradicted": 7,
+  "untestable": 2,
+  "interpretive_not_scored": 5
+ },
+ "claims": [
+  {
+   "id": "C1",
+   "qid": null,
+   "verbatim": "Judge: gpt-4o-2024-08-06 (paper rubric, api transport)",
+   "type": "JUDGE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "judge_model": "gpt-4o-2024-08-06",
+    "transport": "api",
+    "prompt_template_version": "longmemeval-official-judge-v1",
+    "source": "full-v34_pass1/judge_gpt4o/rescore_summary.json"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C2",
+   "qid": null,
+   "verbatim": "Reader: cursor-grok-4.6-high",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "full-v34_pass1.reader_model": "cursor-grok-4.6-high",
+    "full-v34_pass2.reader_model": "cursor-grok-4.6-high",
+    "note": "the release HEADLINE pair is Opus: full-v34-opus_pass{1,2}.reader_model=opus (packets_materialized/MANIFEST.md calls those 'both headline Opus passes')"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C3",
+   "qid": null,
+   "verbatim": "Chain: v3.4 (commit 04eb64763)",
+   "type": "READER",
+   "status": "UNTESTABLE",
+   "evidence": {
+    "why": "commit 04eb64763 is not an object in this release repository (git cat-file -t -> 'Not a valid object name'); it refers to a source repo not published here"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C4",
+   "qid": null,
+   "verbatim": "Pair result these rows are scored inside: 476/474 per 500",
+   "type": "ARITHMETIC",
+   "status": "CONFIRMED",
+   "evidence": {
+    "recomputed_full-v34_pass1": 476,
+    "recomputed_full-v34_pass2": 474,
+    "formula": "round(llm_judge_accuracy*470) + abstention.llm_judge_refusal_recognized"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C5",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "gpt4_731e37d7 (multi-session)",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "question_type": "multi-session"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C6",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "Q: \"How much total money did I spend on attending workshops in the last four months?\"",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "checkpoint_question": "How much total money did I spend on attending workshops in the last four months?"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C7",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "Gold: **$720**",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "gold": "$720"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C8",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "(= $200 + $20 + $500)",
+   "type": "ARITHMETIC",
+   "status": "CONFIRMED",
+   "evidence": {
+    "recomputed": 720
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C9",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "$200 writing workshop (November) \u2014 user-stated, in window.",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "n_occurrences": 2,
+    "hits": [
+     {
+      "session_index": 0,
+      "session_id": "answer_826d51da_4",
+      "session_date": "date: 2023/02/26 (Sun) 13:21",
+      "role": "user:",
+      "offset": 210,
+      "match": "paid $200 to attend",
+      "context": "er at a literary festival. It was a two-day workshop, and I paid $200 to attend. The instructor was a published author, and I got some grea"
+     },
+     {
+      "session_index": 0,
+      "session_id": "answer_826d51da_4",
+      "session_date": "date: 2023/02/26 (Sun) 13:21",
+      "role": "user:",
+      "offset": 6034,
+      "match": "paid $200 to attend",
+      "context": "ch was a two-day writing workshop at a literary festival. I paid $200 to attend, and it was really worth it. Do you know of any websites or"
+     }
+    ],
+    "november_stated": true
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C10",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "$20 mindfulness workshop (Dec 12) \u2014 user-stated, in window.",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "n_occurrences": 1,
+    "hits": [
+     {
+      "session_index": 2,
+      "session_id": "answer_826d51da_3",
+      "session_date": "date: 2023/02/26 (Sun) 11:52",
+      "role": "user:",
+      "offset": 11445,
+      "match": "paid $20 to attend",
+      "context": "o near my home on December 12, and it was really helpful. I paid $20 to attend, and I got to take home a workbook with exercises and tips."
+     }
+    ],
+    "dec12_stated": true
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C11",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "**No $500 attached to any workshop exists anywhere in the evidence.**",
+   "type": "PACKET_NEGATIVE",
+   "status": "CONTRADICTED",
+   "evidence": {
+    "total_$500_occurrences": 9,
+    "paid_500_to_attend_occurrences": 1,
+    "hits": [
+     {
+      "session_index": 8,
+      "session_id": "answer_826d51da_2",
+      "session_date": "date: 2023/02/26 (Sun) 13:37",
+      "role": "user:",
+      "offset": 363,
+      "match": "I paid $500 to attend",
+      "context": "erstanding the importance of tracking my online engagement. I paid $500 to attend, and it was worth it! | assistant: That's great to hear that "
+     }
+    ],
+    "record_content_sha256": "5fb5690f4fc06ba5c819875ad3a37fbbf91bbff4f3a059e0c8b720446dc1cf06"
+   },
+   "minimal_correction": "Delete the sentence. The packet contains one user-stated workshop fee: session date: 2023/02/26 (Sun) 13:37, user turn \u2014 \"I just attended a digital marketing workshop at the city convention center on March 15-16 ... I paid $500 to attend, and it was worth it!\". The dispute is window membership, not existence.",
+   "class_change": "A -> D (or E); Class A requires 'evidence lacks a required fact' and the fact is present"
+  },
+  {
+   "id": "C12",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "Every \"$500\" occurrence is website cost-filter boilerplate (\"under $100, $100-$500\u2026\") or an immigration-form fee in an unrelated session.",
+   "type": "PACKET_NEGATIVE",
+   "status": "CONTRADICTED",
+   "evidence": {
+    "total": 9,
+    "cost_filter_boilerplate": 7,
+    "immigration_form_fee": 1,
+    "user_stated_workshop_fee": 1,
+    "unclassified_by_dossier": [
+     "erstanding the importance of tracking my online engagement. I paid $500 to attend, and it was worth it! | assistant: That's great to hear that "
+    ]
+   },
+   "minimal_correction": "Replace with: of 9 '$500' occurrences, 7 are cost-filter boilerplate, 1 is an immigration-form fee, and 1 is the user-stated digital-marketing workshop fee.",
+   "class_change": null
+  },
+  {
+   "id": "C13",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "The only dated mention of the digital-marketing workshop is internally impossible: a session dated **2023/02/26** says \"I just attended a digital marketing workshop \u2026 **on March 15-16**\"",
+   "type": "PACKET_POSITIVE",
+   "status": "CONTRADICTED",
+   "evidence": {
+    "n_dated_mentions": 2,
+    "mentions": [
+     {
+      "session_date": "date: 2023/02/26 (Sun) 11:52",
+      "role": "user:",
+      "context": "st photography. For instance, I recently attended a two-day digital marketing workshop at the city convention center on March 15-16. | assistant: That's great to hear that you're interested in "
+     },
+     {
+      "session_date": "date: 2023/02/26 (Sun) 13:37",
+      "role": "user:",
+      "context": "s for social media analytics. By the way, I just attended a digital marketing workshop at the city convention center on March 15-16, and it was really helpful in understanding the importance "
+     }
+    ]
+   },
+   "minimal_correction": "'The only dated mention' -> 'Both dated mentions'. Two user turns carry the March 15-16 date (sessions 2023/02/26 11:52 and 2023/02/26 13:37); the second is the one that also states the $500.",
+   "class_change": null
+  },
+  {
+   "id": "C14",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "a past-tense attendance of a future date",
+   "type": "ARITHMETIC",
+   "status": "CONFIRMED",
+   "evidence": {
+    "question_date": "2023/02/26 (Sun) 23:35",
+    "stated_workshop_date": "March 15-16",
+    "note": "Mar 15-16 is after the 2023/02/26 question date; the source datum is internally inconsistent."
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C15",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "Evidence-faithful answer: $220.",
+   "type": "INTERPRETIVE",
+   "status": "NOT_SCORED",
+   "evidence": {
+    "note": "reading of an internally inconsistent source datum; recorded, not scored"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C16",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "Both official passes answered $220 \u2192 scored 0.",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "official_pair(grok, full-v34_pass{1,2})": {
+     "full-v34_pass1": {
+      "answer": "$220",
+      "judge_correct": false
+     },
+     "full-v34_pass2": {
+      "answer": "$220",
+      "judge_correct": false
+     }
+    },
+    "headline_pair(opus, full-v34-opus_pass{1,2})": {
+     "full-v34-opus_pass1": {
+      "answer": "$720",
+      "judge_correct": true
+     },
+     "full-v34-opus_pass2": {
+      "answer": "$720",
+      "judge_correct": true
+     }
+    },
+    "note": "true for the grok pair the dossier names. The release HEADLINE pair answers $720 and is scored correct in BOTH passes, citing the packet's own user-stated $500."
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C17a",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "a weaker reader (gemini-3.7-flash probe) ... \"$500 Digital Marketing Workshop (Recent)\", summed $720, and was scored CORRECT",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "reader_model": "opencode/gemini-3.7-flash",
+    "answer": "$720",
+    "judge_correct": true,
+    "enumeration_line": "5. **Digital Marketing Workshop** (Recent): $500"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C17b",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "HALLUCINATED a \"$500 Digital Marketing Workshop (Recent)\"",
+   "type": "PACKET_NEGATIVE",
+   "status": "CONTRADICTED",
+   "evidence": {
+    "why": "the $500 digital-marketing workshop fee is user-stated in the packet (see C11); citing it is retrieval, not fabrication. The gemini row's only defect is window membership."
+   },
+   "minimal_correction": "Drop 'HALLUCINATED'. The control datum shows two readers differing on whether the March 15-16 workshop is inside a four-month window ending 2023/02/26 \u2014 not fabrication vs fidelity.",
+   "class_change": null
+  },
+  {
+   "id": "C18",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "Packet facts (exhaustive dollar-amount inventory performed)",
+   "type": "INTERPRETIVE",
+   "status": "NOT_SCORED",
+   "evidence": {
+    "note": "method assertion; its output is falsified by C11/C12 but the assertion itself is not scored"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C19",
+   "qid": "gpt4_731e37d7",
+   "verbatim": "VERIFIED IN FULL",
+   "type": "INTERPRETIVE",
+   "status": "NOT_SCORED",
+   "evidence": {},
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C20",
+   "qid": "370a8ff4",
+   "verbatim": "370a8ff4 (temporal-reasoning)",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "question_type": "temporal-reasoning"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C21",
+   "qid": "370a8ff4",
+   "verbatim": "Q: \"How many weeks had passed since I recovered from the flu when I went on my 10th jog outdoors?\"",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "checkpoint_question": "How many weeks had passed since I recovered from the flu when I went on my 10th jog outdoors?"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C22",
+   "qid": "370a8ff4",
+   "verbatim": "Gold: **15**",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "gold": "15"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C23",
+   "qid": "370a8ff4",
+   "verbatim": "recovered 2023/01/19 (\"today\")",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "hits": [
+     {
+      "session_index": 0,
+      "session_id": "answer_61d1be50_1",
+      "session_date": "date: 2023/01/19 (Thu) 10:47",
+      "role": "user:",
+      "offset": 78,
+      "match": "recovered from the flu today",
+      "context": "Thu) 10:47 | user: I'm feeling much better now that I finally recovered from the flu today, and I was thinking about getting back into my exercise rou"
+     }
+    ],
+    "other_flu_recovery_dates": 1
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C24",
+   "qid": "370a8ff4",
+   "verbatim": "10th outdoor jog 2023/04/10 (\"today\")",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "hits": [
+     {
+      "session_index": 1,
+      "session_id": "answer_61d1be50_2",
+      "session_date": "date: 2023/04/10 (Mon) 20:58",
+      "role": "user:",
+      "offset": 230,
+      "match": "10th jog outdoors today",
+      "context": "ming and beach volleyball? Oh, and by the way, I went on my 10th jog outdoors today, and it feels great to be back in shape after a harsh winte"
+     }
+    ],
+    "all_Nth_jog_mentions": [
+     "10th jog",
+     "10th jog"
+    ]
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C25",
+   "qid": "370a8ff4",
+   "verbatim": "Packet dates (user-stated, both passes agree)",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "full-v34_pass1": {
+     "cites_2023/01/19": true,
+     "cites_2023/04/10": true
+    },
+    "full-v34_pass2": {
+     "cites_2023/01/19": true,
+     "cites_2023/04/10": true
+    }
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C26",
+   "qid": "370a8ff4",
+   "verbatim": "Elapsed: 81 days = **11 weeks 4 days**",
+   "type": "ARITHMETIC",
+   "status": "CONFIRMED",
+   "evidence": {
+    "recomputed_days": 81,
+    "weeks": 11,
+    "remainder_days": 4
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C27",
+   "qid": "370a8ff4",
+   "verbatim": "15 weeks = 105 days would place the jog on May 4",
+   "type": "ARITHMETIC",
+   "status": "CONFIRMED",
+   "evidence": {
+    "recomputed": "2023-05-04",
+    "days_in_15_weeks": 105
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C28",
+   "qid": "370a8ff4",
+   "verbatim": "Evidence-faithful answer: 11. Both passes: 11 \u2192 0.",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "official_pair": {
+     "full-v34_pass1": {
+      "answer": "11 weeks",
+      "judge_correct": false
+     },
+     "full-v34_pass2": {
+      "answer": "11 weeks",
+      "judge_correct": false
+     }
+    },
+    "headline_pair": {
+     "full-v34-opus_pass1": {
+      "answer": "About 11 weeks (81 days)",
+      "judge_correct": false
+     },
+     "full-v34-opus_pass2": {
+      "answer": "About 11 weeks",
+      "judge_correct": false
+     }
+    }
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C29",
+   "qid": "370a8ff4",
+   "verbatim": "No reading of the two dated statements yields 15 weeks",
+   "type": "ARITHMETIC",
+   "status": "CONFIRMED",
+   "evidence": {
+    "only_flu_recovery_date": "2023/01/19",
+    "only_10th_jog_date": "2023/04/10",
+    "delta_days": 81,
+    "15_weeks_would_need": "2022-12-26 recovery or 2023-05-04 jog"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C30",
+   "qid": null,
+   "verbatim": "(none surviving review \u2014 71017277 was downgraded to Class D ...)",
+   "type": "INTERPRETIVE",
+   "status": "NOT_SCORED",
+   "evidence": {},
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C31",
+   "qid": "71017277",
+   "verbatim": "Q: \"I received a piece of jewelry last Saturday from whom?\" Gold: my aunt.",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "question": "I received a piece of jewelry last Saturday from whom?",
+    "gold": "my aunt"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C32",
+   "qid": "71017277",
+   "verbatim": "the aunt gave a **crystal chandelier** that Saturday",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "hits": [
+     {
+      "session_index": 2,
+      "session_id": "answer_0b4a8adc_1",
+      "session_date": "date: 2023/03/04 (Sat) 16:45",
+      "role": "user:",
+      "offset": 263,
+      "match": "crystal chandelier from my aunt today",
+      "context": "m taking good care of it. By the way, I also got a stunning crystal chandelier from my aunt today, which used to belong to my great-grandmother - it's got in"
+     }
+    ]
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C33",
+   "qid": "71017277",
+   "verbatim": "no jewelry gift or giver exists in the sessions",
+   "type": "PACKET_NEGATIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "total_jewelry_mentions": 11,
+    "gift_shaped_mentions": 0,
+    "gift_shaped_contexts": [],
+    "categories": "Indian-wedding jewelry discussion, wire-wrapped jewelry-making tools the user already owned, a jewelry cleaning cloth (chandelier care), shopping-tip 'statement jewelry'"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C34",
+   "qid": "71017277",
+   "verbatim": "Grok (both passes) refused the false premise (\"aunt gave a chandelier, not jewelry\") \u2192 0",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "full-v34_pass1": {
+     "answer": "not available",
+     "judge_correct": false
+    },
+    "full-v34_pass2": {
+     "answer": "not in the sessions (aunt gave a chandelier, not jewelry)",
+     "judge_correct": false
+    },
+    "quoted_phrase_verbatim_in": [
+     "full-v34_pass2"
+    ],
+    "note": "the quoted phrase is verbatim in pass 2 only; pass 1 answers 'not available' with the same chandelier reasoning in the body"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C35",
+   "qid": "71017277",
+   "verbatim": "The Sol reader answered ... with \"your aunt\" and was scored correct",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "sol_answer": "Your aunt.",
+    "judge_correct": true,
+    "reader_model": "openai/gpt-5.6-sol"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C36",
+   "qid": "gpt4_7fce9456",
+   "verbatim": "Gold: 4 (excludes the Brookside townhouse itself)",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "gold": "I viewed four properties before making an offer on the townhouse in the Brookside neighborhood. The reasons I didn't mak..."
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C37",
+   "qid": "gpt4_7fce9456",
+   "verbatim": "Grok: 5",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "full-v34_pass1": {
+     "answer": "5",
+     "judge_correct": false
+    },
+    "full-v34_pass2": {
+     "answer": "5",
+     "judge_correct": false
+    }
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C38",
+   "qid": "gpt4_7fce9456",
+   "verbatim": "viewing dated Feb 22, offer Feb 25",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "feb22_view_hits": 1,
+    "feb25_offer_hits": 2,
+    "sample": [
+     {
+      "session_index": 0,
+      "session_id": "answer_a679a86a_5",
+      "session_date": "date: 2023/03/08 (Wed) 09:32",
+      "role": "user:",
+      "offset": 11722,
+      "match": "saw the 3-bedroom townhouse in the Brookside neighborhood on February 22nd",
+      "context": "it affects mortgage rates? | user: I forgot to mention that I saw the 3-bedroom townhouse in the Brookside neighborhood on February 22nd. I put in an offer on February 25th, and after some negotia"
+     },
+     {
+      "session_index": 0,
+      "session_id": "answer_a679a86a_5",
+      "session_date": "date: 2023/03/08 (Wed) 09:32",
+      "role": "user:",
+      "offset": 137,
+      "match": "offer on a 3-bedroom townhouse in the Brookside neighborhood on February 25th",
+      "context": "nd I need help with some calculations. I recently put in an offer on a 3-bedroom townhouse in the Brookside neighborhood on February 25th, and after some negotiations, we agreed on a price of $340,"
+     }
+    ]
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C39",
+   "qid": "07741c45",
+   "verbatim": "07741c45 \u2014 plan vs completed action (knowledge-update)",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "question_type": "knowledge-update"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C40",
+   "qid": "07741c45",
+   "verbatim": "Gold: \"in a shoe rack in my closet\"",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "gold": "in a shoe rack in my closet"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C41",
+   "qid": "07741c45",
+   "verbatim": "Evidence: May 25 \"storing them under the bed\"",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "may25_hits": 1,
+    "sample": [
+     {
+      "session_index": 1,
+      "session_id": "answer_7e9ad7b4_1",
+      "session_date": "date: 2023/05/25 (Thu) 10:04",
+      "role": "assistant:",
+      "offset": 2692,
+      "match": "under the bed",
+      "context": "d Merrell are both excellent brands for sandals. |  | And oh no, sneaker storage can be a challenge! Keeping them under the bed can indeed cause them to smell, especially if they're made of materials that absorb moisture. Here are some t"
+     }
+    ],
+    "all_under_the_bed_hits": 1
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C42",
+   "qid": "07741c45",
+   "verbatim": "May 29 \"looking forward to\" the shoe rack while organizing the closet that weekend",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "hits": [
+     {
+      "session_index": 0,
+      "session_id": "answer_7e9ad7b4_2",
+      "session_date": "date: 2023/05/29 (Mon) 15:01",
+      "role": "user:",
+      "offset": 244,
+      "match": "looking forward to get rid of some of my old sneakers in a shoe rack",
+      "context": "d brands or stores that offer durable sandals? By the way, I need to organize my closet this weekend, and I'm looking forward to get rid of some of my old sneakers in a shoe rack in it, they're currently taking up space. | assistant: New sandals with quality straps sound like a great inves"
+     }
+    ]
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C43",
+   "qid": "07741c45",
+   "verbatim": "the reader (both passes) holds that a plan is not a location change",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "full-v34_pass1": {
+     "answer": "under the bed",
+     "judge_correct": false
+    },
+    "full-v34_pass2": {
+     "answer": "under my bed",
+     "judge_correct": false
+    }
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C44",
+   "qid": "gpt4_2f8be40d",
+   "verbatim": "Gold: 3 (Rachel+Mike, Emily+Sarah, Jen+Tom)",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "gold": "I attended three weddings. The couples were Rachel and Mike, Emily and Sarah, and Jen and Tom."
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C45",
+   "qid": "gpt4_2f8be40d",
+   "verbatim": "Grok: 4, adding the user's sister's wedding (maid of honor, past tense)",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "full-v34_pass1": {
+     "answer": "4",
+     "mentions_sister": true,
+     "judge_correct": false
+    },
+    "full-v34_pass2": {
+     "answer": "4",
+     "mentions_sister": true,
+     "judge_correct": false
+    }
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C46",
+   "qid": "gpt4_2f8be40d",
+   "verbatim": "Whether the sister's wedding falls in \"this year\" is not pinned by a date in the packet",
+   "type": "PACKET_NEGATIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "sisters_wedding_mentions": 2,
+    "mentions_with_a_month_or_year_token_within_140_chars": 0,
+    "contexts": [],
+    "question_date": "2023/10/15 (Sun) 23:47"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C47",
+   "qid": "gpt4_4929293b",
+   "verbatim": "Gold: \"my cousin's wedding\"",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "gold": "my cousin's wedding"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C48",
+   "qid": "gpt4_4929293b",
+   "verbatim": "The wedding is stated \"recently\" (as of June 15) but never dated",
+   "type": "PACKET_NEGATIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "cousins_wedding_mentions": 2,
+    "on_2023/06/15": 2,
+    "explicitly_dated_mentions": 0,
+    "sample": [
+     {
+      "session_date": "date: 2023/06/15 (Thu) 10:02",
+      "role": "user:",
+      "context": "t different venues and imagining how I can make the space feel intimate and special. I recently walked down the aisle as a bridesmaid at my cousin's wedding, and it got me thinking about how I want to create a similar atmosphere at my own wedding. | [... 14 lines elided ...] | user: Yeah, being a br"
+     },
+     {
+      "session_date": "date: 2023/06/15 (Thu) 10:02",
+      "role": "user:",
+      "context": " thinking about how I want to create a similar atmosphere at my own wedding. | [... 14 lines elided ...] | user: Yeah, being a bridesmaid at my cousin's wedding really made me think about the little details that can make a big difference. Like, I loved how she had a special song played during the ce"
+     }
+    ]
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C49",
+   "qid": "gpt4_4929293b",
+   "verbatim": "the niece's kindergarten graduation is pinned to June 10 with the question asked June 22",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "june10_pin_hits": 1,
+    "sample": [
+     {
+      "session_index": 10,
+      "session_id": "4090cbea",
+      "session_date": "date: 2023/04/15 (Sat) 05:17",
+      "role": "user:",
+      "offset": 1526,
+      "match": "it was on June 10th",
+      "context": "he tips, too. By the way, I was thinking about my niece's kindergarten graduation ceremony again, and I remembered that it was on June 10th. It feels like just yesterday I was holding her in my arms at the hospital. Time really flies! | [... 11 lines elided ..."
+     }
+    ],
+    "question_date": "2023/06/22 (Thu) 18:33"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C50",
+   "qid": "88432d0a",
+   "verbatim": "Gold: 4",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "gold": "4"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C51",
+   "qid": "88432d0a",
+   "verbatim": "Grok both passes: 5 distinct completed bakes enumerated with restatements merged",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "full-v34_pass1": {
+     "answer": "5",
+     "tail": "nd the strawberry tart (planned only); jam (not baked); the blog-post cookies (writing, not a bake they did). |  | Answer: 5"
+    },
+    "full-v34_pass2": {
+     "answer": "5",
+     "tail": "stant steps only; you never said you baked the pan. |  | Five distinct completed bakes, with restatements merged. |  | Answer: 5"
+    }
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C52",
+   "qid": "88432d0a",
+   "verbatim": "(flip row, p1 correct/p2 wrong)",
+   "type": "JUDGE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "official_pair_verdicts": {
+     "full-v34_pass1": true,
+     "full-v34_pass2": false
+    },
+    "headline_pair_verdicts": {
+     "full-v34-opus_pass1": true,
+     "full-v34-opus_pass2": false
+    }
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C53",
+   "qid": "9a707b81",
+   "verbatim": "current passes answer 21 days and are accepted (gold's own text allows 21 or 22)",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "gold": "21 days. 22 days (including the last day) is also acceptable.",
+    "passes": {
+     "full-v34_pass1": {
+      "answer": "21 days",
+      "judge_correct": true
+     },
+     "full-v34_pass2": {
+      "answer": "21 days",
+      "judge_correct": true
+     }
+    }
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C54",
+   "qid": "28dc39ac",
+   "verbatim": "current passes compute 140 = gold",
+   "type": "READER",
+   "status": "CONFIRMED",
+   "evidence": {
+    "gold": "140 hours",
+    "passes": {
+     "full-v34_pass1": {
+      "answer": "140 hours",
+      "judge_correct": true
+     },
+     "full-v34_pass2": {
+      "answer": "140 hours",
+      "judge_correct": true
+     }
+    }
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C55",
+   "qid": null,
+   "verbatim": "Strict defects (A+B): **2 rows**, wrong in BOTH official passes.",
+   "type": "JUDGE",
+   "status": "CONTRADICTED",
+   "evidence": {
+    "official_pair_verdicts": {
+     "gpt4_731e37d7": [
+      false,
+      false
+     ],
+     "370a8ff4": [
+      false,
+      false
+     ]
+    },
+    "both_wrong_in_official_pair": true,
+    "why_contradicted": "the 'wrong in both passes' half is CONFIRMED for the grok pair, but the 'strict defects (A+B): 2 rows' half fails: gpt4_731e37d7 is not Class A (C11/C12), so only 1 strict defect survives.",
+    "headline_pair_verdicts": {
+     "gpt4_731e37d7": [
+      true,
+      true
+     ],
+     "370a8ff4": [
+      false,
+      false
+     ]
+    }
+   },
+   "minimal_correction": "'Strict defects (B): 1 row, wrong in both official passes.'",
+   "class_change": null
+  },
+  {
+   "id": "C56",
+   "qid": null,
+   "verbatim": "Under adjudicated gold the pair reads **478/476** instead of 476/474.",
+   "type": "ARITHMETIC",
+   "status": "CONTRADICTED",
+   "evidence": {
+    "arithmetic_given_2_defects": [
+     478,
+     476
+    ],
+    "arithmetic_given_1_defect": [
+     477,
+     475
+    ],
+    "why": "the arithmetic is right; the premise (2 strict defects) is not"
+   },
+   "minimal_correction": "'Under adjudicated gold the pair reads 477/475 instead of 476/474.'",
+   "class_change": null
+  },
+  {
+   "id": "C57",
+   "qid": null,
+   "verbatim": "Boundary rows (D): 6 rows",
+   "type": "ARITHMETIC",
+   "status": "CONFIRMED",
+   "evidence": {
+    "counted_D_headings": 6,
+    "rows": [
+     "71017277",
+     "gpt4_7fce9456",
+     "07741c45",
+     "gpt4_2f8be40d",
+     "gpt4_4929293b",
+     "88432d0a"
+    ],
+    "note": "count is right today; it becomes 7 if gpt4_731e37d7 is re-classed D"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C58",
+   "qid": "88432d0a_abs",
+   "verbatim": "byte-identical-answer verdict flips (88432d0a_abs \"0\")",
+   "type": "JUDGE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "answers": {
+     "full_pass1": "0",
+     "full_pass2": "0"
+    },
+    "gpt4o_verdicts": {
+     "full_pass1": true,
+     "full_pass2": true
+    },
+    "glm_verdicts": {
+     "full_pass1": false,
+     "full_pass2": false
+    },
+    "precision_note": "this is a CROSS-JUDGE disagreement on frozen text (GPT-4o Yes / GLM No). The release's WITHIN-judge byte-identical flip exhibits are 7024f17c and 031748ae_abs in full-v34-opus_pass1 (paper \u00a78). No two lanes' 88432d0a_abs response texts are byte-identical to each other."
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C59",
+   "qid": null,
+   "verbatim": "judge-agreement matrix 98.2/97.8% GLM-vs-GPT-4o",
+   "type": "JUDGE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "full_pass1_pct": 98.2,
+    "full_pass2_pct": 97.8,
+    "source": "eval/dense_chain_v32_20260830/judge_agreement_matrix.json",
+    "note": "these percentages belong to the full_pass{1,2} lanes, not to the full-v34_pass{1,2} pair the dossier scores in; the v34-opus pair's matrix is 98.6/98.6"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C60",
+   "qid": null,
+   "verbatim": "the Class-A control datum where fabrication scored above fidelity",
+   "type": "INTERPRETIVE",
+   "status": "NOT_SCORED",
+   "evidence": {
+    "note": "characterization; its factual core is C17a/C17b"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C61",
+   "qid": null,
+   "verbatim": "Packets: eval/dense_chain_v32_20260830/materialized.jsonl",
+   "type": "PACKET_POSITIVE",
+   "status": "CONTRADICTED",
+   "evidence": {
+    "path_exists": false,
+    "released_packets": "eval/dense_chain_v32_20260830/packets_materialized/materialized_all.jsonl.gz (500 rows)"
+   },
+   "minimal_correction": "Point at packets_materialized/materialized_all.jsonl.gz (+ facts_all.jsonl.gz, MANIFEST.md).",
+   "class_change": null
+  },
+  {
+   "id": "C62",
+   "qid": null,
+   "verbatim": "Official pair answers/verdicts: full-v34_pass{1,2}/{reader,judge_gpt4o}/",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "all_four_dirs_present": true
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C63",
+   "qid": null,
+   "verbatim": "Judge: scripts/rescore_gpt4o_judge.py, frozen paper rubric",
+   "type": "PACKET_POSITIVE",
+   "status": "CONFIRMED",
+   "evidence": {
+    "path_exists": true,
+    "prompt_templates_sha256": "9c9d67fab129acd497461a2f5589d57120d952744d9f7e04fbfff771b3860d62"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  },
+  {
+   "id": "C64",
+   "qid": null,
+   "verbatim": "~$1.28/500 rows",
+   "type": "ARITHMETIC",
+   "status": "UNTESTABLE",
+   "evidence": {
+    "why": "no cost receipt is released; the figure is asserted identically in SOTA_WRITEUP.md:72,162 and the paper:31,98,468 but no artifact records token counts or billed spend"
+   },
+   "minimal_correction": null,
+   "class_change": null
+  }
+ ],
+ "downstream_repetition": [
+  {
+   "claim": "C55",
+   "file": "SOTA_WRITEUP.md",
+   "line": 50,
+   "text": "- With the two strict gold defects adjudicated (see dossier), the raw pair"
+  },
+  {
+   "claim": "C56",
+   "file": "SOTA_WRITEUP.md",
+   "line": 51,
+   "text": "reads 478/476. We report this as an adjudication scenario, not a score."
+  },
+  {
+   "claim": "C11/C17b",
+   "file": "SOTA_WRITEUP.md",
+   "line": 132,
+   "text": "- **2 strict gold defects** \u2014 gold unreachable without fabrication ($720"
+  },
+  {
+   "claim": "C55",
+   "file": "SOTA_WRITEUP.md",
+   "line": 132,
+   "text": "- **2 strict gold defects** \u2014 gold unreachable without fabrication ($720"
+  },
+  {
+   "claim": "C11/C12",
+   "file": "SOTA_WRITEUP.md",
+   "line": 133,
+   "text": "requiring a nonexistent $500 and an impossible date) and a gold"
+  },
+  {
+   "claim": "C11/C12",
+   "file": "SOTA_WRITEUP.md",
+   "line": 137,
+   "text": "reader that HALLUCINATED the missing $500 was scored correct \u2014 the judge"
+  },
+  {
+   "claim": "C17b",
+   "file": "SOTA_WRITEUP.md",
+   "line": 137,
+   "text": "reader that HALLUCINATED the missing $500 was scored correct \u2014 the judge"
+  },
+  {
+   "claim": "C55",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 239,
+   "text": "text, \u00a78 \u2014 so even \"one above\" is a judge roll). The two gold-defect rows from the"
+  },
+  {
+   "claim": "C11/C12",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 241,
+   "text": "the fabrication the dossier documents (the reader supplies the $500 no"
+  },
+  {
+   "claim": "C11/C17b",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 241,
+   "text": "the fabrication the dossier documents (the reader supplies the $500 no"
+  },
+  {
+   "claim": "C11/C17b",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 244,
+   "text": "pair reads 478/474 (ex-fabrication) to 480/476 (restored); the tie with"
+  },
+  {
+   "claim": "C56",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 244,
+   "text": "pair reads 478/474 (ex-fabrication) to 480/476 (restored); the tie with"
+  },
+  {
+   "claim": "C56",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 272,
+   "text": "the gold-defect adjudication scenario (\u00a76.3) the pair reads 477/477; we"
+  },
+  {
+   "claim": "C55",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 366,
+   "text": "The partition: 4 reader-cognition + 8 gold-defect (2 strict, 6"
+  },
+  {
+   "claim": "C55",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 388,
+   "text": "### 6.3 Gold-answer defects (2 strict, 6 boundary)"
+  },
+  {
+   "claim": "C11/C12",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 390,
+   "text": "- **Strict A** \u2014 gold requires a $500 expense that appears nowhere in the"
+  },
+  {
+   "claim": "C11/C12",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 392,
+   "text": "past tense. A weaker reader that *hallucinated* the missing $500 was"
+  },
+  {
+   "claim": "C17b",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 392,
+   "text": "past tense. A weaker reader that *hallucinated* the missing $500 was"
+  },
+  {
+   "claim": "C11/C17b",
+   "file": "paper/longmemeval_auditable_memory_paper.md",
+   "line": 397,
+   "text": "fabrication point inside 479/475 (\u00a75.1)."
+  },
+  {
+   "claim": "C55",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 215,
+   "text": "``one above'' is a judge roll). The two gold-defect rows from the dossier (\\S6.3) sit inside this"
+  },
+  {
+   "claim": "C11/C17b",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 216,
+   "text": "pair as well: one is scored correct via the fabrication the dossier"
+  },
+  {
+   "claim": "C11/C12",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 217,
+   "text": "documents (the reader supplies the \\$500 no session contains), one is lost"
+  },
+  {
+   "claim": "C56",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 219,
+   "text": "net zero per pass. Under adjudication the pair reads 478/474"
+  },
+  {
+   "claim": "C11/C17b",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 220,
+   "text": "(ex-fabrication) to 480/476 (restored); the tie with the published state"
+  },
+  {
+   "claim": "C56",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 220,
+   "text": "(ex-fabrication) to 480/476 (restored); the tie with the published state"
+  },
+  {
+   "claim": "C56",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 241,
+   "text": "adjudication scenario (\\S6.3) the prior pair reads 478/476; we report that as a"
+  },
+  {
+   "claim": "C55",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 349,
+   "text": "\\textbf{6.3 Gold-answer defects (2 strict, 6 boundary).} Documented row-by-row"
+  },
+  {
+   "claim": "C11/C12",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 352,
+   "text": "in the past tense; a weaker reader that \\emph{hallucinated} the missing \\$500"
+  },
+  {
+   "claim": "C17b",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 352,
+   "text": "in the past tense; a weaker reader that \\emph{hallucinated} the missing \\$500"
+  },
+  {
+   "claim": "C11/C12",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 355,
+   "text": "contrast, supplies the \\$500 and is scored correct on both passes --- the"
+  },
+  {
+   "claim": "C11/C17b",
+   "file": "paper/longmemeval_auditable_memory_paper.tex",
+   "line": 356,
+   "text": "disclosed fabrication point inside 479/475 (\\S5.1). Strict B: gold says ``15 weeks''"
+  },
+  {
+   "claim": "C55",
+   "file": "paper/ARXIV_SUBMISSION.md",
+   "line": 18,
+   "text": "We report 479/500 and 475/500 across two independent full passes on LongMemEval-S (Claude Opus reader; CLI alias resolving to claude-opus-5, \u00a75.3) under the benchmark's official GPT-4o judge, against a published state of the art of 478/500 (95.60%, Chronos High, PwC, arXiv 2603.16862) \u2014 one pass above it, one below: a statistical tie whose spread sits inside the instrument's measured noise band. A second, grok-4.6 reader configuration measured 476/474 on the identical substrate. The system is a deterministic retrieval chain \u2014 dense retrieval, cross-encoder reranking, a coverage-first packet compiler, and mechanically extracted reasoning scaffolds, all deterministic code validated by negative controls \u2014 with a replaceable LLM reader confined to the final answering step. At margins of a few questions, measurement is the result: the pair's entire spread traced to eight verdict-flip rows; cross-judge agreement is 98%; we observed official-judge verdict flips on byte-identical answers; and a maximum-reasoning-effort reader variant scored lower (461/465), with 4 of its 19 per-pass losses being the same answer text judged oppositely. We release every reader output, judge verdict, and control receipt, plus an error dossier that attributes all remaining failures \u2014 including two strict gold-answer defects, an improvement stage rejected by our own negative control, and the routes that did not work. A full re-score under the official judge costs about $1.28."
+  }
+ ]
+}

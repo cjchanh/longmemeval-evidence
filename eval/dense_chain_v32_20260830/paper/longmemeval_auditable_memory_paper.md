@@ -25,8 +25,8 @@ answers, and a maximum-reasoning-effort reader variant scored *lower*
 (461/465) — with 4 of its 19 per-pass losses being the same answer text
 judged oppositely. We release every reader
 output, judge verdict, and control receipt, plus an error dossier that
-attributes all remaining failures — including two strict gold-answer
-defects, an improvement stage rejected by our own negative control, and
+attributes all remaining failures — including a strict gold-answer
+defect, an improvement stage rejected by our own negative control, and
 the routes that did not work. A full re-score under the official judge
 costs about $1.28.
 
@@ -187,21 +187,16 @@ it from ever touching the headline.
 **4.4 Self-consistency on measured flip rows (frozen rule).** The raw
 v3.4 pair measured 476/474: eight rows flipped verdicts between passes
 (reader or judge nondeterminism), and the entire spread came from them.
-Before any additional read, we froze a variance-reduction rule
-(`SC_RULE.json`): each of the 8 flip rows receives 3 additional reads
-from the same reader; the majority answer over the 5 votes (2 original +
-3 new; ties break toward the original pass-1 answer) is judged once, and
-that verdict replaces the row's verdict in *both* passes. The rule can
-consult no gold, touches no non-flip row, and cannot manufacture
-capability — it collapses variance. Its measured direction rebuts the
-selection-on-outcome objection: SC resolved four of the eight rows to
-correct and four to wrong, moving the *higher* pass down — pass 1 went
-476 → 475 and pass 2 went 474 → 475. The frozen rule cost us the best
-single number we had measured and converged the pair on the midpoint of
-the raw spread, not its maximum — which is what a variance-collapse rule
-should do and a score-maximizing rule would not. All 24 additional reads
-completed on the same reader lane with zero errors; per-vote transports
-are recorded.
+The raw pair's spread came from eight verdict-flip rows, and a tie-break
+rule frozen before any additional read (`SC_RULE.json`) gave each flip row
+three more reads with a five-vote majority. **The resulting number was
+WITHDRAWN from any claim.** Internal review showed the construction wrote
+one derived verdict into *both* passes — an identity, not two agreeing
+measurements — and that its flip-row selection was judge-conditioned rather
+than gold-blind as the rule had asserted. The artifacts remain released as
+a record of what was built; **no self-consistency number is claimed
+anywhere in this report**, and none should be quoted from the released
+artifacts either.
 
 **4.5 What we did not do.** No per-question prompt tuning against gold;
 no judge re-rolling; no selective reporting (the failed routes are in
@@ -236,12 +231,13 @@ two-pass rule this is a **statistical tie with the published SOTA, one
 pass above it**, not a clean beat: we state 477±2 and decline the
 stronger claim our own bar forbids (a pre-release re-judge of pass 1 under
 the same official judge returned 478 — three verdict flips on identical
-text, §8 — so even "one above" is a judge roll). The two gold-defect rows from the
-dossier (§6.3) sit inside this pair as well: one is scored correct via
-the fabrication the dossier documents (the reader supplies the $500 no
-session contains), one is lost to fidelity (the evidence-faithful answer
-contradicts defective gold) — net zero per pass. Under adjudication the
-pair reads 478/474 (ex-fabrication) to 480/476 (restored); the tie with
+text, §8 — so even "one above" is a judge roll). The two rows §6.3
+documents individually — the $720 workshop row and the 15-weeks row — sit
+inside this pair as well: one is scored correct because this reader counts a
+user-stated $500 fee whose event is dated outside the question's four-month
+window (a boundary row, not a fabrication — §6.3), one is lost to fidelity
+(the evidence-faithful answer contradicts defective gold) — net zero per pass. Adjudicating the single
+strict defect raises the Opus pair to 480/476 (479+1 / 475+1); the tie with
 the published state of the art holds in every stance. Judge controls 24/24 in both
 passes. A 25-row probe preceded the pair (11/25 stable-wrong recovered,
 including one row no prior reader had ever solved).
@@ -261,7 +257,8 @@ a staleness artifact, not a reader loss: the reader resumed one row
 eleven minutes after the judge had scored it on an empty response; a
 surgical v2 re-judge under fresh 12/12 controls restored it, 460 → 461.)
 
-Headline-pair detail: answerable 450/470 and 447/470; abstention
+Raw grok-pair detail (the pair the self-consistency rule was frozen over):
+answerable 450/470 and 447/470; abstention
 26/30 (pass 1) and 27/30 (pass 2). A self-consistency tie-break over the
 raw pair's 8 flip rows was constructed under a frozen rule and later
 WITHDRAWN from any claim: internal review showed it wrote one derived
@@ -269,7 +266,8 @@ verdict into both passes (an identity, not two agreeing measurements)
 and its flip-row selection was judge-conditioned. Its artifacts remain
 released; no SC number is claimed. Judge controls passed in every scoring run
 (scaled to run size; 24/24 on full passes). Under
-the gold-defect adjudication scenario (§6.3) the pair reads 477/477; we
+the gold-defect adjudication scenario (§6.3) that grok pair reads 477/475
+(476+1 / 474+1, the single strict defect); we
 report that as a scenario, never as the score.
 
 ### 5.1.1 Per-question-type breakdown (official GPT-4o judge)
@@ -289,12 +287,17 @@ Five of six answerable types are pass-stable to within one question; the
 raw pair's entire answerable spread is one type (multi-session,
 110 → 106, partially offset by knowledge-update 70 → 71). On the abstention-folded basis of Chronos's per-category table
 (n: KU 78, MS 133, SSA 56, SSP 30, SSU 70, TR 133 — their Appendix A),
-our pass-1 gap is −3 knowledge-update and −1 preference, partially
-offset by +2 multi-session (120/133 vs. their 118/133); pass 2 trails
-on multi-session as well (116/133), so our multi-session score exceeds
-theirs in pass 1 only. The residual
+our pass-1 deficit is −3 knowledge-update (75/78 vs. their 78/78), offset
+by +2 multi-session (120/133 vs. 118/133), +1 single-session-user (70/70
+vs. 69/70) and +1 temporal-reasoning (128/133 vs. 127/133), with
+assistant and preference level — net **+1**, which is 479 vs. their 478.
+Pass 2 carries the same −3 knowledge-update, ties on multi-session
+(118/133), and loses −2 on preference (28/30) — net **−3**, which is 475
+vs. 478. So we exceed them on multi-session in pass 1 and match it in
+pass 2; the pass-to-pass difference is preference, not multi-session. The residual
 concentrates where the benchmark itself is hardest to score:
-multi-session aggregation (where both strict gold defects live) and
+multi-session aggregation (which holds the reclassified boundary row of
+§6.3; the one surviving strict gold defect is temporal-reasoning) and
 abstention (where we measured official-judge verdict flips on identical
 answers).
 
@@ -363,7 +366,7 @@ this rather than hide it.
 ## 6. Error analysis: every remaining failure, attributed
 
 Of 470 answerable questions, 24 fail in at least one configuration.
-The partition: 4 reader-cognition + 8 gold-defect (2 strict, 6
+The partition: 4 reader-cognition + 8 gold-defect (1 strict, 7
 boundary) + 4 retrieval/ordering (1 pool-miss, 3 ordering) + 8
 flip-noise = 24. (§6.2's "12 winnable" rows are a cross-cutting subset
 spanning these buckets, not a fifth bucket.) Post-attribution:
@@ -385,18 +388,23 @@ integration by the pre-committed acceptance rule. A second design
 readings. Both failures map the limit of prompting-side repair and
 motivate an evidence-testimony layer as future work.
 
-### 6.3 Gold-answer defects (2 strict, 6 boundary)
+### 6.3 Gold-answer defects (1 strict, 7 boundary)
 Documented row-by-row in the released dossier:
-- **Strict A** — gold requires a $500 expense that appears nowhere in the
-  evidence, plus an event dated after the question date attended in the
-  past tense. A weaker reader that *hallucinated* the missing $500 was
-  scored correct by the official judge — the judge rewards gold-matching
-  over evidence fidelity. The grok reader's evidence-faithful $220 scores 0
-  in both passes; we keep the 0. The headline Opus reader, by contrast,
-  supplies the $500 and is scored correct on both passes — the disclosed
-  fabrication point inside 479/475 (§5.1).
 - **Strict B** — gold says "15 weeks" between two user-dated events that
-  are 81 days (11 weeks 4 days) apart.
+  are 81 days (11 weeks 4 days) apart. Wrong in all four passes of both
+  reader configurations.
+- **Boundary — the $720 workshop row** (published as strict; reclassified
+  after re-auditing the released packet). Gold requires a $500 workshop fee,
+  and the user states it: session `answer_826d51da_2`, 2023/02/26 13:37,
+  "I paid $500 to attend". Nothing has to be invented to reach gold. What is
+  disputed is window membership: both dated mentions place the workshop on
+  March 15-16, after the 2023/02/26 question date, attended in the past
+  tense. The grok reader excludes the fee and answers $220 → 0 in both
+  passes; the headline Opus reader includes it and answers $720 → correct in
+  both passes; a weaker gemini-3.7-flash probe likewise included it and was
+  scored correct. The judge rewards including the out-of-window item because
+  gold includes it — the disclosed window-inclusion point inside 479/475
+  (§5.1), not a fabrication point.
 - Six further rows are boundary-semantic (defensible readings on both
   sides); we claim nothing for them. One earlier strict candidate was
   *downgraded* to boundary after an independent-reader control showed the
@@ -444,6 +452,16 @@ remaining failures are the measured flip-noise rows addressed by §4.4.
   (§5.3), though the chain's ranking of readers is stable.
 - **One benchmark.** LongMemEval-S measures a specific memory regime;
   we make no cross-benchmark generality claim.
+- **A claim in our own released dossier was wrong and is corrected here.**
+  The dossier originally classed the $720 workshop row as gold-unreachable
+  without fabrication, on the claim that no $500 workshop fee appeared in the
+  evidence; a mechanical re-audit of this release's own published packets
+  found that fee stated by the user, so the row is a boundary row (§6.3),
+  the strict-defect count is 1 rather than 2, and the adjudication figures in
+  §5.1 were recomputed. No verdict changed and the headline 479/475 is
+  unaffected — only the classification of a row that was already scored as
+  measured. The error and its correction are recorded in the dossier rather
+  than removed from it.
 
 ## 8. Reproducibility
 
@@ -522,6 +540,17 @@ judge, and publish the failures with the successes.
 - Barnes, T. *Observational Memory: 95% on LongMemEval.* Mastra Research,
   Feb 2026. mastra.ai/research/observational-memory (accessed 2026-08-31;
   task-averaged 94.87%, raw 468/500)
+- Packer, C., et al. *MemGPT: Towards LLMs as Operating Systems.* 2023.
+  Maharana, A., et al. *LoCoMo.* 2024. (prior long-term-memory systems and
+  benchmark, §1.1)
+- Nogueira, R., Cho, K. *Passage Re-ranking with BERT.* 2019.
+  Chen, J., et al. *BGE M3-Embedding.* 2024.
+  Cormack, G., et al. *Reciprocal Rank Fusion.* SIGIR 2009. (retrieval
+  components of the chain, §1.1)
+- Wang, X., et al. *Self-Consistency Improves Chain of Thought Reasoning.*
+  ICLR 2023. Zheng, L., et al. *Judging LLM-as-a-Judge.* NeurIPS 2023.
+  Dodge, J., et al. *Show Your Work.* EMNLP 2019. (self-consistency, judge
+  variability, and reporting-discipline precedents, §1.1)
 - BAAI. *bge-reranker-v2-m3.* (cross-encoder reranker)
 
 ---

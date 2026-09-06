@@ -3,6 +3,8 @@
 Date: 2026-08-31 · Judge: gpt-4o-2024-08-06 (paper rubric, api transport)
 Reader: cursor-grok-4.6-high · Chain: v3.4 (commit 04eb64763)
 Pair result these rows are scored inside: 476/474 per 500 (475±1 vs Mastra 474).
+The release's headline pair is `full-v34-opus_pass{1,2}` (479/475); where the
+two pairs differ on a row below, both verdicts are reported.
 
 Method: every row below was answered wrong (or flip-unstable) in the official
 pair. For each, the packet evidence was re-read manually; the claim "gold is
@@ -23,25 +25,9 @@ Severity classes:
 
 ## Class A — gold unreachable without fabrication
 
-### gpt4_731e37d7 (multi-session) — VERIFIED IN FULL
-Q: "How much total money did I spend on attending workshops in the last four months?"
-Gold: **$720** (= $200 + $20 + $500)
-
-Packet facts (exhaustive dollar-amount inventory performed):
-- $200 writing workshop (November) — user-stated, in window.
-- $20 mindfulness workshop (Dec 12) — user-stated, in window.
-- **No $500 attached to any workshop exists anywhere in the evidence.** Every
-  "$500" occurrence is website cost-filter boilerplate ("under $100, $100-$500…")
-  or an immigration-form fee in an unrelated session.
-- The only dated mention of the digital-marketing workshop is internally
-  impossible: a session dated **2023/02/26** says "I just attended a digital
-  marketing workshop … **on March 15-16**" — a past-tense attendance of a
-  future date.
-
-Evidence-faithful answer: $220. Both official passes answered $220 → scored 0.
-Control datum: a weaker reader (gemini-3.7-flash probe) HALLUCINATED a
-"$500 Digital Marketing Workshop (Recent)", summed $720, and was scored
-CORRECT — the judge rewards fabrication that matches defective gold.
+(none surviving review — gpt4_731e37d7 was moved to Class D on 2026-09-05
+after a re-audit of the released packet found the $500 this dossier had said
+was absent; see Class D and the Correction record below)
 
 ## Class B — gold arithmetic error
 
@@ -62,6 +48,44 @@ independent-reader control; see below)
 ---
 
 ## Class D — boundary semantics (NOT claimed as defects)
+
+### gpt4_731e37d7 — is a March 15-16 workshop inside a four-month window ending Feb 26? (downgraded from A)
+Q: "How much total money did I spend on attending workshops in the last four months?"
+Gold: **$720** (= $200 + $20 + $500). Question date: 2023/02/26 (Sun) 23:35.
+
+Packet facts (exhaustive dollar-amount inventory, re-verified against the
+released packet record, content_sha256 `5fb5690f…1cf06`):
+- $200 writing workshop (November) — user-stated, in window.
+- $20 mindfulness workshop (Dec 12) — user-stated, in window.
+- **$500 digital-marketing workshop — user-stated, in the packet.** Session
+  `answer_826d51da_2`, date 2023/02/26 (Sun) 13:37, user turn: "I just
+  attended a digital marketing workshop at the city convention center on
+  March 15-16, and it was really helpful … **I paid $500 to attend**, and it
+  was worth it!" Of the 9 "$500" occurrences in the record, **7** are website
+  cost-filter boilerplate ("under $100, $100-$500…"), **1** is an
+  immigration-form fee in an unrelated session, and **1** is this user-stated
+  workshop fee.
+- **Both** dated mentions of the digital-marketing workshop carry the same
+  impossible date: user turns in sessions dated 2023/02/26 (Sun) 11:52 and
+  2023/02/26 (Sun) 13:37 each place it "on March 15-16" — a past-tense
+  attendance of a date after the question date. The 13:37 turn is the one
+  that also states the $500.
+
+Nothing has to be invented to reach gold; the dispute is window membership.
+The two released readers split on it, and both stances are defensible:
+- **grok-4.6-high (official pair)** excluded the fee as out-of-window — pass 2
+  states it outright ("the **$500** is excluded") — answered **$220**, scored
+  **0 in both passes**.
+- **Claude Opus (headline pair)** counted it as recently attended, answered
+  **$720**, scored **correct in both passes** (all three judge directories on
+  pass 1 agree, as does GLM-5.3 on both passes).
+
+Control datum: a weaker reader (gemini-3.7-flash probe) listed "$500 Digital
+Marketing Workshop (Recent)", summed $720, and was scored CORRECT. It cited a
+real user-stated figure, so this is retrieval, not fabrication; its only
+defect is the same window question. The honest reading of the datum is
+narrower than this dossier first published: the judge rewards **including an
+out-of-window item** because gold includes it.
 
 ### 71017277 — premise-repair vs premise-refusal (downgraded from C)
 Q: "I received a piece of jewelry last Saturday from whom?" Gold: my aunt.
@@ -117,19 +141,38 @@ two-week window this stays a boundary row; it is also judge-flip-prone
 
 ## Impact statement (conservative)
 
-- Strict defects (A+B): **2 rows**, wrong in BOTH official passes.
-  Under adjudicated gold the pair reads **478/476** instead of 476/474.
-- Boundary rows (D): 6 rows where an alternative defensible gold exists
+- Strict defects (B): **1 row** (370a8ff4), wrong in BOTH official passes —
+  and in both headline Opus passes. Adjudicating it adds +1 to every pass:
+  the official grok pair reads **477/475** instead of 476/474 (476+1 / 474+1),
+  and the headline Opus pair reads **480/476** instead of 479/475 (479+1 /
+  475+1). Reported as an adjudication scenario, never as a score.
+- Boundary rows (D): 7 rows where an alternative defensible gold exists
   (incl. 71017277, downgraded from strict after an independent-reader
-  control); discussion items only, worth 0 in any headline.
+  control, and gpt4_731e37d7, downgraded from strict after the packet
+  re-audit below); discussion items only, worth 0 in any headline.
 - Judge-floor exhibits attached to this dossier: byte-identical-answer verdict
   flips (88432d0a_abs "0", judge-agreement matrix 98.2/97.8% GLM-vs-GPT-4o),
-  and the Class-A control datum where fabrication scored above fidelity.
+  and the gpt4_731e37d7 control datum where the judge rewarded including an
+  out-of-window item because gold includes it.
 
 ## Reproduction
 
 Every claim above is checkable from committed artifacts:
-- Packets: eval/dense_chain_v32_20260830/materialized.jsonl (regenerable via
-  run_v34_full.sh prep inputs; concat files excluded from git deliberately)
+- Packets: eval/dense_chain_v32_20260830/packets_materialized/materialized_all.jsonl.gz
+  (500 rows, released; alongside facts_all.jsonl.gz and MANIFEST.md, and
+  re-derivable byte-for-byte via scripts/materialize_packets.py)
 - Official pair answers/verdicts: full-v34_pass{1,2}/{reader,judge_gpt4o}/
 - Judge: scripts/rescore_gpt4o_judge.py, frozen paper rubric, ~$1.28/500 rows.
+
+## Correction record (2026-09-05)
+
+The gpt4_731e37d7 entry above was originally published in Class A on the
+claim that no $500 workshop fee existed anywhere in the evidence. A
+mechanical re-audit of this release's own published packet
+(`packets_materialized/materialized_all.jsonl.gz`, record content_sha256
+`5fb5690f4fc06ba5c819875ad3a37fbbf91bbff4f3a059e0c8b720446dc1cf06`) found
+that fee stated by the user in session `answer_826d51da_2`, which makes the
+Class-A definition inapplicable and the "hallucination" reading of the
+control datum wrong. The row was reclassified to D, the strict-defect count
+dropped from 2 to 1, and the adjudication figures were recomputed above. The
+original claim and the contradiction are recorded here rather than removed.

@@ -11,7 +11,7 @@
 \titleformat*{\subsection}{\normalsize\bfseries}
 \newcommand{\pending}[1]{\textcolor{red!70!black}{[#1]}}
 
-\title{\textbf{Auditable Long-Term Memory: A Deterministic Retrieval\\Chain at 95.4$\pm$0.4\% on LongMemEval-S}}
+\title{\textbf{Auditable Long-Term Memory: A Deterministic\\Retrieval Chain Scoring 479/475 of 500 on\\LongMemEval-S Under the Official Judge}}
 \author{Christopher J. Chanhnourack\\Centennial Defense Systems (Archivist)}
 \date{Technical report --- September 1, 2026 --- v1.2}
 
@@ -35,8 +35,8 @@ observed official-judge verdict flips on byte-identical answers; and a
 maximum-reasoning-effort reader variant scored \emph{lower} (461/465), with 4
 of its 19 per-pass losses being the same answer text judged oppositely. We release
 every reader output, judge verdict, and control receipt, plus an error dossier
-that attributes all remaining failures --- including two strict gold-answer
-defects, an improvement stage rejected by our own negative control, and the
+that attributes all remaining failures --- including a strict gold-answer
+defect, an improvement stage rejected by our own negative control, and the
 routes that did not work. A full re-score under the official judge costs about
 \$1.28.
 \end{abstract}
@@ -50,13 +50,14 @@ of measurement noise.
 
 This report makes two claims. \textbf{A capability claim}: a deterministic,
 auditable retrieval chain --- in which the language model is confined to a
-replaceable reader role --- measures 479/475 per 500 on LongMemEval-S, pass 1
-above the published state of the art, the pair a statistical tie with it, with
-overlapping confidence intervals and per-run variance comparable to the gap.
-\textbf{A methodology claim}: the apparatus that produced the number is the more
-important contribution. Every stage below the reader is deterministic code
-validated by negative controls; the promotion rule was frozen before the
-deciding run; measurement noise from both the reader and the judge is
+replaceable reader role --- measures 479/475 per 500 on LongMemEval-S across
+two independent full passes --- pass 1 above the published state of the art
+(478), the pair a statistical tie with it, with overlapping confidence
+intervals and per-run variance comparable to the gap. \textbf{A methodology
+claim}: the apparatus that produced the number is the more important
+contribution: every stage below the reader is deterministic code validated
+by negative controls; the promotion rule (what counts as a reportable
+number) was frozen before the deciding run; measurement noise from both the reader and the judge is
 quantified and disclosed rather than absorbed into the headline.
 
 The system under test is the retrieval core of Archivist, a local-first
@@ -83,8 +84,10 @@ critique of Dodge et al.\ (2019).
 multi-session chat histories: 470 answerable questions across six types
 (single-session-user, single-session-assistant, single-session-preference,
 multi-session, temporal-reasoning, knowledge-update) and 30 abstention
-questions whose correct behavior is to decline to answer. Evidence for a
-question may be spread across sessions recorded weeks apart.
+questions (\texttt{\_abs}) whose correct behavior is to decline to answer.
+Each question carries a haystack of $\sim$40--60 sessions with timestamps;
+evidence for a question may be spread across several sessions recorded
+weeks apart.
 
 \textbf{Judge.} We use the benchmark's official protocol: GPT-4o
 (\texttt{gpt-4o-2024-08-06}) with the paper's rubric templates. One header
@@ -132,31 +135,38 @@ rank).
 
 \textbf{3.3 Coverage-first packet compilation.} For each question a reading
 packet is compiled under a hard budget (16 sessions / 40k proxy tokens): the
-dense baseline top-10 is preserved as a byte-identical prefix, remaining slots
-fill in cross-encoder order with term-preserving extractive compression, and
-budget overruns drop the lowest-ranked extension first. Validated by
-determinism, gold-permutation and question-ID-sabotage negative controls, and
-budget accounting. Packets are gold-complete for 462/470 questions; a sweep of
+dense baseline top-10 is preserved as a byte-identical prefix (invariant R1),
+remaining slots are filled in cross-encoder order with term-preserving
+extractive compression, and budget overruns drop the lowest-ranked extension
+first. The compiler is validated by determinism (two compiles
+byte-identical), a gold-permutation negative control (shuffled gold answers
+must not change output), a question-ID sabotage control (renamed IDs must
+not change output), and budget accounting. Packets are gold-complete for 462/470 questions; a sweep of
 all five extension-ordering policies confirmed the shipped ordering is globally
 optimal (462 vs.\ 454 best alternative).
 
-\textbf{3.4 Deterministic reasoning scaffolds (``facts'').} For 240 of 470
-questions the chain emits a deterministic evidence index computed from the
-packet: session chronology, a canonical user-statement recency domain with
-clock-granular tie keys, a value-preference invariant, candidate enumeration
+\textbf{3.4 Deterministic reasoning scaffolds (``facts'').} For questions
+whose type benefits from mechanical reasoning (240 of 470), the chain emits
+a deterministic evidence index computed from the packet: session chronology,
+a canonical user-statement recency domain with clock-granular tie keys, a
+value-preference invariant (statements carrying candidate values outrank
+bare recency), candidate enumeration
 with quantity roll-up for counting questions, and granularity/unit and
 event-anchor rules (contract \texttt{v3.4-facts-20260831}). Scaffolds are code
 with in-code coupling invariants that raise on internal inconsistency. The
 scaffold is gold-blind and question-ID-independent by construction.
 
 \textbf{3.5 Replaceable reader.} The packet, scaffold, and question go to an
-LLM reader, deliberately replaceable; we measure the chain under multiple
-readers (\S5.3).
+LLM reader. The reader is deliberately replaceable; we measure the chain
+under three readers (\S5.3). The headline pair uses the Claude Opus reader
+over the CLI lane (\S5.1); \texttt{grok-4.6-high} and GLM-5.3 are the
+secondary readers (\S5.3).
 
 \section{Measurement methodology}
 \textbf{4.1 Two-pass rule (pre-registered).} A nondeterministic reader means a
-single full run at a small margin is not a reportable number. Our promotion
-rule, adopted before the deciding experiments: a headline requires two full
+single full run at a one-point margin is not a reportable number. Our
+promotion rule, adopted two days before the deciding experiment: a headline
+requires two full
 passes agreeing, or one number with a stated $\pm$ spread from measured flip
 variance.
 
@@ -198,9 +208,17 @@ Configuration & Pass 1 & Pass 2\\
 \textbf{v3.4, Claude Opus reader (CLI lane)} & \textbf{479/500} & \textbf{475/500}\\
 v3.4, grok-4.6 high (raw pair) & 476/500 & 474/500\\
 v3.4, grok-4.6 xhigh (agentic transport) & 461/500 & 465/500\\
+v3.4, Claude Opus reader --- ex-dossier (8 dossier rows removed, \S6.3) & 474/492 & 471/492\\
+v3.4, grok-4.6 high --- ex-dossier (same 8 rows removed) & 475/492 & 474/492\\
 \bottomrule
 \end{tabular}
 \end{center}
+
+Ex-dossier, grok leads Opus 475/474 to 474/471: the Opus margin on the full
+set is carried by gold-idiom reading on dossier rows (\S5.2, \S6.3), not by
+evidence reading on ordinary rows. Both are reported because the headline is
+the official-judge score and the ex-dossier pair is what the evidence
+supports.
 
 The Opus pair is the headline: pass 1 exceeds the published SOTA (478)
 on the raw score; the pair's both-pass-stable floor is 473 (vs.\ the grok pair's 471);
@@ -212,13 +230,15 @@ every other pair here. Under the pre-registered two-pass rule this is a
 clean beat: we state 477$\pm$2 and decline the stronger claim our own bar
 forbids (a pre-release re-judge of pass 1 under the same official judge
 returned 478 --- three verdict flips on identical text, \S8 --- so even
-``one above'' is a judge roll). The two gold-defect rows from the dossier (\S6.3) sit inside this
-pair as well: one is scored correct via the fabrication the dossier
-documents (the reader supplies the \$500 no session contains), one is lost
-to fidelity (the evidence-faithful answer contradicts defective gold) ---
-net zero per pass. Under adjudication the pair reads 478/474
-(ex-fabrication) to 480/476 (restored); the tie with the published state
-of the art holds in every stance. Judge controls 24/24 in both passes; a 25-row probe preceded the pair
+``one above'' is a judge roll). The two rows \S6.3 documents individually
+--- the \$720 workshop row and the 15-weeks row --- sit inside this pair as
+well: one is scored correct because this reader counts a user-stated \$500
+fee whose event is dated outside the question's four-month window (a
+boundary row, not a fabrication --- \S6.3), one is lost to fidelity (the
+evidence-faithful answer contradicts defective gold) --- net zero per pass.
+Adjudicating the single strict defect raises the Opus pair to 480/476
+(479+1 / 475+1); the tie with the published state of the art holds in every
+stance. Judge controls 24/24 in both passes; a 25-row probe preceded the pair
 (11/25 stable-wrong recovered, one row no prior reader had ever solved).
 
 The xhigh variant is a measured regression ($-15$/$-9$), reported in full.
@@ -238,8 +258,8 @@ it, $460 \to 461$.)
 
 Prior-configuration detail: answerable 450/470 and 447/470; abstention 26/30
 and 27/30. Judge controls passed in every scoring run. Under the gold-defect
-adjudication scenario (\S6.3) the prior pair reads 478/476; we report that as a
-scenario, never as a score.
+adjudication scenario (\S6.3) the prior pair reads 477/475 (476+1 / 474+1, the
+single strict defect); we report that as a scenario, never as a score.
 
 \subsection{Per-question-type breakdown (official GPT-4o judge)}
 \begin{center}
@@ -265,10 +285,15 @@ Five of six answerable types are pass-stable to within one question; the raw
 pair's entire answerable spread is one type (multi-session), partially offset
 by knowledge-update. Against the published SOTA's category table on its own abstention-folded
 basis ($n$: KU 78, MS 133, SSA 56, SSP 30, SSU 70, TR 133 --- their
-Appendix~A), our pass-1 gap is $-3$ knowledge-update and $-1$ preference,
-partially offset by $+2$ multi-session (120/133 vs.\ their 118/133); pass 2
-trails on multi-session as well (116/133), so our multi-session score exceeds
-theirs in pass 1 only.
+Appendix~A), our pass-1 deficit is $-3$ knowledge-update (75/78 vs.\ their
+78/78), offset by $+2$ multi-session (120/133 vs.\ 118/133), $+1$
+single-session-user (70/70 vs.\ 69/70) and $+1$ temporal-reasoning (128/133
+vs.\ 127/133), with assistant and preference level --- net $+1$, which is 479
+vs.\ their 478. Pass 2 carries the same $-3$ knowledge-update, ties on
+multi-session (118/133), and loses $-2$ on preference (28/30) --- net $-3$,
+which is 475 vs.\ 478. We therefore exceed them on multi-session in pass 1 and
+match it in pass 2; the pass-to-pass difference is preference, not
+multi-session.
 
 \subsection{Ablation ladder (single ruler: official GPT-4o judge)}
 \begin{center}
@@ -279,6 +304,7 @@ Stage & Score /500\\
 Dense retrieval + flat reading (Flash reader, v2 prompts) & 452/499$^{1}$\\
 + chain, v3.3 operators, Sol reader & 468\\
 + cross-encoder rerank (v3, grok reader) & 473\\
++ v3.3 operators (official pair) & 471 / 470\\
 + v3.4 operators (official pair, grok high) & 476 / 474\\
 + reader xhigh + agentic transport & 461 / 465 (regression)\\
 \textbf{+ reader tier: Claude Opus, same substrate} & \textbf{479 / 475}\\
@@ -334,8 +360,9 @@ to the grok reader family (\S7).
 Of 470 answerable questions, 24 fail in at least one prior-configuration pass.
 
 \textbf{6.1 Reader-cognition residue ($\sim$4 rows).} The packet contains the
-correct evidence; the reader commits to an evidence-backed distractor. The
-residue is question-boundary semantics (does a stated \emph{plan} update a
+correct evidence; the reader commits to an evidence-backed distractor. Two
+verifier designs failed to fix this honestly (\S6.2). The residue is
+question-boundary semantics (does a stated \emph{plan} update a
 location? does the offered property count as ``viewed''?), not evidence
 selection.
 
@@ -343,19 +370,30 @@ selection.
 recovered 3/12 winnable wrong rows --- and the mandatory negative control
 showed it revised 19/59 baseline-correct drafts, flipping 11 to wrong while
 repairing none. Blocked by the pre-committed acceptance rule. A second design
-(draft-blind candidate enumeration + rule-based adjudication) recovered 0/9.
+(draft-blind candidate enumeration + rule-based adjudication) recovered
+0/9: on the residue rows the adjudicator reaches defensible-but-not-gold
+readings.
 Both failures are published; they map the limit of prompting-side repair.
 
-\textbf{6.3 Gold-answer defects (2 strict, 6 boundary).} Documented row-by-row
-in the released dossier. Strict A: gold requires a \$500 expense that appears
-nowhere in the evidence, plus an event dated after the question date attended
-in the past tense; a weaker reader that \emph{hallucinated} the missing \$500
-was scored correct by the official judge. The grok reader's evidence-faithful
-\$220 scores 0 in both passes; we keep the 0. The headline Opus reader, by
-contrast, supplies the \$500 and is scored correct on both passes --- the
-disclosed fabrication point inside 479/475 (\S5.1). Strict B: gold says ``15 weeks''
-between two user-dated events 81 days apart. Six further rows are
-boundary-semantic and claimed as worth nothing. The Chronos authors
+\textbf{6.3 Gold-answer defects (1 strict, 7 boundary).} Documented row-by-row
+in the released dossier. Strict B: gold says ``15 weeks'' between two
+user-dated events that are 81 days (11 weeks 4 days) apart; wrong in all four
+passes of both reader configurations. Boundary --- the \$720 workshop row
+(published as strict; reclassified after re-auditing the released packet):
+gold requires a \$500 workshop fee, and the user states it (session
+\texttt{answer\_826d51da\_2}, 2023/02/26 13:37, ``I paid \$500 to attend''),
+so nothing has to be invented to reach gold. What is disputed is window
+membership: both dated mentions place the workshop on March 15--16, after the
+2023/02/26 question date, attended in the past tense. The grok reader excludes
+the fee and answers \$220 $\to$ 0 in both passes; the headline Opus reader
+includes it and answers \$720 $\to$ correct in both passes; a weaker
+gemini-3.7-flash probe likewise included it and was scored correct. The judge
+rewards including the out-of-window item because gold includes it --- the
+disclosed window-inclusion point inside 479/475 (\S5.1), not a fabrication
+point. Six further rows are boundary-semantic (defensible readings on both
+sides); we claim nothing for them. One earlier strict candidate was
+\emph{downgraded} to boundary after an independent-reader control showed the
+intended referent was answerable by premise repair. The Chronos authors
 independently document a defect on question \texttt{6d550036} (their \S3.5,
 alongside a judge-variability example on \texttt{75f70248}), consistent with
 our dossier.
@@ -363,12 +401,25 @@ our dossier.
 \textbf{6.4 Retrieval ceiling and coverage, measured precisely.} One row's
 gold never reaches the candidate pool; three rows lost an in-pool gold session
 to packet budget ordering (no global ordering recovers them without losing
-more). An entity-linking retrieval arm was built, tested (17/17), and retired
-when measurement showed zero of its added sessions were gold. Remaining
-failures are measured flip noise.
+more). An entity-linking retrieval arm (alias mining + query expansion) was built,
+tested (17/17), and retired when measurement showed zero of its added
+sessions were gold --- the presumed alias-mismatch losses do not exist in
+this benchmark. Remaining failures are measured flip noise.
 
 \section{Limitations}
 \begin{itemize}
+\item \textbf{No held-out evaluation.} Every component that moves the score
+--- the v3.2$\to$v3.4 operator ladder, the extension-ordering sweeps, the
+packet budgets, and the 60-row negative-control set --- was developed
+against the same 500 LongMemEval-S questions the headline is measured on,
+and the gold-defect dossier records per-row inspection of gold answers
+during development. Nothing in this report is a test-set number in the
+held-out sense. At a one-to-four-question margin over the published state
+of the art this is the dominant threat to validity; the mitigations we do
+have (deterministic stages with negative controls, two independent full
+passes, every verdict released) bound variance, not overfitting. A
+held-out run on a disjoint question set is the right next measurement and
+has not been done.
 \item \textbf{Margins at this level are not statistical superiority.}
 Wilson 95\% intervals: our 479 [93.7\%, 97.2\%] and 475 [92.7\%, 96.6\%]
 (grok pair: 476 [93.0\%, 96.8\%], 474 [92.5\%, 96.4\%]) vs.\ Chronos's 478
@@ -384,12 +435,31 @@ margins can honestly claim.
 reader family; the exact number moves a few points across readers, though the
 chain's ranking of readers is stable.
 \item \textbf{One benchmark.} No cross-benchmark generality claim.
+\item \textbf{A claim in our own released dossier was wrong and is corrected
+here.} The dossier originally classed the \$720 workshop row as
+gold-unreachable without fabrication, on the claim that no \$500 workshop fee
+appeared in the evidence; a mechanical re-audit of this release's own
+published packets found that fee stated by the user, so the row is a boundary
+row (\S6.3), the strict-defect count is 1 rather than 2, and the adjudication
+figures in \S5.1 were recomputed. No verdict changed and the headline 479/475
+is unaffected --- only the classification of a row that was already scored as
+measured. The error and its correction are recorded in the dossier rather
+than removed from it.
 \end{itemize}
 
 \section{Reproducibility}
+\textbf{The Chronos and Mastra comparator sources are pinned in the release;
+OMEGA is not.} The Chronos paper (arXiv 2603.16862, PDF and abstract page)
+and the Mastra Observational Memory page that supply the 478/500 and
+94.87\%~/~468 raw comparator figures are stored with SHA-256 digests and a
+fetch timestamp under \texttt{eval/dense\_chain\_v32\_20260830/comparators/}
+(see its \texttt{MANIFEST.md}), so the comparison rows in \S5.1 can be
+checked against bytes the release carries. The OMEGA figure quoted in \S5.1
+has no pinned source yet; that gap is recorded in the same manifest.
+
 Released with this report at
 \url{https://github.com/cjchanh/longmemeval-evidence} (MIT). A fresh clone
-verifies 449/449 manifest hashes and re-derives every headline count from the
+verifies every \texttt{RELEASE\_MANIFEST.md} row and re-derives every headline count from the
 released verdicts without an API key. The evidence commits in the footer
 anchor to the source tree the release was exported from. The release holds all reader outputs, all judge verdicts and
 control receipts for every run in the ladder, the judge harness (frozen rubric, SHA-pinned
@@ -402,8 +472,14 @@ deterministically by \texttt{scripts/build\_release\_manifest.py}):
 released are all reader checkpoints, judge verdicts, control receipts,
 agreement matrices, the dossier, the judge harness with its tests and rubric
 source, and the reader-lane scripts; held are the retrieval, rerank,
-packet-compiler and scaffold-operator sources and the materialized packets
-(benchmark haystack text). The held stages ship as pinned artifacts with
+packet-compiler and scaffold-operator sources. The materialized packets and
+the v3.4 scaffolds the headline pair consumed are released under
+\texttt{eval/dense\_chain\_v32\_20260830/packets\_materialized/} (gzip; sha256
+in its \texttt{MANIFEST.md}), and \texttt{scripts/materialize\_packets.py}
+re-derives every packet byte-for-byte from the released allocation and the
+MIT benchmark data, so stage 5 (reader) and the judge are re-runnable by a
+third party on the exact text we read. The held stages ship as pinned
+artifacts with
 verification receipts (determinism, gold-permutation, question-ID-sabotage,
 budget gates); every judge-side claim is re-derivable from the released
 checkpoints and harness alone. The benchmark data is MIT-licensed
@@ -447,6 +523,8 @@ Chen, J., et al. \emph{BGE M3-Embedding.} 2024. \quad Cormack, G., et al.
 \item Wang, X., et al. \emph{Self-Consistency Improves Chain of Thought
 Reasoning.} ICLR 2023. \quad Zheng, L., et al. \emph{Judging LLM-as-a-Judge.}
 NeurIPS 2023. \quad Dodge, J., et al. \emph{Show Your Work.} EMNLP 2019.
+\item BAAI. \emph{bge-reranker-v2-m3.} (cross-encoder reranker used in the
+retrieval chain)
 \end{itemize}
 
 \vspace{1em}

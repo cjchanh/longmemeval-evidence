@@ -1,0 +1,36 @@
+{
+  "generated": "2026-09-05",
+  "note": "sha256 of every artifact this port plan was built from (read-only, unmodified) plus this plan itself",
+  "hashes": {
+    "eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md": {
+      "sha256": "ae1c652d4c6a16e09dee5afb073f91f4d895334a8c2a48599e65a5fa4f49e590",
+      "size_bytes": 30804,
+      "mtime": "2026-09-05T09:46:20.047397"
+    },
+    "eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.tex": {
+      "sha256": "f4e1930144c2b013d710cce29356da17e61caf9dfce01da5371a26eef7158f5b",
+      "size_bytes": 26790,
+      "mtime": "2026-09-01T17:29:16.869982"
+    },
+    "eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.pdf": {
+      "sha256": "b58cdea600184d110d47201d531221b53319127ff0eaefb4d23771fe7aee4d88",
+      "size_bytes": 91363,
+      "mtime": "2026-09-01T17:29:16.868971"
+    },
+    "arxiv_upload/longmemeval_auditable_memory_paper.tex": {
+      "sha256": "f4e1930144c2b013d710cce29356da17e61caf9dfce01da5371a26eef7158f5b",
+      "size_bytes": 26790,
+      "mtime": "2026-09-01T17:36:34.456758"
+    },
+    "eval/dense_chain_v32_20260830/audit_2026-09-05/tex-port/TEX_PORT_PLAN.md": {
+      "sha256": "ef2220585ae16bc4957ace65b596ad8447d97f0512c3901e5488a835a05ad893",
+      "size_bytes": 31440,
+      "mtime": "2026-09-05T23:39:44.753430"
+    },
+    "eval/dense_chain_v32_20260830/audit_2026-09-05/tex-port/tex_port_plan.json": {
+      "sha256": "aef420c83532289a0d5ea49cb2c34769e3220c8d3641ef23ac678ddef1efdf59",
+      "size_bytes": 45008,
+      "mtime": "2026-09-05T23:42:19.915787"
+    }
+  }
+}

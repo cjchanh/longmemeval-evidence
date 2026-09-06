@@ -1,0 +1,335 @@
+{
+ "schema": "cds/lme-judge-dir-authority-audit/v1",
+ "generated_at": "2026-09-05",
+ "auditor": "claude-opus-5[1m] (read-only release-integrity auditor)",
+ "scope": "eval/dense_chain_v32_20260830/full-v34-opus_pass1 and full-v34-opus_pass2 judge directories",
+ "release_root": "/Users/cj/Workspace/active/longmemeval-evidence-release",
+ "manifest_integrity": {
+  "manifest": "eval/dense_chain_v32_20260830/RELEASE_MANIFEST.md",
+  "manifest_sha256": "f8875b3bd9252a0be4dbd486ef3ab0097eab6d5c886898e8d424cc565b602b3d",
+  "opus_pair_rows_checked": 34,
+  "mismatches": 0,
+  "total_manifest_rows": 465,
+  "note": "Files analysed are byte-identical to the released bytes."
+ },
+
+ "verdict": {
+  "authoritative_pass1": "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o_v2/",
+  "authoritative_pass1_score_over_500": 479,
+  "authoritative_pass2": "eval/dense_chain_v32_20260830/full-v34-opus_pass2/judge_gpt4o/",
+  "authoritative_pass2_score_over_500": 475,
+  "superseded_partial_artifact": "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o/",
+  "superseded_score_over_500": 289,
+  "independent_rejudge": "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o_repro_20260901/",
+  "independent_rejudge_score_over_500": 478,
+  "third_party_can_pick_correctly": "only_from_repo_README",
+  "manifest_documents_choice": false,
+  "readme_documents_choice": true,
+  "readme_labels_the_defective_dir": false,
+  "paper_documents_this_instance": false
+ },
+
+ "directories": {
+  "full-v34-opus_pass1/judge_gpt4o": {
+   "status": "SUPERSEDED_PARTIAL_ARTIFACT",
+   "rows": 500,
+   "n_answerable": 470,
+   "n_abstention": 30,
+   "n_true": 289,
+   "n_false": 211,
+   "answerable_correct": 273,
+   "answerable_accuracy": 0.5808510638,
+   "abstention_recognized": 16,
+   "total_over_500": 289,
+   "accuracy_over_500": 0.578,
+   "per_type_answerable": {
+    "knowledge-update": {"correct": 0, "n": 72, "acc": 0.0},
+    "multi-session": {"correct": 110, "n": 121, "acc": 0.909091},
+    "single-session-assistant": {"correct": 0, "n": 56, "acc": 0.0},
+    "single-session-preference": {"correct": 30, "n": 30, "acc": 1.0},
+    "single-session-user": {"correct": 64, "n": 64, "acc": 1.0},
+    "temporal-reasoning": {"correct": 69, "n": 127, "acc": 0.543307}
+   },
+   "scored_at_min": "2026-09-01T05:27:08.971787+00:00",
+   "scored_at_max": "2026-09-01T05:30:48.725322+00:00",
+   "summary_generated_at": "2026-09-01T06:28:25.650474+00:00",
+   "summary_generated_at_lag_after_last_row_seconds": 3457,
+   "model": {"gpt-4o-2024-08-06": 500},
+   "transport": {"api": 500},
+   "resolved_snapshot": {"gpt-4o-2024-08-06": 306, "null": 194},
+   "prompt_version": {"longmemeval-official-judge-v1": 500},
+   "attempts": {"1": 306, "0": 194},
+   "llm_judge_raw_empty": 194,
+   "controls_shipped_receipt": {"n": 12, "positive_pass": 12, "negative_pass": 12, "positive_rate": 1.0, "negative_rate": 1.0},
+   "controls_in_log_for_the_run_that_produced_these_verdicts": "positive 11/11 negative 12/12",
+   "control_receipt_describes_a_different_invocation_than_the_verdicts": true
+  },
+  "full-v34-opus_pass1/judge_gpt4o_v2": {
+   "status": "AUTHORITATIVE_PASS1",
+   "rows": 500,
+   "n_answerable": 470,
+   "n_abstention": 30,
+   "n_true": 479,
+   "n_false": 21,
+   "answerable_correct": 452,
+   "answerable_accuracy": 0.9617021277,
+   "abstention_recognized": 27,
+   "total_over_500": 479,
+   "accuracy_over_500": 0.958,
+   "per_type_answerable": {
+    "knowledge-update": {"correct": 69, "n": 72, "acc": 0.958333},
+    "multi-session": {"correct": 110, "n": 121, "acc": 0.909091},
+    "single-session-assistant": {"correct": 56, "n": 56, "acc": 1.0},
+    "single-session-preference": {"correct": 30, "n": 30, "acc": 1.0},
+    "single-session-user": {"correct": 64, "n": 64, "acc": 1.0},
+    "temporal-reasoning": {"correct": 123, "n": 127, "acc": 0.968504}
+   },
+   "scored_at_min": "2026-09-01T06:30:06.769469+00:00",
+   "scored_at_max": "2026-09-01T06:35:20.185955+00:00",
+   "summary_generated_at": "2026-09-01T06:35:20.186943+00:00",
+   "model": {"gpt-4o-2024-08-06": 500},
+   "transport": {"api": 500},
+   "resolved_snapshot": {"gpt-4o-2024-08-06": 500},
+   "prompt_version": {"longmemeval-official-judge-v1": 500},
+   "attempts": {"1": 500},
+   "llm_judge_raw_empty": 0,
+   "controls_shipped_receipt": {"n": 12, "positive_pass": 12, "negative_pass": 12, "positive_rate": 1.0, "negative_rate": 1.0},
+   "controls_in_log_for_the_run_that_produced_these_verdicts": "positive 12/12 negative 12/12",
+   "control_receipt_describes_a_different_invocation_than_the_verdicts": false
+  },
+  "full-v34-opus_pass1/judge_gpt4o_repro_20260901": {
+   "status": "VALID_INDEPENDENT_REJUDGE",
+   "rows": 500,
+   "n_answerable": 470,
+   "n_abstention": 30,
+   "n_true": 478,
+   "n_false": 22,
+   "answerable_correct": 452,
+   "answerable_accuracy": 0.9617021277,
+   "abstention_recognized": 26,
+   "total_over_500": 478,
+   "accuracy_over_500": 0.956,
+   "per_type_answerable": {
+    "knowledge-update": {"correct": 70, "n": 72, "acc": 0.972222},
+    "multi-session": {"correct": 109, "n": 121, "acc": 0.900826},
+    "single-session-assistant": {"correct": 56, "n": 56, "acc": 1.0},
+    "single-session-preference": {"correct": 30, "n": 30, "acc": 1.0},
+    "single-session-user": {"correct": 64, "n": 64, "acc": 1.0},
+    "temporal-reasoning": {"correct": 123, "n": 127, "acc": 0.968504}
+   },
+   "scored_at_min": "2026-09-01T22:53:57.038585+00:00",
+   "scored_at_max": "2026-09-01T22:59:02.813749+00:00",
+   "summary_generated_at": "2026-09-01T22:59:02.815458+00:00",
+   "model": {"gpt-4o-2024-08-06": 500},
+   "transport": {"api": 500},
+   "resolved_snapshot": {"gpt-4o-2024-08-06": 500},
+   "prompt_version": {"longmemeval-official-judge-v1": 500},
+   "attempts": {"1": 500},
+   "llm_judge_raw_empty": 0,
+   "controls_shipped_receipt": {"n": 12, "positive_pass": 12, "negative_pass": 12, "positive_rate": 1.0, "negative_rate": 1.0},
+   "controls_in_log_for_the_run_that_produced_these_verdicts": "positive 12/12 negative 12/12",
+   "control_receipt_describes_a_different_invocation_than_the_verdicts": false
+  },
+  "full-v34-opus_pass2/judge_gpt4o": {
+   "status": "AUTHORITATIVE_PASS2",
+   "rows": 500,
+   "n_answerable": 470,
+   "n_abstention": 30,
+   "n_true": 475,
+   "n_false": 25,
+   "answerable_correct": 450,
+   "answerable_accuracy": 0.9574468085,
+   "abstention_recognized": 25,
+   "total_over_500": 475,
+   "accuracy_over_500": 0.95,
+   "per_type_answerable": {
+    "knowledge-update": {"correct": 70, "n": 72, "acc": 0.972222},
+    "multi-session": {"correct": 109, "n": 121, "acc": 0.900826},
+    "single-session-assistant": {"correct": 56, "n": 56, "acc": 1.0},
+    "single-session-preference": {"correct": 28, "n": 30, "acc": 0.933333},
+    "single-session-user": {"correct": 64, "n": 64, "acc": 1.0},
+    "temporal-reasoning": {"correct": 123, "n": 127, "acc": 0.968504}
+   },
+   "scored_at_min": "2026-09-01T12:20:37.065653+00:00",
+   "scored_at_max": "2026-09-01T12:26:55.205299+00:00",
+   "summary_generated_at": "2026-09-01T12:26:55.209562+00:00",
+   "model": {"gpt-4o-2024-08-06": 500},
+   "transport": {"api": 500},
+   "resolved_snapshot": {"gpt-4o-2024-08-06": 500},
+   "prompt_version": {"longmemeval-official-judge-v1": 500},
+   "attempts": {"1": 500},
+   "llm_judge_raw_empty": 0,
+   "controls_shipped_receipt": {"n": 12, "positive_pass": 12, "negative_pass": 12, "positive_rate": 1.0, "negative_rate": 1.0},
+   "controls_in_log_for_the_run_that_produced_these_verdicts": "positive 12/12 negative 12/12",
+   "control_receipt_describes_a_different_invocation_than_the_verdicts": false
+  }
+ },
+
+ "staleness_test": {
+  "definition": "judge row scored_at < reader row scored_at for the same question_id => stale by construction",
+  "reader_windows": {
+   "pass1": {"n": 500, "scored_at_min": "2026-09-01T03:12:18.608546+00:00", "scored_at_max": "2026-09-01T06:28:04.240197+00:00"},
+   "pass2": {"n": 500, "scored_at_min": "2026-09-01T06:36:17.474790+00:00", "scored_at_max": "2026-09-01T12:20:17.314779+00:00"}
+  },
+  "results": {
+   "full-v34-opus_pass1/judge_gpt4o": {
+    "stale_rows": 194,
+    "stale_rows_verdict_false": 194,
+    "stale_fraction": 0.388,
+    "stale_by_question_type_incl_abstention": {
+     "knowledge-update": 78,
+     "single-session-assistant": 56,
+     "temporal-reasoning": 60,
+     "multi-session": 0,
+     "single-session-preference": 0,
+     "single-session-user": 0
+    },
+    "stale_coverage_by_question_type": {
+     "knowledge-update": {"stale": 78, "total": 78, "fraction": 1.0},
+     "single-session-assistant": {"stale": 56, "total": 56, "fraction": 1.0},
+     "temporal-reasoning": {"stale": 60, "total": 133, "fraction": 0.451},
+     "multi-session": {"stale": 0, "total": 133, "fraction": 0.0},
+     "single-session-preference": {"stale": 0, "total": 30, "fraction": 0.0},
+     "single-session-user": {"stale": 0, "total": 70, "fraction": 0.0}
+    },
+    "reader_scored_at_window_of_stale_rows": ["2026-09-01T05:51:57.696492+00:00", "2026-09-01T06:28:04.240197+00:00"],
+    "reader_scored_at_window_of_non_stale_rows": ["2026-09-01T03:12:18.608546+00:00", "2026-09-01T04:30:34.008104+00:00"],
+    "judge_real_call_window": ["2026-09-01T05:27:08.971787+00:00", "2026-09-01T05:30:48.725127+00:00"],
+    "temporal_separation_clean": true
+   },
+   "full-v34-opus_pass1/judge_gpt4o_v2": {"stale_rows": 0},
+   "full-v34-opus_pass1/judge_gpt4o_repro_20260901": {"stale_rows": 0},
+   "full-v34-opus_pass2/judge_gpt4o": {"stale_rows": 0}
+  },
+  "second_independent_test": {
+   "signature": "attempts == 0 AND llm_judge_raw == '' AND resolved_snapshot is null",
+   "meaning": "the judge API was never called for these rows; absence of a verdict was recorded as false",
+   "count_in_pass1_judge_gpt4o": 194,
+   "set_identical_to_stale_by_timestamp": true
+  },
+  "concentration_conclusion": "The two question types reading 0.0 (knowledge-update, single-session-assistant) are exactly the two types that are 100% stale. temporal-reasoning is 45.1% stale and reads 0.543. Every type with zero stale rows scores identically to judge_gpt4o_v2. The low score is fully explained by the stale set.",
+  "positive_control_on_the_judge": {
+   "agreement_judge_gpt4o_vs_v2_on_the_306_genuinely_judged_rows": "306/306",
+   "agreement_over_all_500": "310/500",
+   "conclusion": "The judge itself never disagreed. judge_gpt4o is the same judge run against an incomplete input, not a different judge result."
+  }
+ },
+
+ "mechanism": {
+  "runtime_source": "scripts/rescore_gpt4o_judge.py",
+  "source_sha256": "623c3b286fc7691db971ee2d7a33eb1b882aec2dca2067acf765e17473ad3876",
+  "findings": [
+   {
+    "lines": "514-516",
+    "code": "response = row.get(\"response\") or \"\"; if not response: verdict, raw, attempts, resolved_snapshot = False, \"\", 0, None",
+    "effect": "An empty reader response short-circuits to a false verdict with NO judge call. This is the exact 194-row signature."
+   },
+   {
+    "lines": "605-612",
+    "code": "done_ids built from question_id presence in rescored.jsonl; rows in done_ids are skipped",
+    "effect": "Resume keys on EXISTENCE, not freshness. Re-running into the same out-dir skips every row already present, however it was scored. Root cause."
+   },
+   {
+    "lines": "631-668",
+    "code": "rescore_summary.json and control_receipt.json recomputed and overwritten on every invocation; resolved_snapshots filters falsy values",
+    "effect": "A resume invocation that judges zero rows still rewrites the summary and control receipt, and the summary structurally cannot show the 194 null snapshots."
+   }
+  ],
+  "corroborating_log": {
+   "file": "eval/dense_chain_v32_20260830/full-v34-opus_pass1/reader.log",
+   "line": "ARTIFACT INVALID — not fit for judging. errors=194 empty=194 contaminated=0 missing=0",
+   "note": "The reader lane declared the checkpoint unfit for judging. The judge was fired against it anyway."
+  },
+  "timeline_utc_20260901": [
+   {"t": "~02:15-04:30", "event": "reader invocation 1 writes 500 rows; 194 error/empty; reader.log declares ARTIFACT INVALID"},
+   {"t": "05:27:08-05:30:48", "event": "judge invocation 1 -> judge_gpt4o/: 306 real verdicts + 194 stubs; judge.log 'controls: positive 11/11 negative 12/12'; acc 0.5809"},
+   {"t": "05:51:57-06:28:04", "event": "reader invocation 2 (resume) rewrites the 194 rows; run_meta n_completed_this_invocation=194; audit clean=true"},
+   {"t": "06:28:25", "event": "judge invocation 2 into the SAME out-dir: resume skips all 500 (no 'ans N/470' progress lines in judge.log block 2); controls re-run 12/12; control_receipt.json and rescore_summary.json OVERWRITTEN; 194 stub verdicts untouched; score still 0.5809"},
+   {"t": "06:30:06-06:35:20", "event": "THE FIX: judge into a CLEAN out-dir -> judge_gpt4o_v2/ -> 479/500"},
+   {"t": "12:20:37-12:26:55", "event": "pass 2 judged clean -> full-v34-opus_pass2/judge_gpt4o/ -> 475/500"},
+   {"t": "22:53:57-22:59:02", "event": "independent re-judge into a clean out-dir -> judge_gpt4o_repro_20260901/ -> 478/500"}
+  ]
+ },
+
+ "release_wide_sweep": {
+  "judge_dirs_scanned": 29,
+  "dirs_with_stub_signature": [
+   {"dir": "full-v34-opus_pass1/judge_gpt4o", "stubs": 194, "fix_dir": "judge_gpt4o_v2", "documented_in_release": false},
+   {"dir": "full-v34-xhigh_pass1/judge_gpt4o", "stubs": 1, "fix_dir": "judge_gpt4o_v2", "documented_in_release": true, "documented_at": "paper §5.1"}
+  ],
+  "note": "Same defect class, same fix pattern, both shipped. The one-row xhigh instance is documented verbatim in paper §5.1 ('460 -> 461'). The 194-row instance on the HEADLINE pass is undocumented."
+ },
+
+ "v2_vs_repro_flips": {
+  "agreement": "497/500",
+  "flips": [
+   {"question_id": "7024f17c", "question_type": "multi-session", "abstention": false, "v2": true, "v2_raw": "Yes.", "repro": false, "repro_raw": "No"},
+   {"question_id": "031748ae_abs", "question_type": "knowledge-update", "abstention": true, "v2": true, "v2_raw": "Yes", "repro": false, "repro_raw": "No"},
+   {"question_id": "a2f3aa27", "question_type": "knowledge-update", "abstention": false, "v2": false, "v2_raw": "No", "repro": true, "repro_raw": "Yes"}
+  ],
+  "matches_paper_section_8": true
+ },
+
+ "documentation_check": {
+  "repo_README": {
+   "path": "README.md",
+   "sha256": "96f78e309767356db6a148acab1869a4f301e816ff659a77475917fc623abb67",
+   "names_authoritative_dirs": true,
+   "quote": "official GPT-4o judge verdicts (`judge_gpt4o_v2/` for pass 1, `judge_gpt4o/` for pass 2), control receipts, GLM-5.3 cross-judge verdicts, and the pre-release re-judge `judge_gpt4o_repro_20260901/` (478/500, three verdict flips on identical text — see paper §8)",
+   "also_provides_rederivation_snippet_with_exact_paths": true,
+   "expected_numbers_line": "Expected: 479, 475, 478, 476, 474.",
+   "names_or_labels_the_defective_dir": false,
+   "gap": "Never names full-v34-opus_pass1/judge_gpt4o/, never says it is superseded, never says it yields 289."
+  },
+  "RELEASE_MANIFEST": {
+   "path": "eval/dense_chain_v32_20260830/RELEASE_MANIFEST.md",
+   "sha256": "f8875b3bd9252a0be4dbd486ef3ab0097eab6d5c886898e8d424cc565b602b3d",
+   "prose_lines_mentioning_judge_gpt4o": 0,
+   "table_rows_per_pass1_judge_dir": 3,
+   "verdict": "Contains NOTHING about any judge directory. The string judge_gpt4o appears only inside manifest table rows (path | bytes | sha256). It proves bytes did not drift; it makes no authority statement and cannot help a third party pick."
+  },
+  "eval_dir_README": {
+   "path": "eval/dense_chain_v32_20260830/README.md",
+   "bytes": 541,
+   "relevant": false,
+   "note": "Describes full_sol/ only."
+  },
+  "ANCHORS": {
+   "path": "eval/dense_chain_v32_20260830/ANCHORS.md",
+   "relevant": false,
+   "note": "Manifest root and signing only."
+  },
+  "paper": {
+   "path": "eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md",
+   "sha256": "ae1c652d4c6a16e09dee5afb073f91f4d895334a8c2a48599e65a5fa4f49e590",
+   "section_5_1_1_table_matches": "judge_gpt4o_v2 (pass1) and full-v34-opus_pass2/judge_gpt4o (pass2), row for row",
+   "section_8_names": "full-v34-opus_pass1/judge_gpt4o_repro_20260901/",
+   "names_the_defective_dir": false,
+   "documents_the_same_defect_class_elsewhere": "§5.1, xhigh pass 1, one row, 460 -> 461"
+  }
+ },
+
+ "adjacent_finding_out_of_scope": {
+  "title": "paper §5.1 'Headline-pair detail' quotes the grok raw pair's numbers, not the Opus pair's",
+  "paper_text": "Headline-pair detail: answerable 450/470 and 447/470; abstention 26/30 (pass 1) and 27/30 (pass 2)",
+  "actual_opus_pair": {"pass1": "answerable 452/470, abstention 27/30 = 479", "pass2": "answerable 450/470, abstention 25/30 = 475"},
+  "actual_grok_raw_pair_verified": {"full-v34_pass1/judge_gpt4o": "answerable 450/470, abstention 26/30 = 476", "full-v34_pass2/judge_gpt4o": "answerable 447/470, abstention 27/30 = 474"},
+  "conclusion": "The quoted detail is the grok raw pair's, mislabelled as the headline pair's. §5.1.1's table is correct; only this prose sentence is wrong.",
+  "owner": "paper / tex-port worker (not this audit's scope; not modified)"
+ },
+
+ "recommendations": [
+  {"priority": 1, "action": "LABEL", "target": "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o/", "detail": "Add SUPERSEDED.md / NOTE.md in-directory: partial artifact, 194/500 rows never judged (attempts 0, empty raw, null snapshot), judged against a checkpoint reader.log had already declared ARTIFACT INVALID, yields 289/500, authoritative pass-1 verdicts are in judge_gpt4o_v2/, and the shipped control receipt is from a later resume invocation that judged no rows.", "reversible_local": true},
+  {"priority": 2, "action": "DOCUMENT", "target": "README.md", "detail": "One clause naming full-v34-opus_pass1/judge_gpt4o/ as superseded. Silence is what makes the naming convention hazardous — the unsuffixed name reads as canonical."},
+  {"priority": 3, "action": "DOCUMENT", "target": "paper §5.1 or §8", "detail": "The paper already documents the identical one-row defect on the xhigh pass. Give the 194-row headline-pass instance the same sentence; it strengthens the fail-closed-audit story."},
+  {"priority": 4, "action": "HARNESS_GUARD", "target": "scripts/rescore_gpt4o_judge.py", "detail": "(a) refuse to resume into an out-dir whose rescored.jsonl contains any row with attempts == 0 (non-verdicts are not completed work); (b) refuse to judge a reader checkpoint whose run_meta audit is not clean, unless forced. Root cause is resume keying on existence rather than freshness."},
+  {"priority": 5, "action": "MANIFEST_ENRICH", "target": "scripts/build_release_manifest.py", "detail": "Optional: emit a per-judge-dir integrity column (rows, attempts==0 count) so the manifest would have exposed this. Today it proves only that bytes did not drift."},
+  {"priority": null, "action": "REMOVE", "target": null, "detail": "NOT recommended by this audit, and an OPERATOR DECISION regardless. Deleting a released file changes RELEASE_MANIFEST.md, its root hash f8875b3bd9252a0be4dbd486ef3ab0097eab6d5c886898e8d424cc565b602b3d, and the published anchor. Keeping the artifact and labelling it is also the more auditable choice.", "operator_decision": true}
+ ],
+
+ "operator_boundaries": [
+  "Any file removal from the public release",
+  "Any edit to RELEASE_MANIFEST.md or RELEASE_MANIFEST.root",
+  "Any commit or push"
+ ]
+}

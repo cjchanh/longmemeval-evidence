@@ -36,8 +36,10 @@ Verified leaderboard (raw /500, fetched at source):
 | OMEGA | 466 | GPT-4.1 judge — not rubric-comparable |
 
 (agentmemory "V4" claims 481 on an unreviewed GitHub README; excluded until
-reviewable.) We beat Chronos on multi-session (119 vs 118); the 4-row gap is
-3 knowledge-update + 1 SSP-abstention row.
+reviewable.) On Chronos's abstention-folded basis we beat them on multi-session in
+pass 1 (120 vs 118) and tie in pass 2 (118 vs 118). Our deficit is
+−3 knowledge-update in both passes, plus −2 preference in pass 2;
+pass 1 nets +1 (479 vs 478) and pass 2 nets −3 (475 vs 478).
 
 - **Retraction.** An earlier draft of this document claimed "475/500 and
   475/500, both passes agreeing" via a self-consistency (SC) step. That
@@ -47,8 +49,10 @@ reviewable.) We beat Chronos on multi-session (119 vs 118); the 4-row gap is
   judge-conditionally, and added no information (the submitted texts equaled
   the original pass answers). The artifacts remain committed (sc_flip/) as a
   record; no SC number appears in our claims.
-- With the two strict gold defects adjudicated (see dossier), the raw pair
-  reads 478/476. We report this as an adjudication scenario, not a score.
+- With the one strict gold defect adjudicated (370a8ff4; see dossier), the
+  grok pair reads 477/475 and the Opus pair 480/476 — +1 per pass, since that
+  row is scored 0 in all four passes. We report this as an adjudication
+  scenario, not a score.
 - An xhigh-effort reader pair (same chain, grok reasoning-effort xhigh;
   NC-gated: 0/58 correct-row flips) is running at press time; its result
   will be reported as its own two-pass number, never merged into this one.
@@ -127,17 +131,28 @@ ordering (+~5 gold-complete packets), facts operators (+recency/count/value
 classes), v3.4 granularity & anchoring rules (+9 stable gains vs v3.3, −5
 uncontrolled losses, net +4 stable, measured).
 
-## What still fails (24 answerable rows), attributed
+## What still fails, attributed
 
-- **2 strict gold defects** — gold unreachable without fabrication ($720
-  requiring a nonexistent $500 and an impossible date) and a gold
-  arithmetic error (15 weeks vs a dated 81 days). A third candidate (a
-  chandelier scored as "jewelry") was downgraded to boundary after an
-  independent-reader control. Full evidence: GOLD_DEFECT_DOSSIER.md. A weaker
-  reader that HALLUCINATED the missing $500 was scored correct — the judge
-  rewards gold-matching over evidence fidelity; we did not take that trade.
-- **~5 boundary-semantics rows** — both readings defensible (plan-vs-done,
-  does-the-offered-house-count); documented, claimed as worth 0.
+(Answerable rows scored wrong: Opus pair 16 stable across both passes,
+union 22; grok pair 18 stable, union 25. Counts are per pair and derivable
+from the released verdicts — there is no single cross-pair figure.)
+
+- **1 strict gold defect** — a gold arithmetic error (15 weeks vs a dated
+  81 days), wrong in every pass of both reader configurations. Two further
+  candidates were downgraded to boundary: a chandelier scored as "jewelry"
+  (after an independent-reader control), and the $720 workshop row (after a
+  re-audit of the released packet found the $500 fee stated by the user —
+  session answer_826d51da_2, 2023/02/26 13:37 — so the live question there is
+  window membership, not existence: the workshop is dated March 15-16, after
+  the Feb 26 question date). Full evidence: GOLD_DEFECT_DOSSIER.md. The two
+  readers split on that row: grok excluded the out-of-window $500, answered
+  $220 → 0 in both passes; the headline Opus reader included it, answered
+  $720 → correct in both passes. A weaker gemini-3.7-flash probe also
+  included it and was scored correct. The judge scores window inclusion
+  because gold does; we report the split rather than claim either side.
+- **~6 boundary-semantics rows** — both readings defensible (plan-vs-done,
+  does-the-offered-house-count, is-a-March-workshop-in-a-Feb-window);
+  documented, claimed as worth 0.
 - **~4 true reader-cognition misses** — the reader commits to an
   evidence-backed distractor. Two verifier designs (cite-or-revise;
   enumerate-then-adjudicate) were built and honestly retired: the first
@@ -167,7 +182,7 @@ uncontrolled losses, net +4 stable, measured).
 - All checkpoints, judge verdicts, control receipts, and attribution tables
   are committed under eval/dense_chain_v32_20260830/ and published at
   https://github.com/cjchanh/longmemeval-evidence (MIT; RELEASE_MANIFEST.md,
-  449 files, sha256 each; fresh clone verified 449/449).
+  466 files, sha256 each; manifest root da55ca5b…, --check green).
 
 ## Release boundary
 

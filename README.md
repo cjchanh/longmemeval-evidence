@@ -1,7 +1,7 @@
 # LongMemEval-S evidence release — Archivist dense chain (479/475 per 500)
 
-Evidence for *Auditable Long-Term Memory: A Deterministic Retrieval Chain at
-95.4±0.4% on LongMemEval-S* (Chanhnourack, Centennial Defense Systems,
+Evidence for *Auditable Long-Term Memory: A Deterministic Retrieval Chain
+Scoring 479/475 of 500 on LongMemEval-S Under the Official Judge* (Chanhnourack, Centennial Defense Systems,
 technical report v1.2, 2026-09-01). Paper source, Markdown, and PDF are in
 `eval/dense_chain_v32_20260830/paper/`.
 
@@ -17,6 +17,11 @@ for the file count; one SHA-256 per row).
   pass 1, `judge_gpt4o/` for pass 2), control receipts, GLM-5.3 cross-judge
   verdicts, and the pre-release re-judge `judge_gpt4o_repro_20260901/`
   (478/500, three verdict flips on identical text — see paper §8).
+  ⚠ `full-v34-opus_pass1/judge_gpt4o/` is a **partial artifact, not a judge
+  result**: 194 of its 500 rows were never judged (`attempts: 0`) and are
+  written `false`, so it totals 289/500. It is retained for the record and
+  labelled by `SUPERSEDED.md` beside it. Pass-1 verdicts come from
+  `judge_gpt4o_v2/`.
 - `full-v34_pass{1,2}/` (grok-4.6-high pair, 476/474), `full-v34-xhigh_pass{1,2}/`,
   `full-v34-{glm53,kimi,sol,dsv4pro,nemotron,gemini}_pass1/` — every run in
   the reader curve, same layout.
@@ -45,7 +50,7 @@ The headline pair's compiled packet text is released under
 ## Verify
 
 Manifest root (sha256 of `RELEASE_MANIFEST.md`):
-`f8875b3bd9252a0be4dbd486ef3ab0097eab6d5c886898e8d424cc565b602b3d`
+`2442c0ff903dcf84ec7c99797f6d100e7a73e06f173a1854fcb6de3154df4ccf`
 (`eval/dense_chain_v32_20260830/RELEASE_MANIFEST.root`). Anchors:
 `eval/dense_chain_v32_20260830/ANCHORS.md`.
 

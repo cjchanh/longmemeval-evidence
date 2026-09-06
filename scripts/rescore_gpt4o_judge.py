@@ -82,7 +82,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -429,6 +429,198 @@ def load_rows(path: Path) -> list[dict]:
     return rows
 
 
+# ---------------------------------------------------------------------------
+# Artifact guards — fail-closed refusals, never verdict changes.
+#
+# Origin: eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o/, where
+# 194 of 500 rows carry attempts=0 / llm_judge_raw="" / resolved_snapshot=null —
+# the judge was never invoked on them — and every one of those 194 is stored as
+# llm_judge_correct=false. A MISSING measurement was written into the same field
+# a real "no" verdict uses, and the directory's total (289/500) then read as a
+# score. Three mechanics combined to produce it, and each gets one guard here:
+#
+#   (a) resume keys on question_id EXISTENCE, not freshness, so a second
+#       invocation into that out-dir skipped all 194 and judged zero rows;
+#   (b) rescore_row() returns a false verdict with attempts=0 and no API call
+#       for an empty reader response, and the reader checkpoint it ran against
+#       had already been declared "ARTIFACT INVALID — not fit for judging.
+#       errors=194 empty=194" by the reader's own run log;
+#   (c) control_receipt.json and rescore_summary.json are written
+#       unconditionally, so the receipt shipped beside those rows came from a
+#       LATER invocation that judged nothing and describes a different row-set
+#       than the run that produced the verdicts.
+#
+# These guards only ever REFUSE. They do not touch judging logic, prompts, the
+# rubric, retry behavior, or any scoring path — a run that passes them scores
+# byte-identically to a run before they existed. Each is overridable by an
+# explicit flag so a deliberate operator workflow is not silently blocked.
+# ---------------------------------------------------------------------------
+
+class ArtifactGuardError(RuntimeError):
+    """A pre-flight or receipt-write guard refused. Fails closed: the run
+    produces no verdict and no receipt rather than an honest-looking one."""
+
+
+def unjudged_rows(rows: list[dict]) -> list[dict]:
+    """Rows the judge was never invoked on (attempts == 0).
+
+    rescore_row() records attempts=0, llm_judge_raw="", resolved_snapshot=None
+    when the reader response was empty. That row is an ABSENCE of measurement
+    stored in the verdict column — not a "no" from the judge."""
+    return [r for r in rows if not r.get("attempts")]
+
+
+def guard_resume_checkpoint(ckpt_path: Path, *,
+                            allow_unjudged_resume: bool = False) -> None:
+    """(a) Refuse to resume into an out-dir holding never-judged rows.
+
+    Resume skips any question_id already present in rescored.jsonl, so those
+    rows would stay unjudged for every future invocation while the summary
+    re-published their absences as verdicts. A clean --out-dir is required."""
+    if not ckpt_path.exists():
+        return
+    rows = load_rows(ckpt_path)
+    stale = unjudged_rows(rows)
+    if not stale:
+        return
+    types = ", ".join(f"{t}={n}" for t, n in sorted(
+        Counter(r.get("question_type", "") for r in stale).items()))
+    msg = (
+        f"REFUSING TO RESUME — {ckpt_path} already holds {len(stale)} of "
+        f"{len(rows)} rows with attempts=0 (judge never invoked; "
+        f"llm_judge_raw empty, resolved_snapshot null), all of them stored as "
+        f"llm_judge_correct=false. Those are missing measurements, not "
+        f"verdicts, and resume keys on question_id existence rather than "
+        f"freshness — resuming here would judge zero of them and re-publish "
+        f"the same partial artifact as a score. Unjudged by question type: "
+        f"{types}. Use a clean --out-dir, or pass --allow-unjudged-resume to "
+        f"override deliberately."
+    )
+    if allow_unjudged_resume:
+        print("WARNING (--allow-unjudged-resume): " + msg, flush=True)
+        return
+    raise ArtifactGuardError(msg)
+
+
+def guard_reader_checkpoint(path: Path, rows: list[dict], *,
+                            allow_empty_responses: bool = False) -> None:
+    """(b) Refuse to judge a reader checkpoint that carries empty responses.
+
+    Mirrors the reader's own fail-closed line ("ARTIFACT INVALID — not fit for
+    judging. errors=N empty=N"). An empty response is scored false with
+    attempts=0 and no judge call, so judging such a checkpoint writes absences
+    into the verdict column at exactly the rate the reader failed."""
+    empty = [r for r in rows if not (r.get("response") or "").strip()]
+    errored = [r for r in rows if r.get("error")]
+    if not (empty or errored):
+        return
+    msg = (
+        f"REFUSING TO JUDGE — reader checkpoint {path} is not fit for "
+        f"judging: errors={len(errored)} empty={len(empty)} of {len(rows)} "
+        f"rows. An empty reader response is recorded as "
+        f"llm_judge_correct=false with attempts=0 and NO judge call, so this "
+        f"pass would write {len(empty)} absences into the verdict column and "
+        f"report them as a score. Re-run the reader until the checkpoint is "
+        f"complete, or pass --allow-empty-responses to override deliberately."
+    )
+    if allow_empty_responses:
+        print("WARNING (--allow-empty-responses): " + msg, flush=True)
+        return
+    raise ArtifactGuardError(msg)
+
+
+def _control_receipt_row_ids(receipt: dict) -> list[str] | None:
+    """Sorted question_ids a control receipt describes, or None if it does not
+    record them (a legacy or hand-written receipt whose row-set is unknowable
+    — which fails closed, because unknown is not the same as identical)."""
+    records = receipt.get("records")
+    if not isinstance(records, list):
+        return None
+    ids = [r.get("question_id") for r in records if isinstance(r, dict)]
+    if not ids or any(i is None for i in ids):
+        return None
+    return sorted(ids)
+
+
+def summary_row_ids_sha256(scored: list[dict]) -> str:
+    """Fingerprint of the exact row-set a summary describes. Written into the
+    summary so a later invocation can tell "same rows, rewritten" from
+    "different rows, silently replacing the shipped receipt"."""
+    payload = "\n".join(sorted(
+        f"{r.get('question_id')}\t{int(bool(r.get('abstention')))}"
+        for r in scored
+    ))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def _read_receipt(path: Path) -> dict | None:
+    try:
+        return json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def guard_control_receipt_overwrite(path: Path, sample_ids: list[str], *,
+                                    allow_receipt_overwrite: bool = False
+                                    ) -> None:
+    """(c-1) Refuse to overwrite a control receipt describing other rows.
+
+    Called BEFORE the control arms run, so a refusal costs no judge calls. The
+    shipped incident receipt reads positive 12/12 over an artifact whose own
+    run log says positive 11/11: a later invocation with a different control
+    sample replaced the receipt of the run that actually produced the
+    verdicts."""
+    if not path.exists():
+        return
+    existing = _read_receipt(path)
+    old_ids = _control_receipt_row_ids(existing) if existing else None
+    new_ids = sorted(sample_ids)
+    if old_ids == new_ids:
+        return
+    detail = ("it records no per-row question_ids, so its row-set cannot be "
+              "shown to match" if old_ids is None
+              else f"it describes a row-set of {len(old_ids)}, this "
+                   f"invocation controls {len(new_ids)}")
+    msg = (
+        f"REFUSING TO OVERWRITE — {path} already exists and {detail}. A "
+        f"control receipt is the evidence for the verdicts shipped beside it; "
+        f"replacing it with a different invocation's row-set makes the "
+        f"receipt describe a run that did not produce those verdicts. Use a "
+        f"clean --out-dir, or pass --allow-receipt-overwrite to override "
+        f"deliberately."
+    )
+    if allow_receipt_overwrite:
+        print("WARNING (--allow-receipt-overwrite): " + msg, flush=True)
+        return
+    raise ArtifactGuardError(msg)
+
+
+def guard_summary_overwrite(path: Path, row_ids_sha256: str, *,
+                            allow_receipt_overwrite: bool = False) -> None:
+    """(c-2) Refuse to overwrite a rescore summary describing other rows."""
+    if not path.exists():
+        return
+    existing = _read_receipt(path)
+    old = existing.get("row_ids_sha256") if existing else None
+    if old == row_ids_sha256:
+        return
+    detail = ("carries no row_ids_sha256, so its row-set cannot be shown to "
+              "match" if not old
+              else f"describes row-set {old[:12]}…, this invocation scored "
+                   f"{row_ids_sha256[:12]}…")
+    msg = (
+        f"REFUSING TO OVERWRITE — {path} already exists and {detail}. The "
+        f"summary is the receipt for the rows in rescored.jsonl; replacing it "
+        f"from an invocation over a different row-set is how a green receipt "
+        f"comes to sit on top of a partial artifact. Use a clean --out-dir, "
+        f"or pass --allow-receipt-overwrite to override deliberately."
+    )
+    if allow_receipt_overwrite:
+        print("WARNING (--allow-receipt-overwrite): " + msg, flush=True)
+        return
+    raise ArtifactGuardError(msg)
+
+
 def summary_caveats(model: str) -> list[str]:
     """Provenance-accurate caveats for whatever model actually ran."""
     caveats = [
@@ -455,12 +647,20 @@ def summary_caveats(model: str) -> list[str]:
 def run_controls(rows: list[dict], model: str, n: int, timeout_s: int,
                  max_attempts: int, backoff_s: float, out_dir: Path, *,
                  transport: str = "opencode",
-                 api_key_file: Path | None = None) -> dict:
+                 api_key_file: Path | None = None,
+                 allow_receipt_overwrite: bool = False) -> dict:
     """Positive+negative judge controls, gating the full pass. Fail-closed:
     either arm below threshold aborts before any real row is judged."""
     rng = random.Random(20260830)
     eligible = [r for r in rows if r.get("response") and r.get("gold")]
     sample = rng.sample(eligible, min(n, len(eligible)))
+    # Guard (c-1) runs here, before the first control call: a refusal must
+    # cost no judge invocations, and the receipt must never be replaced by an
+    # invocation controlling a different row-set.
+    guard_control_receipt_overwrite(
+        out_dir / "control_receipt.json",
+        [r["question_id"] for r in sample],
+        allow_receipt_overwrite=allow_receipt_overwrite)
     pos_total = pos_pass = neg_pass = 0
     records = []
     for row in sample:
@@ -563,6 +763,22 @@ def main(argv: list[str] | None = None) -> int:
                     help="resume mode only; controls must already have passed")
     ap.add_argument("--skip-availability-check", action="store_true",
                     help="test/CI hook only; do not use for a real rescore")
+    # Artifact-guard overrides. Each guard fails closed by default; these
+    # exist so a deliberate operator workflow is refusable-but-possible
+    # rather than silently permitted. See the Artifact guards section above.
+    ap.add_argument("--allow-unjudged-resume", action="store_true",
+                    help="guard (a) override: resume into an out-dir whose "
+                         "rescored.jsonl already holds attempts=0 rows the "
+                         "judge was never invoked on. Those rows stay "
+                         "unjudged.")
+    ap.add_argument("--allow-empty-responses", action="store_true",
+                    help="guard (b) override: judge a reader checkpoint that "
+                         "contains empty/errored responses. Each empty "
+                         "response is scored false with no judge call.")
+    ap.add_argument("--allow-receipt-overwrite", action="store_true",
+                    help="guard (c) override: replace an existing "
+                         "control_receipt.json / rescore_summary.json that "
+                         "describes a different row-set than this run.")
     args = ap.parse_args(argv)
 
     # Transport/model default resolution (see module docstring):
@@ -584,12 +800,35 @@ def main(argv: list[str] | None = None) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     ans_rows = load_rows(Path(args.answerable))
     abs_rows = load_rows(Path(args.abs_path))
+    ckpt_path = out_dir / "rescored.jsonl"
+
+    # Pre-flight artifact guards (a) and (b). They run before the control
+    # phase so a refusal neither spends a judge call nor touches the receipt
+    # already sitting in out_dir.
+    try:
+        guard_reader_checkpoint(
+            Path(args.answerable), ans_rows,
+            allow_empty_responses=args.allow_empty_responses)
+        guard_reader_checkpoint(
+            Path(args.abs_path), abs_rows,
+            allow_empty_responses=args.allow_empty_responses)
+        guard_resume_checkpoint(
+            ckpt_path, allow_unjudged_resume=args.allow_unjudged_resume)
+    except ArtifactGuardError as exc:
+        print(str(exc), flush=True)
+        return 2
 
     if not args.skip_controls:
-        ctrl = run_controls(ans_rows, args.model, args.control_n,
-                            args.timeout_s, args.max_attempts, args.backoff_s,
-                            out_dir, transport=args.transport,
-                            api_key_file=args.api_key_file)
+        try:
+            ctrl = run_controls(
+                ans_rows, args.model, args.control_n,
+                args.timeout_s, args.max_attempts, args.backoff_s,
+                out_dir, transport=args.transport,
+                api_key_file=args.api_key_file,
+                allow_receipt_overwrite=args.allow_receipt_overwrite)
+        except ArtifactGuardError as exc:
+            print(str(exc), flush=True)
+            return 2
         print(f"controls: positive {ctrl['positive_pass']}/"
               f"{ctrl['n_positive_eligible']} negative {ctrl['negative_pass']}/"
               f"{ctrl['n']}", flush=True)
@@ -602,7 +841,6 @@ def main(argv: list[str] | None = None) -> int:
               flush=True)
         return 2
 
-    ckpt_path = out_dir / "rescored.jsonl"
     done_ids = set()
     if ckpt_path.exists():
         for row in load_rows(ckpt_path):
@@ -653,6 +891,12 @@ def main(argv: list[str] | None = None) -> int:
                           "GROUND_TRUTH_SURVEY.md §2 (official templates; "
                           "SSP header sentence reconstructed)"),
         "inputs": {"answerable": args.answerable, "abs": args.abs_path},
+        # Row-set fingerprint of exactly the rows this summary describes.
+        # Guard (c-2) compares it against any summary already in out_dir so a
+        # later invocation over different rows cannot silently replace the
+        # receipt for the shipped verdicts.
+        "row_ids_sha256": summary_row_ids_sha256(scored),
+        "n_rows": len(scored),
         "n_answerable": len(ans),
         "llm_judge_accuracy": (sum(r["llm_judge_correct"] for r in ans)
                                / max(1, len(ans))),
@@ -665,7 +909,15 @@ def main(argv: list[str] | None = None) -> int:
         },
         "caveats": summary_caveats(args.model),
     }
-    (out_dir / "rescore_summary.json").write_text(json.dumps(summary, indent=1))
+    summary_path = out_dir / "rescore_summary.json"
+    try:
+        guard_summary_overwrite(
+            summary_path, summary["row_ids_sha256"],
+            allow_receipt_overwrite=args.allow_receipt_overwrite)
+    except ArtifactGuardError as exc:
+        print(str(exc), flush=True)
+        return 2
+    summary_path.write_text(json.dumps(summary, indent=1))
     print(json.dumps({k: summary[k] for k in
                       ("judge_model", "transport", "resolved_snapshots",
                        "llm_judge_accuracy")}, indent=1))

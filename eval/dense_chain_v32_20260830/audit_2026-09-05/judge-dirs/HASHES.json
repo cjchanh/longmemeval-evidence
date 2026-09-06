@@ -1,0 +1,160 @@
+{
+ "schema": "cds/lme-judge-dir-authority-hashes/v1",
+ "generated_at": "2026-09-06T05:49:08.902712+00:00",
+ "algorithm": "sha256",
+ "release_root": "/Users/cj/Workspace/active/longmemeval-evidence-release",
+ "note": "Inputs are read-only evidence; outputs are this audit's artifacts. Paths are relative to release_root except audit outputs, which are relative to eval/dense_chain_v32_20260830/audit_2026-09-05/judge-dirs/.",
+ "inputs": {
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o/rescored.jsonl": {
+   "bytes": 170318,
+   "sha256": "49b4df396180f4ebf750fb600b09609cc4c31ea6affd05c335224344b2daa792"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o/rescore_summary.json": {
+   "bytes": 1655,
+   "sha256": "bddb5bf7fb86c0105a6436c7ca601da6002d4fd5e7ac7e9baa0690bdc31341e7"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o/control_receipt.json": {
+   "bytes": 2437,
+   "sha256": "3f94a4eb86cd1197eafe0420534353f30b97324fef7aba7b594c9200c44802e3"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o_v2/rescored.jsonl": {
+   "bytes": 173744,
+   "sha256": "e6d8e3a79006e82700af7a15072c14380c17aaae88c218fe7871691a1fcba5b0"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o_v2/rescore_summary.json": {
+   "bytes": 1669,
+   "sha256": "6cbe053ff398af423881181c5f224819a2d13290038680cd3f19baa66d0aab78"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o_v2/control_receipt.json": {
+   "bytes": 2438,
+   "sha256": "01fa3a29a6968b0bb7d87acbd91b85030bdfb78d4c254f47970fc2daeb376ccd"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o_repro_20260901/rescored.jsonl": {
+   "bytes": 173748,
+   "sha256": "fe3520d80bab52d642c8e87ae766e92a70ad8cfa9e210796355a8f972ed46eb8"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o_repro_20260901/rescore_summary.json": {
+   "bytes": 1669,
+   "sha256": "7ed05aa8234cb31163ca39808a76c515bbc2eb43df47619d257cd109f98edcfe"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o_repro_20260901/control_receipt.json": {
+   "bytes": 2437,
+   "sha256": "cffc2360711424c23834a8fb38a4f7be2057f4a38d47f2640917b29ef41ac8eb"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass2/judge_gpt4o/rescored.jsonl": {
+   "bytes": 173732,
+   "sha256": "9c2150627c206a8f83a381a099f2f9f110771ddef102f574e420c334aabaff84"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass2/judge_gpt4o/rescore_summary.json": {
+   "bytes": 1684,
+   "sha256": "2892c50b136f70498ac5c56afd03c06ac5c844d5f848c1c7a6ff2c97d341bf3b"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass2/judge_gpt4o/control_receipt.json": {
+   "bytes": 2419,
+   "sha256": "c343f3a5438141638b264c0173a4ac1d784ca9027d76abf373c1c7f334e56f96"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/reader/checkpoint_answerable.jsonl": {
+   "bytes": 514622,
+   "sha256": "b7e7e39795939267228435ada75e4516099e542d3730b88b6e7938fa4cfdcf93"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/reader/checkpoint_abs.jsonl": {
+   "bytes": 41424,
+   "sha256": "b2cf085f3e48c795510c06daa2b3cef4b8333e4e5a2ab338188860aec831116a"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/reader/run_meta.json": {
+   "bytes": 1006,
+   "sha256": "191d2283666e4fb648528fc2910a4bbd3c06e9a512b53148ba280e25fde44c28"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/reader.log": {
+   "bytes": 8823,
+   "sha256": "04b892c131bf658211da7772bedef2008ce7cbe3ebab7875c34e789f8266c66b"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge.log": {
+   "bytes": 1439,
+   "sha256": "bab0cbb58579682bf4ef322b6dbebdcb3ecd7218e74655f27d3f7e54e0bc42ff"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_v2.log": {
+   "bytes": 864,
+   "sha256": "06efc04bf33ac7d9f1ab8f92e4a744eec68bf158497947d800a00e39ce3e6acd"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_repro_20260901.log": {
+   "bytes": 864,
+   "sha256": "5ecda4d53c4bf815294dd68a377afce11a2fe0c2f79a221e9235f5db9d64b4b8"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass2/reader/checkpoint_answerable.jsonl": {
+   "bytes": 513329,
+   "sha256": "494abbde38d9d14355e19d837ff2ea27eefe157a49aa51ac9bb4902b3fc0bd50"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass2/reader/checkpoint_abs.jsonl": {
+   "bytes": 40802,
+   "sha256": "f2f4fef652a6358a5ea1bc4e9759b7259d94514a288ea7a65294c3e4a7acfc46"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass2/reader/run_meta.json": {
+   "bytes": 1006,
+   "sha256": "44a210326475ce57fb447a03239b067b862b351ec9a69a2194e4eca111cd8e67"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-opus_pass2/judge.log": {
+   "bytes": 879,
+   "sha256": "78a342a8efb29614c2f798b40e28809432f500a167d353af0c5f3044cf374979"
+  },
+  "eval/dense_chain_v32_20260830/full-v34_pass1/judge_gpt4o/rescored.jsonl": {
+   "bytes": 173740,
+   "sha256": "a037c3e5bc640456f0889e0497a6ccc0258de0ea98c8cf7d0beaddaf3c7c1b0e"
+  },
+  "eval/dense_chain_v32_20260830/full-v34_pass2/judge_gpt4o/rescored.jsonl": {
+   "bytes": 173738,
+   "sha256": "3a637cb42df1f11231ec4bc0822b94a36368549e9ddc64c9920e9fc6ea722924"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-xhigh_pass1/judge_gpt4o/rescored.jsonl": {
+   "bytes": 173777,
+   "sha256": "d3a5e59d9eaf8618dff355bfc90a8f1a1712c82b9e52b71ef3398e968c92de6a"
+  },
+  "eval/dense_chain_v32_20260830/full-v34-xhigh_pass1/judge_gpt4o_v2/rescored.jsonl": {
+   "bytes": 173794,
+   "sha256": "1ad30bcd53eb948aa4ea26726d2e08972ad611055d7037e55e40f1fcb7ec0403"
+  },
+  "eval/dense_chain_v32_20260830/RELEASE_MANIFEST.md": {
+   "bytes": 70277,
+   "sha256": "f8875b3bd9252a0be4dbd486ef3ab0097eab6d5c886898e8d424cc565b602b3d"
+  },
+  "eval/dense_chain_v32_20260830/RELEASE_MANIFEST.root": {
+   "bytes": 65,
+   "sha256": "b68bd36e33228e855aedc94776c10f986e79d81c27401400dc542d29c7e5d05f"
+  },
+  "eval/dense_chain_v32_20260830/ANCHORS.md": {
+   "bytes": 1118,
+   "sha256": "e346a6bcd1b13d2b96dba354f4c4d539f79a0dd92a072fe1ea2379e2cfed57b7"
+  },
+  "eval/dense_chain_v32_20260830/README.md": {
+   "bytes": 541,
+   "sha256": "9f865a94322765858d220441fc5554928b7096765a4e5b54f8a0ba974e49cbb6"
+  },
+  "eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md": {
+   "bytes": 30804,
+   "sha256": "ae1c652d4c6a16e09dee5afb073f91f4d895334a8c2a48599e65a5fa4f49e590"
+  },
+  "README.md": {
+   "bytes": 5456,
+   "sha256": "96f78e309767356db6a148acab1869a4f301e816ff659a77475917fc623abb67"
+  },
+  "scripts/rescore_gpt4o_judge.py": {
+   "bytes": 32176,
+   "sha256": "623c3b286fc7691db971ee2d7a33eb1b882aec2dca2067acf765e17473ad3876"
+  }
+ },
+ "audit_outputs": {
+  "JUDGE_DIR_AUTHORITY.md": {
+   "bytes": 18322,
+   "sha256": "fb92643ccb158f5325eeac60af7d661bfcfa35bed40295005da36cfb72128d39"
+  },
+  "judge_dir_authority.json": {
+   "bytes": 19313,
+   "sha256": "4f77ea5203d7900fb070b0cb6cc744a91a1e8e02b214214e6b0ece34219211dd"
+  },
+  "HASHES.json": {
+   "bytes": null,
+   "sha256": null,
+   "note": "self-referential; not hashed"
+  }
+ }
+}
