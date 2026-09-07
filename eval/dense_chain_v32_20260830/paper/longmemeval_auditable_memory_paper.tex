@@ -224,8 +224,8 @@ supports.
 The Opus pair is the headline: pass 1 exceeds the published SOTA (478)
 on the raw score; the pair's both-pass-stable floor is 473 (vs.\ the grok pair's 471);
 pass 1 is perfect on three of six answerable types (single-session assistant,
-user, preference). Its 8 flip rows (6 lost --- including 2 abstentions and 2
-dossier-listed flip-prone rows --- 2 gained) match the flip-noise structure of
+user, preference). Its 8 flip rows (6 lost --- including 2 abstentions and 1
+dossier-listed flip-prone row --- 2 gained) match the flip-noise structure of
 every other pair here. Under the pre-registered two-pass rule this is a
 \textbf{statistical tie with the published SOTA, one pass above it}, not a
 clean beat: we state 477$\pm$2 and decline the stronger claim our own bar
@@ -358,7 +358,10 @@ tiers but only a few points within a tier. The v3.4 scaffold contract is tuned
 to the grok reader family (\S7).
 
 \section{Error analysis: every remaining failure, attributed}
-Of 470 answerable questions, 24 fail in at least one pass of the grok-4.6-high pair.
+Of 470 answerable questions, 25 fail in at least one pass of the grok-4.6-high
+pair (pass 1: 20, pass 2: 23; 18 wrong in both). The buckets below attribute
+those failures; the per-bucket counts are approximate and do not form an exact
+partition of the union, since a flip row can change bucket between passes.
 
 \textbf{6.1 Reader-cognition residue ($\sim$4 rows).} The packet contains the
 correct evidence; the reader commits to an evidence-backed distractor. Two

@@ -367,11 +367,14 @@ this rather than hide it.
 
 ## 6. Error analysis: every remaining failure, attributed
 
-Of 470 answerable questions, 24 fail in at least one configuration.
-The partition: 4 reader-cognition + 8 gold-defect (1 strict, 7
-boundary) + 4 retrieval/ordering (1 pool-miss, 3 ordering) + 8
-flip-noise = 24. (§6.2's "12 winnable" rows are a cross-cutting subset
-spanning these buckets, not a fifth bucket.) Post-attribution:
+Of 470 answerable questions, 25 fail in at least one pass of the
+grok-4.6-high pair (pass 1: 20, pass 2: 23; 18 wrong in both). The
+buckets below — reader-cognition, gold-defect (1 strict, 7 boundary),
+retrieval/ordering (1 pool-miss, 3 ordering), and flip-noise — attribute
+those failures; their counts are approximate and do not form an exact
+partition of the union, since a flip row can change bucket between
+passes. (§6.2's "12 winnable" rows are a cross-cutting subset spanning
+these buckets, not a fifth bucket.) Post-attribution:
 
 ### 6.1 Reader-cognition residue (~4 rows)
 The packet contains the correct evidence; the reader commits to an

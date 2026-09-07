@@ -95,5 +95,20 @@
   "gpt4_7fce9456"
  ],
  "stable_loss_reading": "5 stable losses (4 answerable uncontrolled + 1 abs) = the uncontrolled-facts-row class predicted before launch; net stable delta vs v3.3 +4.",
- "gold_defect_note": "5 documented gold-defect candidates unclaimed in this number; with defensible gold corrections the pair would read ~478/476."
+ "gold_defect_note": "5 documented gold-defect candidates unclaimed in this number; with defensible gold corrections the pair would read ~478/476.",
+ "correction_2026_09_06": {
+  "supersedes": [
+   "gold_defect_note",
+   "headline"
+  ],
+  "why": "A 2026-09-06 re-audit of the released packets against the dossier's own claims found the Class-A entry for gpt4_731e37d7 false: packets_materialized/materialized_all.jsonl.gz carries a user-stated \"I paid $500 to attend\" (session answer_826d51da_2, 2023/02/26 13:37). No reader fabricated it; the dispute is window membership. Separately, the published raw bar was re-verified at source: Mastra's \"94.87%\" is category-unweighted and their per-category counts sum to 468/500 raw, so \"Mastra bar 474\" was never a raw comparison.",
+  "gold_defect_note_corrected": "1 strict gold defect (370a8ff4, temporal-reasoning, wrong in all four passes) and 7 boundary rows. Adjudicating the single strict defect gives this grok pair 477/475 (476+1 / 474+1). The prior \"~478/476\" rested on 5 candidates, two of which were later downgraded to boundary.",
+  "headline_corrected": "475 +/- 1 per 500 (476/474) for the grok-4.6-high pair. The published raw state of the art is Chronos High 478/500 (arXiv 2603.16862); Mastra's raw count is 468/500. This pair is below the published bar; the Opus headline pair (479/475) is the paper's reported result.",
+  "original_fields_retained": true,
+  "see": [
+   "GOLD_DEFECT_DOSSIER.md",
+   "audit_2026-09-05/DOSSIER_CLAIM_AUDIT.md",
+   "paper/longmemeval_auditable_memory_paper.tex"
+  ]
+ }
 }
