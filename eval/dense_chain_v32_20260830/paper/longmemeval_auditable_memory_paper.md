@@ -14,7 +14,7 @@ GPT-4o judge, against a published state of the art of 478/500
 (95.60%, Chronos High, PwC, arXiv 2603.16862) — one pass above it, one
 below: indistinguishable from it within the instrument's measured noise
 band. A second, grok-4.6 reader configuration measured
-476/474 on the identical substrate. The system is
+476/474 on the identical substrate. Ex-dossier (eight gold-defect/boundary rows removed), grok leads Opus 475/474 vs. 474/471. The system is
 a deterministic retrieval chain — dense retrieval, cross-encoder
 reranking, a coverage-first packet compiler, and mechanically extracted
 reasoning scaffolds, all deterministic code validated by negative
@@ -28,7 +28,8 @@ judged oppositely. We release every reader
 output, judge verdict, and control receipt, plus an error dossier that
 attributes all remaining failures — including a strict gold-answer
 defect, an improvement stage rejected by our own negative control, and
-the routes that did not work. A full re-score under the official judge
+the routes that did not work. The headline score is not independently
+reproducible: packets and the judge are; the method is not. A full re-score under the official judge
 costs about $1.28.
 
 ## 1. Introduction
@@ -102,16 +103,16 @@ reconstructed one); every run in this report returned 12/12 and 12/12.
 The harness records the resolved model snapshot per verdict and fails
 closed on authentication errors. A full 500-row re-score costs ≈ $1.28.
 
-**Comparison point (verified at source, 2026-08-31).** The published
+**Comparison point (author-reported; Chronos and Mastra sources pinned in the release).** The published
 raw-score state of the art is **Chronos High: 478/500 (95.60%)** (PwC,
-arXiv 2603.16862, Mar 2026; generator Claude Opus 4.6, LongMemEval judge
+arXiv 2603.16862, Mar 2026; PDF sha256 `a6a75d61…`; generator Claude Opus 4.6, LongMemEval judge
 protocol, per-category table published — their Table 2 and Appendix A
 Table 4). Two widely-quoted higher
 percentages are not raw-comparable: Mastra OM's "94.87%" is a
 category-unweighted average — their own per-category counts sum to
-**468/500 raw** (generator gpt-5-mini) — and OMEGA's "95.4%" is likewise
+**468/500 raw** (generator gpt-5-mini; page sha256 `cd0bf092…`) — and OMEGA's "95.4%" is likewise
 task-averaged with raw 466/500, judged by GPT-4.1 rather than the
-canonical judge. One higher claim (481/500, "agentmemory V4") exists in
+canonical judge (no source URL or hash is in this release). One higher claim (481/500, "agentmemory V4") exists in
 an unreviewed personal repository; we note it without treating it as the
 published bar. Reader/generator tier varies freely across all published
 entries (GPT-4o through Opus 4.6; our headline reader's alias resolved to Opus 5 on a same-day probe, §5.2); we follow the field convention of

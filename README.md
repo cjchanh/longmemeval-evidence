@@ -1,8 +1,24 @@
 # LongMemEval-S evidence release — Archivist dense chain (479/475 per 500)
 
-Evidence for *Auditable Long-Term Memory: A Deterministic Retrieval Chain
-Scoring 479/475 of 500 on LongMemEval-S Under the Official Judge* (Chanhnourack, Centennial Defense Systems,
-technical report v1.2, 2026-09-01). Paper source, Markdown, and PDF are in
+Judge-side evidence for a LongMemEval-S measurement: 479/475 of 500 under
+the official GPT-4o judge. Clone this repo; `python3 -m pytest -q tests/`
+is the install check. Re-derive the headline from released verdicts with
+the snippet under Verify. This tree does not release the retrieval, rerank,
+packet-compiler, or scaffold-operator sources.
+
+The headline score is not independently reproducible. Packets and the
+judge harness are; the method is not.
+
+Comparator numbers (Chronos High 478, Mastra 468 raw, OMEGA 466 raw) are
+author-reported. Chronos PDF sha256 `a6a75d611a381ba8e244c77601c21ad4567e39e2e97426c85999a0cea21ae738`
+and Mastra page sha256 `cd0bf092daa9a2956bf8983c8425ea812290ef6c005b00eb6fa60ba7e0f2a073`
+are pinned under `eval/dense_chain_v32_20260830/comparators/`; OMEGA has no
+source in this release.
+
+Paper: *Auditable Long-Term Memory: A Deterministic Retrieval Chain
+Measured at 479/475 of 500 on LongMemEval-S Under the Official Judge*
+(Chanhnourack, Centennial Defense Systems, technical report v1.3,
+2026-09-08). Source, Markdown, and PDF are in
 `eval/dense_chain_v32_20260830/paper/`.
 
 This tree matches the rows in
@@ -14,7 +30,7 @@ for the file count; one SHA-256 per row).
 - `eval/dense_chain_v32_20260830/full-v34-opus_pass{1,2}/` — the headline
   Opus reader pair: reader checkpoints (`reader/checkpoint_*.jsonl`,
   `run_meta.json`), official GPT-4o judge verdicts (`judge_gpt4o_v2/` for
-  pass 1, `judge_gpt4o/` for pass 2), control receipts, GLM-5.3 cross-judge
+  pass 1, `judge_gpt4o/` for pass 2), control records, GLM-5.3 cross-judge
   verdicts, and the pre-release re-judge `judge_gpt4o_repro_20260901/`
   (478/500, three verdict flips on identical text — see paper §8).
   ⚠ `full-v34-opus_pass1/judge_gpt4o/` is a **partial artifact, not a judge
@@ -50,7 +66,7 @@ The headline pair's compiled packet text is released under
 ## Verify
 
 Manifest root (sha256 of `RELEASE_MANIFEST.md`):
-`b94788bc44bc4206cbf1d3917be881de0fddb82c4b608e964ca42f4c7809e744`
+`e8ec1cf469c59faf843d6e7ed6e4bdc1fe5b0336b448698159e7527f8ef88c64`
 (`eval/dense_chain_v32_20260830/RELEASE_MANIFEST.root`). Anchors:
 `eval/dense_chain_v32_20260830/ANCHORS.md`.
 
@@ -70,7 +86,7 @@ shasum -a 256 benchmarks/longmemeval-judge-gate/upstream/evaluate_qa.py
 ```
 
 `--check` exits 1 and names mismatching rows if any released file drifted.
-The signature wrapper prints `UNSIGNED` and exits 2 until an operator
+The signature wrapper prints `UNSIGNED` and exits 2 until a maintainer
 offline key writes `RELEASE_MANIFEST.root.sig`.
 
 Every file against the manifest:
@@ -128,4 +144,4 @@ the raw dataset JSON is not.
 
 ## License
 
-MIT (see `LICENSE`) for the code and receipts in this release. The benchmark-derived question and gold text is MIT under the dataset's own license.
+MIT (see `LICENSE`) for the code and evidence in this release. The benchmark-derived question and gold text is MIT under the dataset's own license.

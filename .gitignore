@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+.lineage-state/
+arxiv_upload/*.pdf
