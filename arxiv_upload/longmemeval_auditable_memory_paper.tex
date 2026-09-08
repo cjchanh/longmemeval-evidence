@@ -11,19 +11,19 @@
 \titleformat*{\subsection}{\normalsize\bfseries}
 \newcommand{\pending}[1]{\textcolor{red!70!black}{[#1]}}
 
-\title{\textbf{Auditable Long-Term Memory: A Deterministic\\Retrieval Chain Scoring 479/475 of 500 on\\LongMemEval-S Under the Official Judge}}
-\author{Christopher J. Chanhnourack\\Centennial Defense Systems (Archivist)}
-\date{Technical report --- September 1, 2026 --- v1.2}
+\title{\textbf{Auditable Long-Term Memory: A Deterministic\\Retrieval Chain Measured at 479/475 of 500 on\\LongMemEval-S Under the Official Judge}}
+\author{Christopher J. Chanhnourack\thanks{Correspondence: Centennial Defense Systems. Evidence release: \url{https://github.com/cjchanh/longmemeval-evidence}. Source-tree evidence commits: 477726726 \textperiodcentered{} 04eb64763 \textperiodcentered{} ad71321ea \textperiodcentered{} ba805e575 \textperiodcentered{} 08e5784bb \textperiodcentered{} ad43cc99a \textperiodcentered{} 9b0711c39.}\\Centennial Defense Systems (Archivist)}
+\date{Technical report --- September 8, 2026 --- v1.3 (v1.2: September 1, 2026)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
 \noindent We report 479/500 and 475/500 across two independent full passes on
-LongMemEval-S (Claude Opus reader; CLI alias resolving to \texttt{claude-opus-5}, \S5.3) under the benchmark's official GPT-4o
+LongMemEval-S (Claude Opus reader via an unpinned CLI alias; a same-day probe resolved it to \texttt{claude-opus-5}, \S5.2) under the benchmark's official GPT-4o
 judge, against a published state of the art of 478/500 (95.60\%,
-Chronos High, PwC, arXiv 2603.16862) --- one pass above it, one below: a
-statistical tie whose spread sits inside the instrument's measured noise band.
+Chronos High, PwC, arXiv 2603.16862) --- one pass above it, one below:
+indistinguishable from it within the instrument's measured noise band.
 A second, grok-4.6 reader configuration measured 476/474 on the identical
 substrate. The system is a deterministic retrieval chain --- dense retrieval,
 cross-encoder reranking, a coverage-first packet compiler, and mechanically
@@ -52,7 +52,7 @@ This report makes two claims. \textbf{A capability claim}: a deterministic,
 auditable retrieval chain --- in which the language model is confined to a
 replaceable reader role --- measures 479/475 per 500 on LongMemEval-S across
 two independent full passes --- pass 1 above the published state of the art
-(478), the pair a statistical tie with it, with overlapping confidence
+(478), the pair indistinguishable from it within measured noise, with overlapping confidence
 intervals and per-run variance comparable to the gap. \textbf{A methodology
 claim}: the apparatus that produced the number is the more important
 contribution: every stage below the reader is deterministic code validated
@@ -62,7 +62,10 @@ quantified and disclosed rather than absorbed into the headline.
 
 The system under test is the retrieval core of Archivist, a local-first
 conversational memory product. Nothing in the chain is benchmark-specific
-except the evaluation harness itself.
+except the evaluation harness itself. The release reproduces the measurement
+--- materialized packets, scaffolds, reader outputs, judge verdicts, and control
+receipts --- and attests the chain's determinism by receipt; the retrieval,
+rerank, packet-compiler, and scaffold-operator sources are held (\S8).
 
 \subsection{Related work}
 Agentic memory systems (MemGPT, Packer et al., 2023; production systems such as
@@ -113,7 +116,7 @@ with raw 466/500, judged by GPT-4.1 rather than the canonical judge. One higher
 claim (481/500, ``agentmemory V4'') exists in an unreviewed personal
 repository; we note it without treating it as the published bar. Reader tier
 varies freely across published entries (GPT-4o through Opus 4.6; our headline
-reader resolves to Opus 5, \S5.3); we follow the
+reader's alias resolved to Opus 5 on a same-day probe, \S5.2); we follow the
 field convention of reporting our strongest configuration alongside the full
 reader ladder.
 
@@ -227,7 +230,7 @@ pass 1 is perfect on three of six answerable types (single-session assistant,
 user, preference). Its 8 flip rows (6 lost --- including 2 abstentions and 1
 dossier-listed flip-prone row --- 2 gained) match the flip-noise structure of
 every other pair here. Under the pre-registered two-pass rule this is a
-\textbf{statistical tie with the published SOTA, one pass above it}, not a
+\textbf{indistinguishable from the published SOTA within measured noise, one pass above it}, not a
 clean beat: we state 477$\pm$2 and decline the stronger claim our own bar
 forbids (a pre-release re-judge of pass 1 under the same official judge
 returned 478 --- three verdict flips on identical text, \S8 --- so even
@@ -238,8 +241,8 @@ fee whose event is dated outside the question's four-month window (a
 boundary row, not a fabrication --- \S6.3), one is lost to fidelity (the
 evidence-faithful answer contradicts defective gold) --- net zero per pass.
 Adjudicating the single strict defect raises the Opus pair to 480/476
-(479+1 / 475+1); the tie with the published state of the art holds in every
-stance. Judge controls 24/24 in both passes; a 25-row probe preceded the pair
+(479+1 / 475+1); the pair stays within noise of the published state of the art
+in every stance. Judge controls 24/24 in both passes; a 25-row probe preceded the pair
 (11/25 stable-wrong recovered, one row no prior reader had ever solved).
 
 The xhigh variant is a measured regression ($-15$/$-9$), reported in full.
@@ -275,7 +278,7 @@ knowledge-update & 72 & 70 (97.2\%) & 71 (98.6\%) & 69 / 70 & 69 / 70\\
 single-session-preference & 30 & 29 (96.7\%) & 29 (96.7\%) & 25 / 25 & 30 / 28\\
 temporal-reasoning & 127 & 122 (96.1\%) & 122 (96.1\%) & 121 / 123 & 123 / 123\\
 multi-session & 121 & 110 (90.9\%) & 106 (87.6\%) & 103 / 106 & 110 / 109\\
-abstention & 30 & 26 (86.7\%) & 27 (90.0\%) & 26 / 26 & 27 / 25\\
+abstention & 30 & 26 (86.7\%) & 27 (90.0\%) & 27 / 26 & 27 / 25\\
 \midrule
 \textbf{Total} & \textbf{500} & \textbf{476} & \textbf{474} & 461 / 465 & \textbf{479 / 475}\\
 \bottomrule
@@ -290,8 +293,9 @@ Appendix~A), our pass-1 deficit is $-3$ knowledge-update (75/78 vs.\ their
 78/78), offset by $+2$ multi-session (120/133 vs.\ 118/133), $+1$
 single-session-user (70/70 vs.\ 69/70) and $+1$ temporal-reasoning (128/133
 vs.\ 127/133), with assistant and preference level --- net $+1$, which is 479
-vs.\ their 478. Pass 2 carries the same $-3$ knowledge-update, ties on
-multi-session (118/133), and loses $-2$ on preference (28/30) --- net $-3$,
+vs.\ their 478. Pass 2 carries the same $-3$ knowledge-update and the same
+$+1$ single-session-user and $+1$ temporal-reasoning, ties on multi-session
+(118/133), and loses $-2$ on preference (28/30) --- net $-3$,
 which is 475 vs.\ 478. We therefore exceed them on multi-session in pass 1 and
 match it in pass 2; the pass-to-pass difference is preference, not
 multi-session.
@@ -324,7 +328,7 @@ comparator's Opus 4.6. The grok and GLM readers are named models. Three of Opus'
 (\texttt{2133c1b5\_abs}, \texttt{c8090214\_abs}, \texttt{f685340e\_abs}) are
 premise-repair-then-answer responses the official judge accepts and the GLM
 cross-judge rejects; under strict abstention the pair reads 476/472 --- still
-a tie.}
+within noise of the published bar.}
 {\footnotesize $^{1}$One row of the legacy baseline failed its reader lane and
 was never re-read; counted as scored-out-of-499 rather than imputed.}
 
@@ -352,7 +356,7 @@ family) scores 465/500 (444/470 answerable, 21/30 abstention; same judge,
 controls 12/12) --- long-context specialization does not transfer to
 memory-benchmark dominance on this substrate. Together the fixed
 substrate exposes a full reader-capability curve
-(93 $\to$ 436 $\to$ 455 $\to$ 465 $\to$ 471 $\to$ 476): the packet and scaffold layers carry the
+(93 $\to$ 436 $\to$ 455 $\to$ 465 $\to$ 471 $\to$ 476 $\to$ 479): the packet and scaffold layers carry the
 score for capable readers, and reader choice moves it by tens of points across
 tiers but only a few points within a tier. The v3.4 scaffold contract is tuned
 to the grok reader family (\S7).
@@ -412,7 +416,7 @@ sessions were gold --- the presumed alias-mismatch losses do not exist in
 this benchmark. Remaining failures are measured flip noise.
 
 \section{Limitations}
-\begin{itemize}
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}\setlength{\parsep}{0pt}
 \item \textbf{No held-out evaluation.} Every component that moves the score
 --- the v3.2$\to$v3.4 operator ladder, the extension-ordering sweeps, the
 packet budgets, and the 60-row negative-control set --- was developed
@@ -439,6 +443,12 @@ margins can honestly claim.
 \item \textbf{Scaffold--reader coupling.} The v3.4 scaffold is tuned to one
 reader family; the exact number moves a few points across readers, though the
 chain's ranking of readers is stable.
+\item \textbf{The headline reader's provenance is probed, not recorded.} The
+Opus reader ran through an unpinned CLI alias; no run artifact records the
+model it resolved to, and the same-day probe that resolved it to
+\texttt{claude-opus-5} ran on a later CLI build than the passes (\S5.2). The
+grok and GLM readers are named models. Any re-run of the headline pair should
+pin the reader snapshot in the run receipt.
 \item \textbf{One benchmark.} No cross-benchmark generality claim.
 \item \textbf{A claim in our own released dossier was wrong and is corrected
 here.} The dossier originally classed the \$720 workshop row as
@@ -465,7 +475,7 @@ has no pinned source yet; that gap is recorded in the same manifest.
 Released with this report at
 \url{https://github.com/cjchanh/longmemeval-evidence} (MIT). A fresh clone
 verifies every \texttt{RELEASE\_MANIFEST.md} row and re-derives every headline count from the
-released verdicts without an API key. The evidence commits in the footer
+released verdicts without an API key. The evidence commits on the title page
 anchor to the source tree the release was exported from. The release holds all reader outputs, all judge verdicts and
 control receipts for every run in the ladder, the judge harness (frozen rubric, SHA-pinned
 templates, fail-closed transport), the tie-break rule and per-vote records,
@@ -498,21 +508,27 @@ with the quoted 479; answerable is identical (452/470); the three flips are
 on byte-identical answer text (\texttt{7024f17c} and \texttt{031748ae\_abs}
 lost, \texttt{a2f3aa27} gained). The official judge's own flip floor (\S4.2)
 is therefore measured within a single judge on the headline pass, and
-``one pass above'' is inside that floor; the tie is the claim. Receipts:
-\texttt{full-v34-opus\_pass1/judge\_gpt4o\_repro\_20260901/}.
+``one pass above'' is inside that floor; the claim is the noise band, not the
+rank. Receipts:
+\texttt{full-v34-opus\_pass1/judge\_gpt4o\_repro\_20260901/}. The authoritative
+verdict directories are \texttt{full-v34-opus\_pass1/judge\_gpt4o\_v2/} (479) and
+\texttt{full-v34-opus\_pass2/judge\_gpt4o/} (475);
+\texttt{full-v34-opus\_pass1/judge\_gpt4o/} is a superseded partial in which 194
+rows were never judged (289/500), retained under a \texttt{SUPERSEDED.md} marker
+rather than deleted.
 
 \section{Conclusion}
 A deterministic, negatively-controlled retrieval chain with the LLM confined
 to a replaceable reader measures 479/475 per 500 on LongMemEval-S --- one pass
-above the published state of the art, the pair a statistical tie inside the
-instrument's noise band --- under a measurement discipline that makes the number defensible at margins where
+above the published state of the art, the pair indistinguishable from it inside
+the instrument's noise band --- under a measurement discipline that makes the number defensible at margins where
 measurement is usually the weakest link. The apparatus generalizes: freeze the
 promotion rule before the deciding run, control every improvement against what
 it might break, measure the judge, and publish the failures with the
 successes.
 
 \section*{References}
-\begin{itemize}
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}\setlength{\parsep}{0pt}
 \item Wu, D., et al. \emph{LongMemEval: Benchmarking Chat Assistants on
 Long-Term Interactive Memory.} ICLR 2025, arXiv:2410.10813.
 \item Sen, S., Lumer, E., Gulati, A., Subbiah, V.~K. \emph{Chronos:
@@ -531,14 +547,5 @@ NeurIPS 2023. \quad Dodge, J., et al. \emph{Show Your Work.} EMNLP 2019.
 \item BAAI. \emph{bge-reranker-v2-m3.} (cross-encoder reranker used in the
 retrieval chain)
 \end{itemize}
-
-\vspace{1em}
-\noindent\rule{\textwidth}{0.4pt}\\
-{\footnotesize Correspondence: Christopher J. Chanhnourack, Centennial Defense Systems.
-Evidence release: \url{https://github.com/cjchanh/longmemeval-evidence}.
-Source-tree evidence commits: 477726726
-\textperiodcentered{} 04eb64763 \textperiodcentered{} ad71321ea
-\textperiodcentered{} ba805e575 \textperiodcentered{} 08e5784bb
-\textperiodcentered{} ad43cc99a \textperiodcentered{} 9b0711c39.}
 
 \end{document}
