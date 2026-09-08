@@ -234,7 +234,7 @@ on the raw score; the pair's both-pass-stable floor is 473 (vs. the grok pair's
 rows: 6 lost — including 2 abstentions and 1 row our dossier already
 lists as flip-prone — 2 gained) matches the flip-noise structure
 measured on every other pair in this report. Under the pre-registered
-two-pass rule this is a **indistinguishable from the published SOTA within measured noise, one
+two-pass rule this is **indistinguishable from the published SOTA within measured noise, one
 pass above it**, not a clean beat: we state 477±2 and decline the
 stronger claim our own bar forbids (a pre-release re-judge of pass 1 under
 the same official judge returned 478 — three verdict flips on identical

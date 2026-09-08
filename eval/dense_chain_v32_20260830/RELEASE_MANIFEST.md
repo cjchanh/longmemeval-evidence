@@ -270,10 +270,10 @@ A public copy of this release is verified when every row below matches `sha256su
 | `eval/dense_chain_v32_20260830/packets_materialized/MANIFEST.md` | 2282 | `067ab6381144c70699f3d590eb5414f1a0f1a68405463b96c0c3424fdbcfb7b6` |
 | `eval/dense_chain_v32_20260830/packets_materialized/facts_all.jsonl.gz` | 742968 | `0e0f648dfc7a6e39236b9d1272a89b36931e99cfb2f344270a6ec1e7cdf2ff42` |
 | `eval/dense_chain_v32_20260830/packets_materialized/materialized_all.jsonl.gz` | 22471435 | `304b7be41c1045618cba3d669d1c1062298500c4447872378c7b077134305dd7` |
-| `eval/dense_chain_v32_20260830/paper/ARXIV_SUBMISSION.md` | 2963 | `2e564a345faa900ad15a68b855c894b24d1a5f47a475cc628acf2a554517a9b1` |
-| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md` | 34826 | `1607cb8a1879e91e16fccb030b873b2ef489447eb0a0c8135730bf81d0c61edd` |
-| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.pdf` | 240972 | `15887f07cc82a3ce51316e3516c22ed2405ef61dd1e2a1c37b93b818d22cd582` |
-| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.tex` | 33704 | `d45e91ce4826daebbd80234efe14d07f17f04b792cdcff145d548069d70c76be` |
+| `eval/dense_chain_v32_20260830/paper/ARXIV_SUBMISSION.md` | 2963 | `910bd80c636798108b3722e31125476ccbc58ddb5295dbef24d620e5bc1086d2` |
+| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.md` | 34824 | `e5f4c485bd255907e4ad927cf9e86154f0771fe79dd519450c0f00a5368fb62a` |
+| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.pdf` | 240969 | `8caf5fc5bba69a00bb51f02fc226b8bd62d91b6351d57bf7420ee7c008905735` |
+| `eval/dense_chain_v32_20260830/paper/longmemeval_auditable_memory_paper.tex` | 33702 | `4db72ea6bca808ab09bd7189ab7bf3d7c2d5116c92db8015ae82621513079743` |
 | `eval/dense_chain_v32_20260830/replay-f3fix_pass1/judge.log` | 743 | `a5adcda1af36d89f211eab93a0515e5b12ee8bbe3a64f1fdadda09cc8577503b` |
 | `eval/dense_chain_v32_20260830/replay-f3fix_pass1/judge/control_receipt.json` | 2392 | `b8b3b4ba28f879d23820b90d32fda7615729c4553fa2854965e42b3106e33cad` |
 | `eval/dense_chain_v32_20260830/replay-f3fix_pass1/judge/rescore_summary.json` | 1603 | `aef1c5e19afa643ba5c5ea5bcdaf51fb4fa2bdce975d34dc192fb3a62b061b7f` |

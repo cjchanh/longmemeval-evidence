@@ -20,7 +20,7 @@
 
 \begin{abstract}
 \noindent We report 479/500 and 475/500 across two independent full passes on
-LongMemEval-S (Claude Opus reader via an unpinned CLI alias; a same-day probe resolved it to \texttt{claude-opus-5}, \S5.2) under the benchmark's official GPT-4o
+LongMemEval-S (Claude Opus reader via an unpinned CLI alias; a same-day probe resolved it to \texttt{claude-opus-5}, \S5.3) under the benchmark's official GPT-4o
 judge, against a published state of the art of 478/500 (95.60\%,
 Chronos High, PwC, arXiv 2603.16862) --- one pass above it, one below:
 indistinguishable from it within the instrument's measured noise band.
@@ -116,7 +116,7 @@ with raw 466/500, judged by GPT-4.1 rather than the canonical judge. One higher
 claim (481/500, ``agentmemory V4'') exists in an unreviewed personal
 repository; we note it without treating it as the published bar. Reader tier
 varies freely across published entries (GPT-4o through Opus 4.6; our headline
-reader's alias resolved to Opus 5 on a same-day probe, \S5.2); we follow the
+reader's alias resolved to Opus 5 on a same-day probe, \S5.3); we follow the
 field convention of reporting our strongest configuration alongside the full
 reader ladder.
 
@@ -161,9 +161,9 @@ scaffold is gold-blind and question-ID-independent by construction.
 
 \textbf{3.5 Replaceable reader.} The packet, scaffold, and question go to an
 LLM reader. The reader is deliberately replaceable; we measure the chain
-under three readers (\S5.3). The headline pair uses the Claude Opus reader
+under three readers (\S5.4). The headline pair uses the Claude Opus reader
 over the CLI lane (\S5.1); \texttt{grok-4.6-high} and GLM-5.3 are the
-secondary readers (\S5.3).
+secondary readers (\S5.4).
 
 \section{Measurement methodology}
 \textbf{4.1 Two-pass rule (pre-registered).} A nondeterministic reader means a
@@ -219,7 +219,7 @@ v3.4, grok-4.6 high --- ex-dossier (same 8 rows removed) & 475/492 & 474/492\\
 \end{center}
 
 Ex-dossier, grok leads Opus 475/474 to 474/471: the Opus margin on the full
-set is carried by gold-idiom reading on dossier rows (\S5.2, \S6.3), not by
+set is carried by gold-idiom reading on dossier rows (\S5.3, \S6.3), not by
 evidence reading on ordinary rows. Both are reported because the headline is
 the official-judge score and the ex-dossier pair is what the evidence
 supports.
@@ -229,7 +229,7 @@ on the raw score; the pair's both-pass-stable floor is 473 (vs.\ the grok pair's
 pass 1 is perfect on three of six answerable types (single-session assistant,
 user, preference). Its 8 flip rows (6 lost --- including 2 abstentions and 1
 dossier-listed flip-prone row --- 2 gained) match the flip-noise structure of
-every other pair here. Under the pre-registered two-pass rule this is a
+every other pair here. Under the pre-registered two-pass rule this is
 \textbf{indistinguishable from the published SOTA within measured noise, one pass above it}, not a
 clean beat: we state 477$\pm$2 and decline the stronger claim our own bar
 forbids (a pre-release re-judge of pass 1 under the same official judge
@@ -446,7 +446,7 @@ chain's ranking of readers is stable.
 \item \textbf{The headline reader's provenance is probed, not recorded.} The
 Opus reader ran through an unpinned CLI alias; no run artifact records the
 model it resolved to, and the same-day probe that resolved it to
-\texttt{claude-opus-5} ran on a later CLI build than the passes (\S5.2). The
+\texttt{claude-opus-5} ran on a later CLI build than the passes (\S5.3). The
 grok and GLM readers are named models. Any re-run of the headline pair should
 pin the reader snapshot in the run receipt.
 \item \textbf{One benchmark.} No cross-benchmark generality claim.
