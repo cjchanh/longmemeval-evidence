@@ -82,14 +82,14 @@ provenance goes to a separate sidecar so it cannot perturb the served artifact.
 ```
 python3 eval/dense_chain_v32_20260830/v4/anchors/gen_facts_v35.py \
   --materialized eval/dense_chain_v32_20260830/materialized.jsonl \
-  --data /Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json \
+  --data "${LONGMEMEVAL_S_JSON:-$HOME/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json}" \
   --out eval/dense_chain_v32_20260830/v4/anchors/facts_v35.jsonl \
   --anchors-out eval/dense_chain_v32_20260830/v4/anchors/anchors_v35.jsonl \
   --contract v3.5-facts
 
 python3 eval/dense_chain_v32_20260830/v4/anchors/gen_facts_v35.py \
   --materialized eval/dense_chain_v32_20260830/materialized_abs.jsonl \
-  --data /Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json \
+  --data "${LONGMEMEVAL_S_JSON:-$HOME/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json}" \
   --out eval/dense_chain_v32_20260830/v4/anchors/facts_abs_v35.jsonl \
   --anchors-out eval/dense_chain_v32_20260830/v4/anchors/anchors_abs_v35.jsonl \
   --contract v3.5-facts

@@ -11,7 +11,7 @@ Read-only diff/plan artifact. Nothing in `paper/` or `arxiv_upload/` was modifie
   - **12** are cosmetic-only (punctuation/tense/article, zero informational delta) — Tier C, listed compactly, not recommended as individual ports.
 - **Mechanically portable: 17 of 39** (PI-1..PI-17). All are text substitutions in existing `\textbf{}`/paragraph/itemize/tabular structures — no new LaTeX packages, no new environments.
 - **No table changed column count** (§5.1, §5.1.1, §5.2 tables all gained/need rows only, never columns). **No figures exist in either document.** Citations are handled as one structural flag (CP-7), not per-citation edits.
-- **TeX toolchain: INSTALLED and verified.** TinyTeX `pdflatex` at `/Users/cj/Library/TinyTeX/bin/universal-darwin/pdflatex` (also xelatex, lualatex, latexmk) plus Homebrew `tectonic` at `/opt/homebrew/bin/tectonic`. Test-compiled the current tex in an isolated scratch copy (not the repo) — clean 2-pass build, exit 0, 8-page PDF. **The PDF does not have to be recorded as stale** — see §5.
+- **TeX toolchain: INSTALLED and verified.** TinyTeX `pdflatex` at `~/Library/TinyTeX/bin/universal-darwin/pdflatex` (also xelatex, lualatex, latexmk) plus Homebrew `tectonic` at `/opt/homebrew/bin/tectonic`. Test-compiled the current tex in an isolated scratch copy (not the repo) — clean 2-pass build, exit 0, 8-page PDF. **The PDF does not have to be recorded as stale** — see §5.
 
 ## 1. Commits that touched the md after the tex's baseline (2026-09-01 17:29:17, commit `27904b9`)
 
@@ -403,7 +403,7 @@ md's §6.4 heading is "Retrieval ceiling (2 rows) and flip noise"; tex's is "Ret
 
 ## 5. PDF rebuild
 
-TeX toolchain **is installed**: TinyTeX provides `pdflatex`, `xelatex`, `lualatex`, `latexmk`, `kpsewhich` at `/Users/cj/Library/TinyTeX/bin/universal-darwin/`; Homebrew also provides `tectonic` at `/opt/homebrew/bin/tectonic`. All are on `PATH`.
+TeX toolchain **is installed**: TinyTeX provides `pdflatex`, `xelatex`, `lualatex`, `latexmk`, `kpsewhich` at `~/Library/TinyTeX/bin/universal-darwin/`; Homebrew also provides `tectonic` at `/opt/homebrew/bin/tectonic`. All are on `PATH`.
 
 Verified by test-compiling the **current, unmodified** tex in an isolated scratch copy (`/private/tmp/claude-501/-Users-cj/ada35468-f339-4d59-8027-c1740c8e0180/scratchpad/texbuild/`, never inside the repo): two `pdflatex` passes, both exit 0, output `longmemeval_auditable_memory_paper.pdf`, 8 pages, 225,900 bytes. No missing-package errors; all packages the tex declares (geometry, booktabs, microtype, parskip, titlesec, xcolor, hyperref, helvet) resolved from TinyTeX's tree.
 

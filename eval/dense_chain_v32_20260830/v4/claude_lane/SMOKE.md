@@ -24,7 +24,7 @@ comment for that history).
 
 - Prompt built exactly as `scripts/run_lme_qa_flash_packets.py`'s
   `build_prompt()` builds it: dataset item from
-  `/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json`
+  `~/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json`
   (question_id `08f4fc43`) + `session_blobs` from
   `eval/dense_chain_v32_20260830/full-v34_pass1/materialized_all.jsonl` +
   `facts_text` from `eval/dense_chain_v32_20260830/full-v34_pass1/facts_all.jsonl`

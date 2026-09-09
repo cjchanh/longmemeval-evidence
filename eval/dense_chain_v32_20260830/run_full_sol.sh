@@ -6,7 +6,7 @@
 set -u
 V=eval/dense_chain_v32_20260830
 P="$V/full_sol"; mkdir -p "$P"
-DATA=/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json
+DATA="${LONGMEMEVAL_S_JSON:-$HOME/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json}"
 cat "$V/materialized.jsonl" "$V/materialized_abs.jsonl" > "$P/materialized_all.jsonl"
 cat "$V/facts_f3value.jsonl" "$V/facts_abs_f3value.jsonl" > "$P/facts_all.jsonl"
 date -u +"%Y-%m-%dT%H:%M:%SZ start full_sol" >> "$V/timeline.log"

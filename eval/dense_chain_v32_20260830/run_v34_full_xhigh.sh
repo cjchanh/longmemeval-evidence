@@ -7,7 +7,7 @@ set -u
 LABEL="$1"
 V=eval/dense_chain_v32_20260830
 P="$V/full-v34-xhigh_$LABEL"; mkdir -p "$P"
-DATA=/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json
+DATA="${LONGMEMEVAL_S_JSON:-$HOME/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json}"
 cat "$V/materialized.jsonl" "$V/materialized_abs.jsonl" > "$P/materialized_all.jsonl"
 cat "$V/facts_v34.jsonl" "$V/facts_abs_v34.jsonl" > "$P/facts_all.jsonl"
 date -u +"%Y-%m-%dT%H:%M:%SZ start v34-xhigh $LABEL" >> "$V/timeline.log"

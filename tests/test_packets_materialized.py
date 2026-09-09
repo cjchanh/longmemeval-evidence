@@ -23,6 +23,7 @@ from __future__ import annotations
 import gzip
 import hashlib
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -45,7 +46,12 @@ FACTS_GZ = PACKETS_DIR / "facts_all.jsonl.gz"
 PACKETS = EVAL / "packets.jsonl"
 PACKETS_ABS = EVAL / "packets_abs.jsonl"
 PACKETS_MANIFEST_REL = "eval/dense_chain_v32_20260830/packets_materialized/MANIFEST.md"
-DATASET = Path("/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json")
+DATASET = Path(
+    os.environ.get(
+        "LONGMEMEVAL_S_JSON",
+        str(Path.home() / ".archivist/eval/longmemeval-s/longmemeval_s_cleaned.json"),
+    )
+)
 FILE_ROW_RE = re.compile(
     r"^\| `([^`]+)` \| (\d+) \| `([0-9a-f]{64})` \|$"
 )

@@ -7,7 +7,7 @@ set -u
 LABEL="$1"
 V=eval/dense_chain_v32_20260830
 P="$V/replay-v34_$LABEL"; mkdir -p "$P"
-DATA=/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json
+DATA="${LONGMEMEVAL_S_JSON:-$HOME/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json}"
 date -u +"%Y-%m-%dT%H:%M:%SZ start v34 $LABEL" >> "$V/timeline.log"
 LME_READER_LANE=cursor-grok LME_READER_MODEL=cursor-grok-4.6-high \
 python3 scripts/run_lme_qa_flash_packets.py --data "$DATA" \

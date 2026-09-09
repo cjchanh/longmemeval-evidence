@@ -10,7 +10,7 @@ set -u
 STAGE="$1"; SUB="${2:-}"
 V3=eval/dense_chain_reranker_v3_20260830
 V=eval/dense_chain_v32_20260830
-DATA=/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json
+DATA="${LONGMEMEVAL_S_JSON:-$HOME/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json}"
 TOP10=eval/lme_product_dense_qa_20260827/retrieval_ranked_dense_c.jsonl
 mkdir -p "$V"
 case "$STAGE" in

@@ -7,7 +7,9 @@ the snippet under Verify. This tree does not release the retrieval, rerank,
 packet-compiler, or scaffold-operator sources.
 
 The headline score is not independently reproducible. Packets and the
-judge harness are; the method is not.
+judge harness are; the method is not. Every component that moves the
+score was tuned against the same 500 LongMemEval-S questions; no
+held-out split is reported.
 
 Comparator numbers (Chronos High 478, Mastra 468 raw, OMEGA 466 raw) are
 author-reported. Chronos PDF sha256 `a6a75d611a381ba8e244c77601c21ad4567e39e2e97426c85999a0cea21ae738`
@@ -66,7 +68,7 @@ The headline pair's compiled packet text is released under
 ## Verify
 
 Manifest root (sha256 of `RELEASE_MANIFEST.md`):
-`e8ec1cf469c59faf843d6e7ed6e4bdc1fe5b0336b448698159e7527f8ef88c64`
+`2bec7bd44f1f5f7f529fb389735c42812a4477dc4d4dbeefe6f28e380d09959d`
 (`eval/dense_chain_v32_20260830/RELEASE_MANIFEST.root`). Anchors:
 `eval/dense_chain_v32_20260830/ANCHORS.md`.
 
@@ -88,6 +90,9 @@ shasum -a 256 benchmarks/longmemeval-judge-gate/upstream/evaluate_qa.py
 `--check` exits 1 and names mismatching rows if any released file drifted.
 The signature wrapper prints `UNSIGNED` and exits 2 until a maintainer
 offline key writes `RELEASE_MANIFEST.root.sig`.
+Logged commands in frozen evidence artifacts record the author's local
+dataset path; they are hashed receipts of what ran, not an install
+requirement.
 
 Every file against the manifest:
 
@@ -140,7 +145,8 @@ Tests: `python3 -m pytest -q tests/`.
 LongMemEval-S, `xiaowu0162/longmemeval-cleaned` (Hugging Face, MIT). Reader
 checkpoints carry question and gold text from the benchmark. Rendered
 packet text (`session_blobs` under `packets_materialized/`) is released;
-the raw dataset JSON is not.
+the raw dataset JSON is not. Runner scripts read `$LONGMEMEVAL_S_JSON`
+(default `$HOME/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json`).
 
 ## License
 

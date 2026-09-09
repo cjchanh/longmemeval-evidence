@@ -3,7 +3,7 @@
 Adversarial read-only pass on a frozen tree. Zero model/provider/network calls.
 No git writes. One file written: this one.
 
-- Repo: `/Users/cj/Workspace/active/longmemeval-evidence-release`
+- Repo: `~/Workspace/active/longmemeval-evidence-release`
 - HEAD at start and end: `0fc232b0c4b1ca18d1b937d2b562ff3aa1e1a1a6`
 - Verifier model: `claude-opus-5[1m]`
 - Date: 2026-09-06

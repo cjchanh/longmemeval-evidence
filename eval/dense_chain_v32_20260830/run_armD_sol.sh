@@ -6,7 +6,7 @@
 set -u
 V=eval/dense_chain_v32_20260830
 P="$V/armD_sol"; mkdir -p "$P"
-DATA=/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json
+DATA="${LONGMEMEVAL_S_JSON:-$HOME/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json}"
 date -u +"%Y-%m-%dT%H:%M:%SZ start armD" >> "$V/timeline.log"
 LME_READER_LANE=sol LME_READER_MODEL=openai/gpt-5.6-sol \
 python3 scripts/run_lme_qa_flash_packets.py --data "$DATA" --materialized "$V/replay_materialized.jsonl" \
