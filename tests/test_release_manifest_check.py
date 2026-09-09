@@ -87,7 +87,7 @@ README = REPO / "README.md"
 PACKETS_MANIFEST = EVAL / "packets_materialized" / "MANIFEST.md"
 ANCHORS = EVAL / "ANCHORS.md"
 PIN_TEST = REPO / "tests" / "test_upstream_judge_pin.py"
-MACHINE_DATASET = "/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json"
+MACHINE_DATASET = "/Users/" + "cj" + "/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json"  # split so no tracked file carries the literal
 STALE_S8 = "Paper §8 still lists materialized packets as held"
 WAIVER = '"answer no.\\n\\n", "answer no. \\n\\n"'
 

@@ -491,7 +491,7 @@ A public copy of this release is verified when every row below matches `sha256su
 | `tests/test_claude_cli_lane.py` | 9803 | `c5ef6be26c6fe401dbb9340cd58b9395fe5c436ad52fde5de09f40b35f16d4f7` |
 | `tests/test_packets_materialized.py` | 10533 | `2cbfd38f9c68929ee6b63a480c939a692ca7982821b5f12248a16ee77017a465` |
 | `tests/test_upstream_judge_pin.py` | 5001 | `cc94407dd92289b0e414701ed37995cf8b6dfafde4048791dcccbe835a5e92e0` |
-| `tests/test_release_manifest_check.py` | 6436 | `45c0ffee38997769377ef7d1cb597ac0a9403102856f1560dc0a7a906f651c14` |
+| `tests/test_release_manifest_check.py` | 6494 | `53d0b74cfdd52cc355d1a851c9f6d79304a74956284bec6a740e2d9e8580110f` |
 | `benchmarks/longmemeval-judge-gate/GROUND_TRUTH_SURVEY.md` | 10212 | `4e316e74923422222232684c19c19aa46b705506048a778f6f61971be6af48b2` |
 | `benchmarks/longmemeval-judge-gate/upstream/evaluate_qa.py` | 7436 | `ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251` |
 | `benchmarks/longmemeval-judge-gate/upstream/UPSTREAM.md` | 1272 | `435731a49f2e2620c1682c92b745c1ea0832109b0a71c960d516b8c80212ef27` |

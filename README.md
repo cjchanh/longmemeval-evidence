@@ -68,7 +68,7 @@ The headline pair's compiled packet text is released under
 ## Verify
 
 Manifest root (sha256 of `RELEASE_MANIFEST.md`):
-`28d87ca97b621fa76f8d495017dbbd2fef0ca70649d4e66542ea9b6b4766887e`
+`9f95007916ba647015bb0ac76876f79ff0ab0ea71941caf1e0b510f19b6e9c2b`
 (`eval/dense_chain_v32_20260830/RELEASE_MANIFEST.root`). Anchors:
 `eval/dense_chain_v32_20260830/ANCHORS.md`.
 
