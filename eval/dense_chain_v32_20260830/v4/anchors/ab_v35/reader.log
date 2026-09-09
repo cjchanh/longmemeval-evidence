@@ -3,10 +3,10 @@
 75/119 (2620s)
 100/119 (3400s)
 Traceback (most recent call last):
-  File "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/scripts/run_lme_qa_flash_packets.py", line 589, in <module>
+  File "~/Workspace/worktrees/archivist-ms-poolgrade-20260828/scripts/run_lme_qa_flash_packets.py", line 589, in <module>
     sys.exit(main())
              ~~~~^^
-  File "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/scripts/run_lme_qa_flash_packets.py", line 575, in main
+  File "~/Workspace/worktrees/archivist-ms-poolgrade-20260828/scripts/run_lme_qa_flash_packets.py", line 575, in main
     (out_dir / "run_meta.json").write_text(json.dumps(meta, indent=1))
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 809, in write_text

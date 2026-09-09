@@ -4,7 +4,7 @@
   "inputs": {
     "packets": "eval/dense_chain_v32_20260830/packets.jsonl",
     "packets_sha256": "3598aee8a14e760a65549abaa45c386942f05c027a3de8ef33ede56b9f6b52f0",
-    "data": "/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json",
+    "data": "~/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json",
     "data_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442"
   },
   "n_rows": 470,

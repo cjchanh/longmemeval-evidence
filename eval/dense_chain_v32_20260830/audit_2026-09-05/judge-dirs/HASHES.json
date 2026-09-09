@@ -2,7 +2,7 @@
  "schema": "cds/lme-judge-dir-authority-hashes/v1",
  "generated_at": "2026-09-06T05:49:08.902712+00:00",
  "algorithm": "sha256",
- "release_root": "/Users/cj/Workspace/active/longmemeval-evidence-release",
+ "release_root": "~/Workspace/active/longmemeval-evidence-release",
  "note": "Inputs are read-only evidence; outputs are this audit's artifacts. Paths are relative to release_root except audit outputs, which are relative to eval/dense_chain_v32_20260830/audit_2026-09-05/judge-dirs/.",
  "inputs": {
   "eval/dense_chain_v32_20260830/full-v34-opus_pass1/judge_gpt4o/rescored.jsonl": {

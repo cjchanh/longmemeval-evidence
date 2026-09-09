@@ -1,7 +1,7 @@
 {
  "schema": "cds/v4-pilot-runner/v1",
  "mode": "live",
- "pilot_set": "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/eval/dense_chain_v32_20260830/v4/pilot/PILOT_SET.json",
+ "pilot_set": "~/Workspace/worktrees/archivist-ms-poolgrade-20260828/eval/dense_chain_v32_20260830/v4/pilot/PILOT_SET.json",
  "freeze_hash": "4c9feeac5a522d17f1aeba41ba75a016dcd4f3e819abe696ec74df681fe6ad2f",
  "n_rows": 89,
  "counts": {
@@ -83,9 +83,9 @@
  "armA": {
   "cmd": [
    "/opt/homebrew/opt/python@3.14/bin/python3.14",
-   "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/scripts/run_lme_qa_flash_packets.py",
+   "~/Workspace/worktrees/archivist-ms-poolgrade-20260828/scripts/run_lme_qa_flash_packets.py",
    "--data",
-   "/Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json",
+   "~/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json",
    "--materialized",
    "eval/dense_chain_v32_20260830/v4/pilot_runner/armA/filtered/materialized_pilot.jsonl",
    "--out-dir",

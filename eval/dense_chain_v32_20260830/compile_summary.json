@@ -1,7 +1,7 @@
 {
   "schema": "cds/dense-chain-coverage-packets-summary/v1",
   "generated_at": "2026-08-30T19:05:24.809571+00:00",
-  "command": "python3 scripts/build_coverage_preserving_packets.py --pools eval/dense_chain_reranker_v3_20260830/abs/pools_ce.jsonl --baseline-top10 eval/dense_chain_reranker_v3_20260830/abs/baseline_top10_abs_dedup.jsonl --data /Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json --out eval/dense_chain_v32_20260830/packets_abs.jsonl --budget-tokens 40000 --max-sessions 16 --allocation union16-rerank-term-extractive --extension-order ce --extension-floor none",
+  "command": "python3 scripts/build_coverage_preserving_packets.py --pools eval/dense_chain_reranker_v3_20260830/abs/pools_ce.jsonl --baseline-top10 eval/dense_chain_reranker_v3_20260830/abs/baseline_top10_abs_dedup.jsonl --data ~/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json --out eval/dense_chain_v32_20260830/packets_abs.jsonl --budget-tokens 40000 --max-sessions 16 --allocation union16-rerank-term-extractive --extension-order ce --extension-floor none",
   "allocation": "union16-rerank-term-extractive",
   "extension_order": "ce",
   "extension_floor": "none",

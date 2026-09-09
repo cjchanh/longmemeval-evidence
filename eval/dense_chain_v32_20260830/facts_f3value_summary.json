@@ -1,7 +1,7 @@
 {
   "schema": "cds/dense-chain-closure-facts-summary/v1",
   "generated_at": "2026-08-30T23:46:25.208962+00:00",
-  "command": "python3 scripts/run_dense_chain_failure_closure.py facts --materialized eval/dense_chain_v32_20260830/materialized.jsonl --data /Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json --out eval/dense_chain_v32_20260830/facts_f3value.jsonl",
+  "command": "python3 scripts/run_dense_chain_failure_closure.py facts --materialized eval/dense_chain_v32_20260830/materialized.jsonl --data ~/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json --out eval/dense_chain_v32_20260830/facts_f3value.jsonl",
   "materialized": "eval/dense_chain_v32_20260830/materialized.jsonl",
   "materialized_sha256": "876ef9d2f95d57ae5d014476315b69fa7dc323f631ba9fae0558fd5c3c3f9a6c",
   "n_materialized_rows": 470,

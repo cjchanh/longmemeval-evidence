@@ -519,10 +519,10 @@
   "pdf_rebuild": {
     "toolchain_installed": true,
     "binaries_found": {
-      "pdflatex": "/Users/cj/Library/TinyTeX/bin/universal-darwin/pdflatex",
-      "xelatex": "/Users/cj/Library/TinyTeX/bin/universal-darwin/xelatex",
-      "lualatex": "/Users/cj/Library/TinyTeX/bin/universal-darwin/lualatex",
-      "latexmk": "/Users/cj/Library/TinyTeX/bin/universal-darwin/latexmk",
+      "pdflatex": "~/Library/TinyTeX/bin/universal-darwin/pdflatex",
+      "xelatex": "~/Library/TinyTeX/bin/universal-darwin/xelatex",
+      "lualatex": "~/Library/TinyTeX/bin/universal-darwin/lualatex",
+      "latexmk": "~/Library/TinyTeX/bin/universal-darwin/latexmk",
       "tectonic": "/opt/homebrew/bin/tectonic"
     },
     "verified_by": "test compile of the CURRENT, unmodified tex in an isolated scratch copy outside the repo (never written into eval/dense_chain_v32_20260830/paper/)",

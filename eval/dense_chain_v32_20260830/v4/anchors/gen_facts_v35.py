@@ -23,7 +23,7 @@ gate below fails, the v3.5 delta is not attributable and the run is void.
 Usage:
   python3 eval/dense_chain_v32_20260830/v4/anchors/gen_facts_v35.py \\
       --materialized eval/dense_chain_v32_20260830/materialized.jsonl \\
-      --data /Users/cj/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json \\
+      --data ~/.archivist/eval/longmemeval-s/longmemeval_s_cleaned.json \\
       --out eval/dense_chain_v32_20260830/v4/anchors/facts_v35.jsonl \\
       --anchors-out eval/dense_chain_v32_20260830/v4/anchors/anchors_v35.jsonl \\
       --contract v3.5-facts \\

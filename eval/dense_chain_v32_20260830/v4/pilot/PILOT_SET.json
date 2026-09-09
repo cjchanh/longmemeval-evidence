@@ -3,7 +3,7 @@
  "seed": 20260831,
  "n_control_target": 60,
  "source": {
-  "root": "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/eval/dense_chain_v32_20260830",
+  "root": "~/Workspace/worktrees/archivist-ms-poolgrade-20260828/eval/dense_chain_v32_20260830",
   "pass1": "full-v34_pass1/judge_gpt4o/rescored.jsonl",
   "pass2": "full-v34_pass2/judge_gpt4o/rescored.jsonl",
   "reader": "cursor-grok-4.6-high",

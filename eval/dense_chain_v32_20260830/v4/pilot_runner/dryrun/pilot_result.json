@@ -1,7 +1,7 @@
 {
  "schema": "cds/v4-pilot-runner/v1",
  "mode": "dry-run",
- "pilot_set": "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/eval/dense_chain_v32_20260830/v4/pilot/PILOT_SET.json",
+ "pilot_set": "~/Workspace/worktrees/archivist-ms-poolgrade-20260828/eval/dense_chain_v32_20260830/v4/pilot/PILOT_SET.json",
  "freeze_hash": "4c9feeac5a522d17f1aeba41ba75a016dcd4f3e819abe696ec74df681fe6ad2f",
  "n_rows": 89,
  "counts": {
@@ -56,7 +56,7 @@
  "effort": "high",
  "dual_read_enabled": true,
  "filter_materialized": {
-  "source": "/Users/cj/Workspace/worktrees/archivist-ms-poolgrade-20260828/eval/dense_chain_v32_20260830/full-v34_pass1/materialized_all.jsonl",
+  "source": "~/Workspace/worktrees/archivist-ms-poolgrade-20260828/eval/dense_chain_v32_20260830/full-v34_pass1/materialized_all.jsonl",
   "written": "eval/dense_chain_v32_20260830/v4/pilot_runner/dryrun/filtered/materialized_pilot.jsonl",
   "n_wanted": 89,
   "n_written": 89,
