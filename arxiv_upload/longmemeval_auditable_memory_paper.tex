@@ -13,7 +13,7 @@
 
 \title{\textbf{Auditable Long-Term Memory: A Deterministic\\Retrieval Chain Measured at 479/475 of 500 on\\LongMemEval-S Under the Official Judge}}
 \author{Christopher J. Chanhnourack\thanks{Correspondence: Centennial Defense Systems. Evidence release: \url{https://github.com/cjchanh/longmemeval-evidence}. Source-tree evidence commits: 477726726 \textperiodcentered{} 04eb64763 \textperiodcentered{} ad71321ea \textperiodcentered{} ba805e575 \textperiodcentered{} 08e5784bb \textperiodcentered{} ad43cc99a \textperiodcentered{} 9b0711c39.}\\Centennial Defense Systems (Archivist)}
-\date{Technical report --- September 8, 2026 --- v1.3 (v1.2: September 1, 2026)}
+\date{Technical report --- September 24, 2026 --- v1.4 (v1.3: September 8, 2026)}
 
 \begin{document}
 \maketitle
@@ -119,7 +119,11 @@ average --- their own per-category counts sum to \textbf{468/500 raw}
 (generator gpt-5-mini; page sha256 \texttt{cd0bf092\ldots}) --- and OMEGA's ``95.4\%'' is likewise task-averaged
 with raw 466/500, judged by GPT-4.1 rather than the canonical judge (no source URL or hash is in this release). One higher
 claim (481/500, ``agentmemory V4'') exists in an unreviewed personal
-repository; we note it without treating it as the published bar. Reader tier
+repository; we note it without treating it as the published bar. Agent Zero
+Memory (arXiv 2608.29606, Aug 2026) reports the same 95.60\% on 500
+LongMemEval questions without naming the variant or the judge, and its
+comparison table omits Chronos; we read it as a tie with the bar, not a new
+one. Reader tier
 varies freely across published entries (GPT-4o through Opus 4.6; our headline
 reader's alias resolved to Opus 5 on a same-day probe, \S5.3); we follow the
 field convention of reporting our strongest configuration alongside the full
@@ -539,6 +543,8 @@ Long-Term Interactive Memory.} ICLR 2025, arXiv:2410.10813.
 \item Sen, S., Lumer, E., Gulati, A., Subbiah, V.~K. \emph{Chronos:
 Temporal-Aware Conversational Agents with Structured Event Retrieval for
 Long-Term Memory.} arXiv:2603.16862, Mar 2026.
+\item Wu, M., Zhu, P. \emph{Agent Zero Memory: Provenance-Aware Long-Term
+Memory for LLM Agents.} arXiv:2608.29606, Aug 2026.
 \item Barnes, T. \emph{Observational Memory: 95\% on LongMemEval.} Mastra
 Research, Feb 2026 (accessed 2026-08-31).
 \item Packer, C., et al. \emph{MemGPT: Towards LLMs as Operating Systems.}
