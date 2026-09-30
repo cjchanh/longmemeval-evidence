@@ -1,10 +1,14 @@
 # LongMemEval-S evidence release — Archivist dense chain (479/475 per 500)
 
 Judge-side evidence for a LongMemEval-S measurement: 479/475 of 500 under
-the official GPT-4o judge. Clone this repo; `python3 -m pytest -q tests/`
-is the install check. Re-derive the headline from released verdicts with
-the snippet under Verify. This tree does not release the retrieval, rerank,
-packet-compiler, or scaffold-operator sources.
+the benchmark's GPT-4o judge protocol (`gpt-4o-2024-08-06`), with one
+disclosed deviation: the 72 answerable knowledge-update rows were judged
+with a modified knowledge-update prompt, and their verdicts under the
+official prompt text have not been measured. In this README, "official
+judge" means this judge with that one exception. Clone this repo;
+`python3 -m pytest -q tests/` is the install check. Re-derive the headline
+from released verdicts with the snippet under Verify. This tree does not
+release the retrieval, rerank, packet-compiler, or scaffold-operator sources.
 
 The headline score is not independently reproducible. Packets and the
 judge harness are; the method is not. Every component that moves the
@@ -18,10 +22,12 @@ are pinned under `eval/dense_chain_v32_20260830/comparators/`; OMEGA has no
 source in this release.
 
 Paper: *Auditable Long-Term Memory: A Deterministic Retrieval Chain
-Measured at 479/475 of 500 on LongMemEval-S Under the Official Judge*
-(Chanhnourack, Centennial Defense Systems, technical report v1.3,
-2026-09-08). Source, Markdown, and PDF are in
-`eval/dense_chain_v32_20260830/paper/`.
+Measured at 479/475 of 500 on LongMemEval-S* (Chanhnourack, Centennial
+Defense Systems, technical report, 2026-09-29; submitted to arXiv, cs.CL).
+The manuscript copies bundled in this tree
+(`eval/dense_chain_v32_20260830/paper/` and `arxiv_upload/`) are an
+earlier draft, v1.3 of 2026-09-08; where they differ, the submitted report
+governs.
 
 This tree matches the rows in
 `eval/dense_chain_v32_20260830/RELEASE_MANIFEST.md` (see that file's header
