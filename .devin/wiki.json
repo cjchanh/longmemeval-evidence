@@ -1,0 +1,78 @@
+{
+  "repo_notes": [
+    {
+      "content": "This is a judge-side evidence release for a LongMemEval-S memory benchmark measurement: 479/475 of 500 under the official GPT-4o judge protocol (gpt-4o-2024-08-06), with one disclosed deviation — the 72 answerable knowledge-update rows were judged with a modified knowledge-update prompt and their verdicts under the official prompt text were never measured. Design laws: (1) honest-scope — the headline score is NOT independently reproducible (packets and judge harness are released; retrieval, rerank, packet-compiler, and scaffold-operator sources are held); every score-moving component was tuned against the same 500 questions with no held-out split; (2) evidence pinning — RELEASE_MANIFEST.md lists every released row with one SHA-256 each, with RELEASE_MANIFEST.root and ANCHORS.md as anchors; comparator numbers (Chronos 478, Mastra 468, OMEGA 466) are author-reported with sha256-pinned sources under comparators/ where available; (3) artifact honesty — superseded/partial artifacts are retained and labelled, e.g. full-v34-opus_pass1/judge_gpt4o/ is a partial artifact (194 unjudged rows → 289/500) superseded by judge_gpt4o_v2/ per its SUPERSEDED.md.",
+      "author": "Devin"
+    },
+    {
+      "content": "Layout: eval/dense_chain_v32_20260830/ is the evidence tree (~460 files): full-v34-opus_pass{1,2}/ is the headline reader pair (reader checkpoints, judge_gpt4o_v2/ and judge_gpt4o/ verdicts, GLM-5.3 cross-judge, controls, judge_gpt4o_repro_20260901/ showing 478/500 with three flips); full-v34*_pass*/ and full_*_pass*/ are the reader curve (grok-4.6-high, xhigh, glm53, kimi, sol, dsv4pro, nemotron, gemini); replay-*/ are replay runs; v4/ holds PARENT_ANALYSIS.md and ADVERSARIAL_PASS_20260901.md; packets_materialized/ has the headline pair's compiled packet text; comparators/ pins comparator sources; facts*.jsonl and compile*.log are derivation artifacts. scripts/ holds the judge harness (rescore_gpt4o_judge.py with frozen SHA-256-pinned rubric templates, rescore_llm_judge.py, oc_flash_lane.py), reader lanes (reader_lane.py, claude_cli_lane.py, grok_cli_lane.py, run_lme_qa_flash_packets.py), and release tooling (build_release_manifest.py, export_release.py, materialize_packets.py, verify_release_manifest_signature.sh). benchmarks/longmemeval-judge-gate/ has GROUND_TRUTH_SURVEY.md (rubric source) and upstream/evaluate_qa.py. tests/ has 7 pytest modules; arxiv_upload/ + eval/.../paper/ hold the v1.3 draft manuscript (the submitted report governs where they differ).",
+      "author": "Devin"
+    },
+    {
+      "content": "Vocabulary: 'reader' = the model lane that answers each question from a compiled packet; 'judge' = the GPT-4o rubric scorer producing per-row verdicts; 'cross-judge' = a second-model judging pass (GLM-5.3); 'packet' = the compiled evidence text fed to a reader; 'pass' = an independent run of the same pipeline over all 500 rows; 'controls' = live positive/negative canary questions inside the judge harness; 'held' = components intentionally not released. Prioritize README.md (the authoritative summary of claims and caveats), RELEASE_MANIFEST.md, ANCHORS.md, GOLD_DEFECT_DOSSIER.md, SOTA_WRITEUP.md, and benchmarks/longmemeval-judge-gate/GROUND_TRUTH_SURVEY.md. De-emphasize bulk per-row verdict JSONL — document formats and meanings rather than enumerating rows.",
+      "author": "Devin"
+    }
+  ],
+  "pages": [
+    {
+      "title": "Overview",
+      "purpose": "What this repo is: a judge-side evidence release for the Archivist dense-chain LongMemEval-S measurement (479/475 of 500), what is released vs held, and how README.md frames the claims. Name eval/dense_chain_v32_20260830/ as the evidence root.",
+      "parent": null
+    },
+    {
+      "title": "Getting Started",
+      "purpose": "Clone-and-verify flow: python3 -m pytest -q tests/ as the install check, re-deriving the headline from released verdicts, verifying RELEASE_MANIFEST.md via scripts/verify_release_manifest_signature.sh and the RELEASE_MANIFEST.root sha256, and reading ANCHORS.md.",
+      "parent": "Overview"
+    },
+    {
+      "title": "Reading the Score",
+      "purpose": "How to interpret 479/475-per-500: the GPT-4o judge protocol, the disclosed knowledge-update prompt deviation (72 rows), the non-reproducibility statement (same-500 tuning, no held-out split), author-reported comparator numbers (Chronos 478, Mastra 468, OMEGA 466), and the re-judge variance (478/500 with three flips on identical text, paper §8).",
+      "parent": "Overview"
+    },
+    {
+      "title": "Evidence Integrity Model",
+      "purpose": "The pinning scheme: RELEASE_MANIFEST.md one-SHA-256-per-row, RELEASE_MANIFEST.root anchor hash, ANCHORS.md, sha256-pinned comparator sources under comparators/, superseded-artifact labelling (SUPERSEDED.md on the partial pass-1 judge dir), and fail-closed transport in the judge harness.",
+      "parent": "Overview"
+    },
+    {
+      "title": "Dense Chain Evidence Tree",
+      "purpose": "The layout of eval/dense_chain_v32_20260830/: per-run directory convention (reader/checkpoint_*.jsonl, run_meta.json, judge_*/ verdicts, controls), which families exist (full-*, replay-*, verifier_*, sc_flip, xhigh_probe, armD_sol, baseline_*, audit_2026-09-05), and the top-level facts*.jsonl / compile*.log derivation artifacts.",
+      "parent": null
+    },
+    {
+      "title": "Reader Runs and Judge Verdicts",
+      "purpose": "The reader curve: full-v34-opus_pass{1,2} headline pair vs the other model lanes (grok-4.6-high 476/474, xhigh, glm53, kimi, sol, dsv4pro, nemotron, gemini); verdict file formats; GLM-5.3 cross-judge directories; the partial-artifact caveat on full-v34-opus_pass1/judge_gpt4o/ and why judge_gpt4o_v2/ is authoritative for pass 1.",
+      "parent": "Dense Chain Evidence Tree"
+    },
+    {
+      "title": "Analysis Documents and Audits",
+      "purpose": "GOLD_DEFECT_DOSSIER.md (gold-set defect attribution), SOTA_WRITEUP.md, judge_agreement_matrix*.json (cross-judge agreement), v4/PARENT_ANALYSIS.md and v4/ADVERSARIAL_PASS_20260901.md, audit_2026-09-05/, and controls_n60.jsonl — what each establishes about the measurement.",
+      "parent": "Dense Chain Evidence Tree"
+    },
+    {
+      "title": "Packets and Comparators",
+      "purpose": "packets_materialized/ (the headline pair's compiled packet text + MANIFEST.md), comparators/ (pinned Chronos PDF and Mastra page sha256s, OMEGA noted as unsourced in this release), and how a reviewer uses packets to spot-check judge verdicts.",
+      "parent": "Dense Chain Evidence Tree"
+    },
+    {
+      "title": "Judge Harness and Reader Lanes",
+      "purpose": "scripts/: rescore_gpt4o_judge.py (the official-judge harness — frozen rubric templates SHA-256-pinned, live positive/negative controls, fail-closed transport), rescore_llm_judge.py and oc_flash_lane.py variants, reader lanes (reader_lane.py, claude_cli_lane.py, grok_cli_lane.py, run_lme_qa_flash_packets.py), analyze_judge_agreement.py, and release tooling (build_release_manifest.py, export_release.py, materialize_packets.py, verify_release_manifest_signature.sh).",
+      "parent": null
+    },
+    {
+      "title": "Benchmark Ground Truth",
+      "purpose": "benchmarks/longmemeval-judge-gate/: GROUND_TRUTH_SURVEY.md as the rubric source of truth and upstream/evaluate_qa.py + UPSTREAM.md as the vendored upstream LongMemEval evaluator the templates are pinned against.",
+      "parent": null
+    },
+    {
+      "title": "Testing and CI",
+      "purpose": ".github/workflows/release-manifest.yml: build_release_manifest.py --check, pytest -q tests/, and manifest-signature verification (rc 2 → UNSIGNED warning). tests/ covers template pins, verdict extraction, manifest checks, packets_materialized, claude_cli_lane, and the no-private-paths guard.",
+      "parent": null
+    },
+    {
+      "title": "Paper Manuscript",
+      "purpose": "The technical report 'Auditable Long-Term Memory: A Deterministic Retrieval Chain Measured at 479/475 of 500 on LongMemEval-S': arxiv_upload/longmemeval_auditable_memory_paper.tex and eval/dense_chain_v32_20260830/paper/ are draft v1.3 of 2026-09-08; where they differ from the submitted report, the submitted report governs.",
+      "parent": null
+    }
+  ]
+}
